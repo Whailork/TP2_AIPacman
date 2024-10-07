@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\TP2_unreal.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\TP2_unreal.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\TP2_unrealEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\TP2_unreal">
+      <UniqueIdentifier>{E57536C7-1BAE-35A3-ADC6-2EE528696557}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\TP2_unreal\TP2_unreal.Build.cs">
+      <Filter>Source\TP2_unreal</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\TP2_unreal\TP2_unreal.cpp">
+      <Filter>Source\TP2_unreal</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unreal.h">
+      <Filter>Source\TP2_unreal</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TP2_unreal\TP2_unrealCharacter.cpp">
+      <Filter>Source\TP2_unreal</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unrealCharacter.h">
+      <Filter>Source\TP2_unreal</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\TP2_unreal\TP2_unrealGameMode.cpp">
+      <Filter>Source\TP2_unreal</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unrealGameMode.h">
+      <Filter>Source\TP2_unreal</Filter>
+    </ClInclude>
+    <Filter Include="Source\TP2_unreal\Private">
+      <UniqueIdentifier>{27A3A151-2E58-3E71-955D-0489DCF304BF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\TP2_unreal\Private\Corner">
+      <UniqueIdentifier>{052EE198-0A4C-3866-9A46-2ED882BC15AB}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Corner\CornerActor.cpp">
+      <Filter>Source\TP2_unreal\Private\Corner</Filter>
+    </ClCompile>
+    <Filter Include="Source\TP2_unreal\Private\Entity">
+      <UniqueIdentifier>{BC196DC7-DC6D-34BD-9DD2-B8E8E935A610}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Entity\EntityCharacter.cpp">
+      <Filter>Source\TP2_unreal\Private\Entity</Filter>
+    </ClCompile>
+    <Filter Include="Source\TP2_unreal\Private\Ghost">
+      <UniqueIdentifier>{E81E8B1E-B41A-37C5-A6D6-6151D18648AB}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\GhostCharacter.cpp">
+      <Filter>Source\TP2_unreal\Private\Ghost</Filter>
+    </ClCompile>
+    <Filter Include="Source\TP2_unreal\Private\Map">
+      <UniqueIdentifier>{D54C28D3-A7D0-3D84-B236-10CC20F673BA}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Map\Wall.cpp">
+      <Filter>Source\TP2_unreal\Private\Map</Filter>
+    </ClCompile>
+    <Filter Include="Source\TP2_unreal\Public">
+      <UniqueIdentifier>{6F1AA921-F625-3156-9153-55BF2D3F79D1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\TP2_unreal\Public\Corner">
+      <UniqueIdentifier>{9E2553D5-1CAA-3193-9A0A-A941141EE2A5}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Corner\CornerActor.h">
+      <Filter>Source\TP2_unreal\Public\Corner</Filter>
+    </ClInclude>
+    <Filter Include="Source\TP2_unreal\Public\Entity">
+      <UniqueIdentifier>{F6109B53-F94C-3EC9-A5C4-36EEDF495B0A}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Entity\EntityCharacter.h">
+      <Filter>Source\TP2_unreal\Public\Entity</Filter>
+    </ClInclude>
+    <Filter Include="Source\TP2_unreal\Public\Ghost">
+      <UniqueIdentifier>{86506D56-2E02-3642-8560-1FC66175C447}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\GhostCharacter.h">
+      <Filter>Source\TP2_unreal\Public\Ghost</Filter>
+    </ClInclude>
+    <Filter Include="Source\TP2_unreal\Public\Map">
+      <UniqueIdentifier>{EFD0E982-041E-3834-BAE0-2D43EEE4A9BC}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Map\Wall.h">
+      <Filter>Source\TP2_unreal\Public\Map</Filter>
+    </ClInclude>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+</Project>

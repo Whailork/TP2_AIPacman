@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\Coralie\\Desktop\\Intelligence artificielle pour le jeu video\\TP2\\Olorae\\TP2_IA_jeu_video\\TP2_unreal\\Source\\TP2_unreal\\TP2_unreal.Build.cs",
+		"C:\\Users\\Coralie\\Desktop\\Intelligence artificielle pour le jeu video\\TP2\\Olorae\\TP2_IA_jeu_video\\TP2_unreal\\Source\\TP2_unreal.Target.cs",
+		"C:\\Users\\Coralie\\Desktop\\Intelligence artificielle pour le jeu video\\TP2\\Olorae\\TP2_IA_jeu_video\\TP2_unreal\\Source\\TP2_unrealEditor.Target.cs"
+	],
+	"EngineVersion": "5.4.4"
+}
