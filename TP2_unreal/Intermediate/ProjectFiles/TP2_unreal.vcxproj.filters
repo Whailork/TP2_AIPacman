@@ -11,7 +11,6 @@
     <None Include="..\..\Source\TP2_unrealEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
-    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -57,6 +56,9 @@
     <Filter Include="Source\TP2_unreal\Private">
       <UniqueIdentifier>{27A3A151-2E58-3E71-955D-0489DCF304BF}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\PacMan.cpp">
+      <Filter>Source\TP2_unreal\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\TP2_unreal\Private\Corner">
       <UniqueIdentifier>{052EE198-0A4C-3866-9A46-2ED882BC15AB}</UniqueIdentifier>
     </Filter>
@@ -84,6 +86,9 @@
     <Filter Include="Source\TP2_unreal\Public">
       <UniqueIdentifier>{6F1AA921-F625-3156-9153-55BF2D3F79D1}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\PacMan.h">
+      <Filter>Source\TP2_unreal\Public</Filter>
+    </ClInclude>
     <Filter Include="Source\TP2_unreal\Public\Corner">
       <UniqueIdentifier>{9E2553D5-1CAA-3193-9A0A-A941141EE2A5}</UniqueIdentifier>
     </Filter>
@@ -108,6 +113,5 @@
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Map\Wall.h">
       <Filter>Source\TP2_unreal\Public\Map</Filter>
     </ClInclude>
-    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
