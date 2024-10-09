@@ -26,8 +26,21 @@ public:
 public:
 	UPROPERTY(VisibleAnywhere)
 	FVector PositionActuelle;
+	UPROPERTY(EditAnywhere)
+	bool ContinueOnContact = false;
 
+	UPROPERTY(EditAnywhere, Category = Corner, BlueprintReadWrite)
 	TArray<ACornerActor*> NeighborsArray;
+	UPROPERTY(EditAnywhere, Category = Corner)
+	ACornerActor* UpCorner;
+	UPROPERTY(EditAnywhere, Category = Corner)
+	ACornerActor* DownCorner;
+	UPROPERTY(EditAnywhere, Category = Corner)
+	ACornerActor* LeftCorner;
+	UPROPERTY(EditAnywhere, Category = Corner)
+	ACornerActor* RightCorner;
 
 	void AddNeighborCorner(ACornerActor* neighbor);
+	UFUNCTION()
+	void OnOverlap(AActor* MyActor, AActor* OtherActor);
 };
