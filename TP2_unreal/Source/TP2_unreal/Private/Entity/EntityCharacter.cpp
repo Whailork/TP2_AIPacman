@@ -4,6 +4,7 @@
 #include "Entity/EntityCharacter.h"
 #include "Components/BoxComponent.h"
 #include "GameFramework//FloatingPawnMovement.h"
+#include "GameFramework/MovementComponent.h"
 
 // Sets default values
 AEntityCharacter::AEntityCharacter()
@@ -24,13 +25,15 @@ AEntityCharacter::AEntityCharacter()
 // Called when the game starts or when spawned
 void AEntityCharacter::BeginPlay()
 {
-
+	//Super::BeginPlay();
 }
 
 // Called every frame
 void AEntityCharacter::Tick(float DeltaTime)
 {
+	//Super::Tick(DeltaTime);
 
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ceci est un message à l'ecran from Tick Entity!"));
 
 }
 
