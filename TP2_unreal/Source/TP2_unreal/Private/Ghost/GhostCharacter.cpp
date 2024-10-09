@@ -18,8 +18,6 @@ AGhostCharacter::AGhostCharacter()
 void AGhostCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-
-    MoveNPC();
 }
 
 // Called every frame
@@ -29,50 +27,28 @@ void AGhostCharacter::Tick(float DeltaTime)
 
 	// float distance = FVector::DistSquared(targetLocation, currentLocation);
 	// if (distance <= 5) { change targetLocation }
-	// MoveTo(Seek(targetLocation));
+
+	targetLocation = FVector(50, 50, 50);
+	MoveTo(Seek(targetLocation));
+	/*
+	MovementComponent;
+
+	GetMovementComponent()->AddInputVector(Location);
+
+
+	AEntityCharacter entity;
+
+	entity.MovementComponent->AddInputVector(targetLocation);
+	*/
 }
 
 // Called to bind functionality to input
 void AGhostCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
 }
 
-void AGhostCharacter::MoveNPC()
-{
-    targetLocation = FindRandomReachableLocation();
 
-    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Vector: %s"), *targetLocation.ToString()));
-
-    MoveTo(targetLocation);
-
-
-    SetActorLocation(targetLocation);
-}
-
-FVector AGhostCharacter::FindRandomReachableLocation()
-{
-    // Variables
-    float Radius = 1000.0f;
-    FVector RandomLocation = FVector(0, 0, 0);;
-
-    // Get the navigation system
-   /* UNavigationSystemV1* navigationSystem = UNavigationSystemV1::GetCurrent(GetWorld());
-
-    if (navigationSystem)
-    {
-        FNavLocation navLocation;
-        bool RandomPointFound = navigationSystem->GetRandomReachablePointInRadius(currentLocation(), Radius, navLocation);
-
-        // TODO : quoi faire si Random Point NOT Found??
-        if (RandomPointFound) {
-            RandomLocation = navLocation.Location;
-        }
-    }*/
-
-    return RandomLocation;
-}
 
 FVector AGhostCharacter::currentLocation()
 {

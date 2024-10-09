@@ -77,7 +77,7 @@ AGhostCharacter::~AGhostCharacter() {}
 // End Class AGhostCharacter
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_GhostCharacter_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_GhostCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_AGhostCharacter, AGhostCharacter::StaticClass, TEXT("AGhostCharacter"), &Z_Registration_Info_UClass_AGhostCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGhostCharacter), 1586050907U) },

@@ -32,10 +32,6 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 public:
-	
-	void MoveNPC();
-
-	FVector FindRandomReachableLocation();
 
 	FVector currentLocation();
 };
