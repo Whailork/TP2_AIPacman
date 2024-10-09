@@ -56,7 +56,13 @@
     <Filter Include="Source\TP2_unreal\Private">
       <UniqueIdentifier>{27A3A151-2E58-3E71-955D-0489DCF304BF}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\APlayerInputManager.cpp">
+      <Filter>Source\TP2_unreal\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\TP2_unreal\Private\PacMan.cpp">
+      <Filter>Source\TP2_unreal\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\PacmanAIController.cpp">
       <Filter>Source\TP2_unreal\Private</Filter>
     </ClCompile>
     <Filter Include="Source\TP2_unreal\Private\Corner">
@@ -86,7 +92,13 @@
     <Filter Include="Source\TP2_unreal\Public">
       <UniqueIdentifier>{6F1AA921-F625-3156-9153-55BF2D3F79D1}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\APlayerInputManager.h">
+      <Filter>Source\TP2_unreal\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\PacMan.h">
+      <Filter>Source\TP2_unreal\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\PacmanAIController.h">
       <Filter>Source\TP2_unreal\Public</Filter>
     </ClInclude>
     <Filter Include="Source\TP2_unreal\Public\Corner">
