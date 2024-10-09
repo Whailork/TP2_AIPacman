@@ -10,7 +10,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeEntityCharacter() {}
 
 // Begin Cross Module References
-ENGINE_API UClass* Z_Construct_UClass_ACharacter();
+ENGINE_API UClass* Z_Construct_UClass_APawn();
 ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UPawnMovementComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
@@ -74,7 +74,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEntityCh
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AEntityCharacter_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AEntityCharacter_Statics::DependentSingletons[])() = {
-	(UObject* (*)())Z_Construct_UClass_ACharacter,
+	(UObject* (*)())Z_Construct_UClass_APawn,
 	(UObject* (*)())Z_Construct_UPackage__Script_TP2_unreal,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AEntityCharacter_Statics::DependentSingletons) < 16);
@@ -110,14 +110,14 @@ AEntityCharacter::~AEntityCharacter() {}
 // End Class AEntityCharacter
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Olorae_TP2_IA_jeu_video_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEntityCharacter, AEntityCharacter::StaticClass, TEXT("AEntityCharacter"), &Z_Registration_Info_UClass_AEntityCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEntityCharacter), 448713906U) },
+		{ Z_Construct_UClass_AEntityCharacter, AEntityCharacter::StaticClass, TEXT("AEntityCharacter"), &Z_Registration_Info_UClass_AEntityCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEntityCharacter), 416931805U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Olorae_TP2_IA_jeu_video_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_599396388(TEXT("/Script/TP2_unreal"),
-	Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Olorae_TP2_IA_jeu_video_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Olorae_TP2_IA_jeu_video_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_3967048040(TEXT("/Script/TP2_unreal"),
+	Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

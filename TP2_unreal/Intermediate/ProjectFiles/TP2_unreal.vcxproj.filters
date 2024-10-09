@@ -108,6 +108,5 @@
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Map\Wall.h">
       <Filter>Source\TP2_unreal\Public\Map</Filter>
     </ClInclude>
-    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
