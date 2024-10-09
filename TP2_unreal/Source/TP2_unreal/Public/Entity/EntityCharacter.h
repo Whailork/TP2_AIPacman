@@ -12,6 +12,7 @@ class TP2_UNREAL_API AEntityCharacter : public APawn
 	GENERATED_BODY()
 
 public:
+
 	UPROPERTY(Category = Pawn, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	UPawnMovementComponent* MovementComponent;
 

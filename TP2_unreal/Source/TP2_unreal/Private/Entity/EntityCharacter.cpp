@@ -4,6 +4,7 @@
 #include "Entity/EntityCharacter.h"
 #include "Components/BoxComponent.h"
 #include "GameFramework//FloatingPawnMovement.h"
+#include "GameFramework/MovementComponent.h"
 
 // Sets default values
 AEntityCharacter::AEntityCharacter()

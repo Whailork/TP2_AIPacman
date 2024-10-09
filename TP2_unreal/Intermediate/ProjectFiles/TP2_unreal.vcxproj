@@ -252,7 +252,6 @@
     <None Include="..\..\TP2_unreal.uproject"/>
     <None Include="..\..\Source\TP2_unreal.Target.cs"/>
     <None Include="..\..\Source\TP2_unrealEditor.Target.cs"/>
-    <None Include="..\..\.vsconfig"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
