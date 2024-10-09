@@ -3,6 +3,8 @@
 
 #include "Corner/CornerActor.h"
 
+#include "PacMan.h"
+
 // Sets default values
 ACornerActor::ACornerActor()
 {
@@ -33,6 +35,15 @@ void ACornerActor::AddNeighborCorner(ACornerActor* neighbor)
 
 void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 {
+	if (auto pacman = Cast<APacMan>(OtherActor))
+	{
+		//GEngine->AddOnScreenDebugMessage(-1, 15, FColor::Red, TEXT("destroyBonus"));
+		pacman->isMoving = false;
+		pacman->UpCorner = UpCorner;
+		pacman->DownCorner = DownCorner;
+		pacman->LeftCorner = LeftCorner;
+		pacman->RightCorner = RightCorner;
+	}
 	
 }
 

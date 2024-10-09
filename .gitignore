@@ -489,3 +489,5 @@ FodyWeavers.xsd
 
 # End of https://www.toptal.com/developers/gitignore/api/unrealengine,visualstudio
 TP2_unreal/Saved/SourceControl/UncontrolledChangelists.json
+
+TP2_unreal/Saved/Telemetry/Telemetry.json
