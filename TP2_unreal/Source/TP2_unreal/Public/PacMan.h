@@ -29,6 +29,10 @@ class TP2_UNREAL_API APacMan : public AEntityCharacter
 	AAIController* PlayerAI;
 
 public:
+	UPROPERTY()
+	int nbEaten;
+	UPROPERTY()
+	int score;
 	
 	UPROPERTY(EditAnywhere, Category = Corner)
 	ACornerActor* UpCorner;
@@ -55,6 +59,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void OnEat(int earnedScore, bool isPacGomme);
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	void MoveUp();

@@ -33,7 +33,7 @@ void AEntityCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Tick"));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Tick"));
 }
 
 // Called to bind functionality to input
