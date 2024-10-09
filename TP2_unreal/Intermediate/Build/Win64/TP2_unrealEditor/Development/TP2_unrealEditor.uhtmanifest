@@ -3823,6 +3823,135 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
+      "Name": "InteractiveToolsFramework",
+      "ModuleType": "EngineRuntime",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\InteractiveToolsFramework\\UHT",
+      "ClassesHeaders": [],
+      "PublicHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\ContextObjectStore.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InputBehavior.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InputBehaviorSet.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InputRouter.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InputState.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InteractionMechanic.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InteractiveCommand.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InteractiveGizmo.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InteractiveGizmoBuilder.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InteractiveGizmoManager.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InteractiveTool.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InteractiveToolBuilder.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InteractiveToolChange.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InteractiveToolObjects.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InteractiveToolManager.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InteractiveToolQueryInterfaces.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\MultiSelectionTool.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\InteractiveToolsContext.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\SelectionSet.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\SingleSelectionTool.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\ToolContextInterfaces.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\ToolTargetManager.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseBehaviors\\AnyButtonInputBehavior.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseBehaviors\\KeyAsModifierInputBehavior.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseBehaviors\\ClickDragBehavior.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseBehaviors\\MouseHoverBehavior.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseBehaviors\\MouseWheelBehavior.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseBehaviors\\MultiClickSequenceInputBehavior.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseBehaviors\\SingleClickOrDragBehavior.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseBehaviors\\SingleClickBehavior.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseBehaviors\\SingleKeyCaptureBehavior.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseBehaviors\\Widgets\\WidgetBaseBehavior.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\AxisAngleGizmo.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\AxisPositionGizmo.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\AxisSources.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\BrushStampIndicator.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoActor.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoBaseComponent.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\CombinedTransformGizmo.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoArrowComponent.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoBoxComponent.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoCircleComponent.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementArc.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementArrow.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementBase.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementBox.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementCircle.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementCircleBase.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementCone.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementCylinder.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementGroup.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementHitTargets.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementLineBase.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementLineStrip.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementRectangle.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementShared.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementRenderState.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementSphere.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementTorus.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoLineHandleComponent.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\ParameterSourcesFloat.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\IntervalGizmo.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\ParameterSourcesVec2.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\HitTargets.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\ParameterToTransformAdapters.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\RepositionableTransformGizmo.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\PlanePositionGizmo.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\ScalableSphereGizmo.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\StateTargets.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\TransformGizmoUtil.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoElementTriangleList.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseTools\\BaseBrushTool.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoInterfaces.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseTools\\ClickDragTool.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseTools\\MeshSurfacePointTool.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseTools\\SingleClickTool.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\SceneQueries\\SceneSnappingManager.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\TargetInterfaces\\MaterialProvider.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\TargetInterfaces\\AssetBackedTarget.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoRectangleComponent.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\TargetInterfaces\\MeshDescriptionCommitter.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\TargetInterfaces\\MeshDescriptionProvider.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\TargetInterfaces\\PhysicsDataSource.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\TargetInterfaces\\PrimitiveComponentBackedTarget.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\TargetInterfaces\\SkeletalMeshBackedTarget.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\TargetInterfaces\\StaticMeshBackedTarget.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\GizmoViewContext.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\ToolTargets\\PrimitiveComponentToolTarget.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\ToolTargets\\ToolTarget.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\TransformSources.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\InteractiveToolsFramework\\Public\\BaseGizmos\\TransformProxy.h"
+      ],
+      "InternalHeaders": [],
+      "PrivateHeaders": [],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\InteractiveToolsFramework\\UHT\\InteractiveToolsFramework.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
+      "Name": "MeshDescription",
+      "ModuleType": "EngineRuntime",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\MeshDescription",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\MeshDescription\\UHT",
+      "ClassesHeaders": [],
+      "PublicHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\MeshDescription\\Public\\MeshDescription.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\MeshDescription\\Public\\MeshDescriptionBaseBulkData.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\MeshDescription\\Public\\MeshDescriptionBase.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\MeshDescription\\Public\\MeshTypes.h"
+      ],
+      "InternalHeaders": [],
+      "PrivateHeaders": [],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\MeshDescription\\UHT\\MeshDescription.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
       "Name": "PortalServices",
       "ModuleType": "EngineRuntime",
       "OverrideModuleType": "None",
@@ -4283,7 +4412,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "VectorVM",
+      "Name": "PortalMessages",
       "ModuleType": "EngineRuntime",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Runtime\\VectorVM",
@@ -4295,11 +4424,26 @@
       ],
       "InternalHeaders": [],
       "PrivateHeaders": [],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\PortalMessages\\UHT\\PortalMessages.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
+      "Name": "BuildPatchServices",
+      "ModuleType": "EngineRuntime",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\Online\\BuildPatchServices",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\BuildPatchServices\\UHT",
+      "ClassesHeaders": [],
+      "PublicHeaders": [],
+      "InternalHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Runtime\\Online\\BuildPatchServices\\Private\\Data\\ManifestUObject.h"
+      ],
       "PublicDefines": [
-        "VECTORVM_SUPPORTS_EXPERIMENTAL=1",
-        "VECTORVM_SUPPORTS_LEGACY=1",
-        "VECTORVM_SUPPORTS_SERIALIZATION=0",
-        "VECTORVM_DEBUG_PRINTF=0"
+        "ENABLE_PATCH_DISK_OVERFLOW_STORE=1"
       ],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\VectorVM\\UHT\\VectorVM.gen",
       "SaveExportedHeaders": false,
@@ -4767,7 +4911,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "ToolMenus",
+      "Name": "SourceControl",
       "ModuleType": "EngineDeveloper",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Developer\\ToolMenus",
@@ -4966,8 +5110,8 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "EditorFramework",
-      "ModuleType": "EngineEditor",
+      "Name": "AITestSuite",
+      "ModuleType": "EngineDeveloper",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\EditorFramework",
       "IncludeBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source",
@@ -4982,10 +5126,38 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\EditorFramework\\Public\\Subsystems\\PlacementSubsystem.h",
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\EditorFramework\\Public\\Tools\\AssetEditorContextInterface.h"
       ],
+      "PublicHeaders": [],
       "InternalHeaders": [],
       "PrivateHeaders": [],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\EditorFramework\\UHT\\EditorFramework.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
+      "Name": "PhysicsAssetEditor",
+      "ModuleType": "EngineEditor",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\PhysicsAssetEditor",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\PhysicsAssetEditor\\UHT",
+      "ClassesHeaders": [],
+      "PublicHeaders": [],
+      "InternalHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\PhysicsAssetEditor\\Private\\PhysicsAssetEditorAnimInstance.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\PhysicsAssetEditor\\Private\\PhysicsAssetEditorAnimInstanceProxy.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\PhysicsAssetEditor\\Private\\PhysicsAssetEditorSkeletalMeshComponent.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\PhysicsAssetEditor\\Private\\PhysicsAssetGraph\\PhysicsAssetGraph.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\PhysicsAssetEditor\\Private\\PhysicsAssetGraph\\PhysicsAssetGraphNode_Bone.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\PhysicsAssetEditor\\Private\\PhysicsAssetGraph\\PhysicsAssetGraphNode_Constraint.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\PhysicsAssetEditor\\Private\\PhysicsAssetGraph\\PhysicsAssetGraphSchema.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\PhysicsAssetEditor\\Private\\PhysicsAssetEditorPhysicsHandleComponent.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\PhysicsAssetEditor\\Private\\PhysicsAssetEditorToolMenuContext.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\PhysicsAssetEditor\\Private\\PhysicsAssetGraph\\PhysicsAssetGraphNode.h"
+      ],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\PhysicsAssetEditor\\UHT\\PhysicsAssetEditor.gen",
       "SaveExportedHeaders": false,
       "UHTGeneratedCodeVersion": "None"
     },
@@ -7095,7 +7267,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "EditorSubsystem",
+      "Name": "EditorFramework",
       "ModuleType": "EngineEditor",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\EditorSubsystem",
@@ -7161,7 +7333,9 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\SkeletalMeshEditor\\Public\\SkeletalMeshEditorSubsystem.h"
       ],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\InputBindingEditor\\Private\\EditorKeyboardShortcutSettings.h"
+      ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\SkeletalMeshEditor\\UHT\\SkeletalMeshEditor.gen",
       "SaveExportedHeaders": false,
@@ -7275,6 +7449,21 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\Blutility\\Classes\\GlobalEditorUtilityBase.h",
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\Blutility\\Classes\\PlacedEditorUtilityBase.h"
       ],
+      "InternalHeaders": [],
+      "PrivateHeaders": [],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\SparseVolumeTexture\\UHT\\SparseVolumeTexture.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
+      "Name": "StructViewer",
+      "ModuleType": "EngineEditor",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\StructViewer",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\StructViewer\\UHT",
+      "ClassesHeaders": [],
       "PublicHeaders": [
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\Blutility\\Public\\AsyncCaptureScene.h",
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\Blutility\\Public\\AsyncImageExport.h",
@@ -7387,7 +7576,10 @@
       "IncludeBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source",
       "OutputDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\InputBindingEditor\\UHT",
       "ClassesHeaders": [],
-      "PublicHeaders": [],
+      "PublicHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\StaticMeshEditor\\Public\\StaticMeshEditorSubsystem.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Source\\Editor\\StaticMeshEditor\\Public\\StaticMeshEditorSubsystemHelpers.h"
+      ],
       "InternalHeaders": [],
       "PrivateHeaders": [
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\InputBindingEditor\\Private\\EditorKeyboardShortcutSettings.h"
@@ -7496,7 +7688,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "WorldBrowser",
+      "Name": "Blutility",
       "ModuleType": "EngineEditor",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\WorldBrowser",
@@ -7539,7 +7731,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "LandscapeEditorUtilities",
+      "Name": "StringTableEditor",
       "ModuleType": "EngineEditor",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\LandscapeEditorUtilities",
@@ -7723,9 +7915,6 @@
       "ClassesHeaders": [
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Source\\Editor\\GameplayTasksEditor\\Classes\\K2Node_LatentGameplayTaskCall.h"
       ],
-      "PublicHeaders": [],
-      "InternalHeaders": [],
-      "PrivateHeaders": [],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\GameplayTasksEditor\\UHT\\GameplayTasksEditor.gen",
       "SaveExportedHeaders": false,
@@ -8230,6 +8419,34 @@
       "ClassesHeaders": [],
       "PublicHeaders": [
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Experimental\\AutomationUtils\\Source\\AutomationUtils\\Public\\AutomationUtilsBlueprintLibrary.h"
+      ],
+      "InternalHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Source\\MeshModelingTools\\Private\\ToolActivities\\PolyEditBevelEdgeActivity.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Source\\MeshModelingTools\\Private\\ToolActivities\\PolyEditExtrudeEdgeActivity.h"
+      ],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\MeshModelingTools\\UHT\\MeshModelingTools.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
+      "Name": "ModelingComponentsEditorOnly",
+      "ModuleType": "EngineEditor",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Source\\ModelingComponentsEditorOnly",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\ModelingComponentsEditorOnly\\UHT",
+      "ClassesHeaders": [],
+      "PublicHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Source\\ModelingComponentsEditorOnly\\Public\\EditorModelingObjectsCreationAPI.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Source\\ModelingComponentsEditorOnly\\Public\\Operations\\SubdividePoly.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Source\\ModelingComponentsEditorOnly\\Public\\ToolTargets\\SkeletalMeshComponentToolTarget.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Source\\ModelingComponentsEditorOnly\\Public\\ToolTargets\\DynamicMeshComponentToolTarget.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Source\\ModelingComponentsEditorOnly\\Public\\ToolTargets\\SkeletalMeshToolTarget.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Source\\ModelingComponentsEditorOnly\\Public\\ToolTargets\\StaticMeshToolTarget.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Source\\ModelingComponentsEditorOnly\\Public\\ToolTargets\\StaticMeshComponentToolTarget.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Runtime\\MeshModelingToolset\\Source\\ModelingComponentsEditorOnly\\Public\\ToolTargets\\VolumeComponentToolTarget.h"
       ],
       "InternalHeaders": [],
       "PrivateHeaders": [],
@@ -8956,7 +9173,18 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Runtime\\RigVM\\Source\\RigVMEditor\\Public\\RigVMEditorBlueprintLibrary.h"
       ],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\SequencerScripting\\Source\\SequencerScripting\\Private\\KeysAndChannels\\MovieSceneScriptingActorReference.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\SequencerScripting\\Source\\SequencerScripting\\Private\\KeysAndChannels\\MovieSceneScriptingBool.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\SequencerScripting\\Source\\SequencerScripting\\Private\\KeysAndChannels\\MovieSceneScriptingByte.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\SequencerScripting\\Source\\SequencerScripting\\Private\\KeysAndChannels\\MovieSceneScriptingChannel.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\SequencerScripting\\Source\\SequencerScripting\\Private\\KeysAndChannels\\MovieSceneScriptingFloat.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\SequencerScripting\\Source\\SequencerScripting\\Private\\KeysAndChannels\\MovieSceneScriptingDouble.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\SequencerScripting\\Source\\SequencerScripting\\Private\\KeysAndChannels\\MovieSceneScriptingInteger.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\SequencerScripting\\Source\\SequencerScripting\\Private\\KeysAndChannels\\MovieSceneScriptingString.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\SequencerScripting\\Source\\SequencerScripting\\Private\\KeysAndChannels\\MovieSceneScriptingObjectPath.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\SequencerScripting\\Source\\SequencerScripting\\Private\\KeysAndChannels\\MovieSceneScriptingEvent.h"
+      ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Runtime\\RigVM\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\RigVMEditor\\UHT\\RigVMEditor.gen",
       "SaveExportedHeaders": false,
@@ -9219,7 +9447,10 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\MediaPlate\\Source\\MediaPlate\\Public\\MediaPlateComponent.h"
       ],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\TemplateSequence\\Source\\TemplateSequence\\Private\\Systems\\TemplateSequenceSystem.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\TemplateSequence\\Source\\TemplateSequence\\Private\\Tests\\SequenceCameraShakeTestUtil.h"
+      ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\MediaPlate\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\MediaPlate\\UHT\\MediaPlate.gen",
       "SaveExportedHeaders": false,
@@ -9237,7 +9468,10 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\ImgMedia\\Source\\ImgMediaEngine\\Public\\Unreal\\ImgMediaPlaybackComponent.h"
       ],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Cameras\\GameplayCameras\\Source\\GameplayCameras\\Private\\Core\\BlendStackRootCameraNode.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Cameras\\GameplayCameras\\Source\\GameplayCameras\\Private\\Tests\\CameraShakeTestObjects.h"
+      ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\ImgMedia\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\ImgMediaEngine\\UHT\\ImgMediaEngine.gen",
       "SaveExportedHeaders": false,
@@ -10149,7 +10383,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "ChaosCaching",
+      "Name": "EnhancedInput",
       "ModuleType": "EngineRuntime",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Experimental\\ChaosCaching\\Source\\ChaosCaching",
@@ -10411,8 +10645,8 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "FullBodyIK",
-      "ModuleType": "EngineRuntime",
+      "Name": "ProfilerMessages",
+      "ModuleType": "EngineDeveloper",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Experimental\\FullBodyIK\\Source\\FullBodyIK",
       "IncludeBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Experimental\\FullBodyIK\\Source",
@@ -10473,7 +10707,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "ControlRigSpline",
+      "Name": "ACLPlugin",
       "ModuleType": "EngineRuntime",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Animation\\ControlRigSpline\\Source\\ControlRigSpline",
@@ -11522,6 +11756,32 @@
       "IncludeBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Animation\\AnimationModifierLibrary\\Source",
       "OutputDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Animation\\AnimationModifierLibrary\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\AnimationModifierLibrary\\UHT",
       "ClassesHeaders": [],
+      "PublicHeaders": [],
+      "InternalHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\VirtualProduction\\Takes\\Source\\TakeRecorderSources\\Private\\TakeRecorderActorSource.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\VirtualProduction\\Takes\\Source\\TakeRecorderSources\\Private\\TakeRecorderCameraCutSource.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\VirtualProduction\\Takes\\Source\\TakeRecorderSources\\Private\\TakeRecorderLevelSequenceSource.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\VirtualProduction\\Takes\\Source\\TakeRecorderSources\\Private\\TakeRecorderLevelVisibilitySource.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\VirtualProduction\\Takes\\Source\\TakeRecorderSources\\Private\\TakeRecorderMicrophoneAudioManager.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\VirtualProduction\\Takes\\Source\\TakeRecorderSources\\Private\\TakeRecorderPlayerSource.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\VirtualProduction\\Takes\\Source\\TakeRecorderSources\\Private\\TakeRecorderNearbySpawnedActorSource.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\VirtualProduction\\Takes\\Source\\TakeRecorderSources\\Private\\TakeRecorderWorldSource.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\VirtualProduction\\Takes\\Source\\TakeRecorderSources\\Private\\TakeRecorderMicrophoneAudioSource.h"
+      ],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\VirtualProduction\\Takes\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\TakeRecorderSources\\UHT\\TakeRecorderSources.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
+      "Name": "StructUtilsTestSuite",
+      "ModuleType": "EngineUncooked",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Experimental\\StructUtils\\Source\\StructUtilsTestSuite",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Experimental\\StructUtils\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Experimental\\StructUtils\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\StructUtilsTestSuite\\UHT",
+      "ClassesHeaders": [],
       "PublicHeaders": [
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Animation\\AnimationModifierLibrary\\Source\\AnimationModifierLibrary\\Public\\EncodeRootBoneModifier.h",
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Animation\\AnimationModifierLibrary\\Source\\AnimationModifierLibrary\\Public\\CopyBonesModifier.h",
@@ -11584,6 +11844,52 @@
       ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Runtime\\Metasound\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\MetasoundEditor\\UHT\\MetasoundEditor.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
+      "Name": "AnimationData",
+      "ModuleType": "EngineUncooked",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Animation\\AnimationData\\Source\\AnimationData",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Animation\\AnimationData\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Animation\\AnimationData\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\AnimationData\\UHT",
+      "ClassesHeaders": [],
+      "PublicHeaders": [],
+      "InternalHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Animation\\AnimationData\\Source\\AnimationData\\Private\\AnimSequencerDataModel.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Animation\\AnimationData\\Source\\AnimationData\\Private\\AnimSequencerController.h"
+      ],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Animation\\AnimationData\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\AnimationData\\UHT\\AnimationData.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
+      "Name": "EnvironmentQueryEditor",
+      "ModuleType": "EngineUncooked",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Source\\EnvironmentQueryEditor",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\EnvironmentQueryEditor\\UHT",
+      "ClassesHeaders": [],
+      "PublicHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Source\\EnvironmentQueryEditor\\Public\\ActorFactoryEnvironmentQuery.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Source\\EnvironmentQueryEditor\\Public\\EdGraphSchema_EnvironmentQuery.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Source\\EnvironmentQueryEditor\\Public\\EnvironmentQueryFactory.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Source\\EnvironmentQueryEditor\\Public\\EnvironmentQueryGraph.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Source\\EnvironmentQueryEditor\\Public\\EnvironmentQueryGraphNode.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Source\\EnvironmentQueryEditor\\Public\\EnvironmentQueryGraphNode_Test.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Source\\EnvironmentQueryEditor\\Public\\EnvironmentQueryGraphNode_Root.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Source\\EnvironmentQueryEditor\\Public\\EnvironmentQueryGraphNode_Option.h"
+      ],
+      "InternalHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Source\\EnvironmentQueryEditor\\Private\\AssetDefinition_EnvironmentQuery.h"
+      ],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\AI\\EnvironmentQueryEditor\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\EnvironmentQueryEditor\\UHT\\EnvironmentQueryEditor.gen",
       "SaveExportedHeaders": false,
       "UHTGeneratedCodeVersion": "None"
     },
@@ -11663,8 +11969,6 @@
       "PublicHeaders": [
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Experimental\\StructUtils\\Source\\StructUtilsNodes\\Public\\K2Node_InstancedStruct.h"
       ],
-      "InternalHeaders": [],
-      "PrivateHeaders": [],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Experimental\\StructUtils\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\StructUtilsNodes\\UHT\\StructUtilsNodes.gen",
       "SaveExportedHeaders": false,
@@ -11681,6 +11985,7 @@
       "PublicHeaders": [
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Developer\\RenderDocPlugin\\Source\\RenderDocPlugin\\Public\\RenderDocPluginSettings.h"
       ],
+      "PublicHeaders": [],
       "InternalHeaders": [],
       "PrivateHeaders": [],
       "PublicDefines": [],
@@ -12166,6 +12471,8 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\MediaPlayerEditor\\Source\\MediaPlayerEditor\\Private\\Factories\\MediaPlaylistFactoryNew.h",
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\MediaPlayerEditor\\Source\\MediaPlayerEditor\\Private\\Shared\\MediaSourceThumbnailRenderer.h"
       ],
+      "InternalHeaders": [],
+      "PrivateHeaders": [],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\MediaPlayerEditor\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\MediaPlayerEditor\\UHT\\MediaPlayerEditor.gen",
       "SaveExportedHeaders": false,
@@ -12242,6 +12549,86 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\ImgMedia\\Source\\ImgMediaEditor\\Private\\Factories\\ImgMediaSourceFactoryNew.h",
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\ImgMedia\\Source\\ImgMediaEditor\\Private\\Widgets\\ImgMediaProcessEXROptions.h"
       ],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Media\\AndroidMedia\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\AndroidMediaEditor\\UHT\\AndroidMediaEditor.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
+      "Name": "InterchangeEditorUtilities",
+      "ModuleType": "EngineEditor",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source\\Utilities",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\InterchangeEditorUtilities\\UHT",
+      "ClassesHeaders": [],
+      "PublicHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source\\Utilities\\Public\\InterchangeOpenFileDialog.h"
+      ],
+      "InternalHeaders": [],
+      "PrivateHeaders": [],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\InterchangeEditorUtilities\\UHT\\InterchangeEditorUtilities.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
+      "Name": "InterchangeEditorPipelines",
+      "ModuleType": "EngineEditor",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source\\Pipelines",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\InterchangeEditorPipelines\\UHT",
+      "ClassesHeaders": [],
+      "PublicHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source\\Pipelines\\Public\\InterchangeGraphInspectorPipeline.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source\\Pipelines\\Public\\InterchangePipelineConfigurationGeneric.h"
+      ],
+      "InternalHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source\\Pipelines\\Private\\InterchangePipelineFactories.h"
+      ],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\InterchangeEditorPipelines\\UHT\\InterchangeEditorPipelines.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
+      "Name": "InterchangeEditor",
+      "ModuleType": "EngineEditor",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source\\InterchangeEditor",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\InterchangeEditor\\UHT",
+      "ClassesHeaders": [],
+      "PublicHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source\\InterchangeEditor\\Public\\InterchangeFbxAssetImportDataConverter.h"
+      ],
+      "InternalHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source\\InterchangeEditor\\Private\\AssetDefinition_InterchangeSceneImportAsset.h"
+      ],
+      "PublicDefines": [],
+      "GeneratedCPPFilenameBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\InterchangeEditor\\UHT\\InterchangeEditor.gen",
+      "SaveExportedHeaders": false,
+      "UHTGeneratedCodeVersion": "None"
+    },
+    {
+      "Name": "ChaosCachingEditor",
+      "ModuleType": "EngineEditor",
+      "OverrideModuleType": "None",
+      "BaseDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Experimental\\ChaosCaching\\Source\\ChaosCachingEditor",
+      "IncludeBase": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Experimental\\ChaosCaching\\Source",
+      "OutputDirectory": "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Experimental\\ChaosCaching\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\ChaosCachingEditor\\UHT",
+      "ClassesHeaders": [],
+      "PublicHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Experimental\\ChaosCaching\\Source\\ChaosCachingEditor\\Public\\Chaos\\ActorFactoryCacheManager.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Experimental\\ChaosCaching\\Source\\ChaosCachingEditor\\Public\\Chaos\\CacheCollectionFactory.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Experimental\\ChaosCaching\\Source\\ChaosCachingEditor\\Public\\Sequencer\\MovieSceneChaosCacheTrackRecorder.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Experimental\\ChaosCaching\\Source\\ChaosCachingEditor\\Public\\Sequencer\\TakeRecorderChaosCacheSource.h"
+      ],
+      "InternalHeaders": [],
+      "PrivateHeaders": [],
       "PublicDefines": [
         "IMGMEDIAEDITOR_EXR_SUPPORTED_PLATFORM=1"
       ],
@@ -12261,7 +12648,13 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\AvfMedia\\Source\\AvfMediaFactory\\Public\\AvfMediaSettings.h"
       ],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\TemplateSequence\\Source\\TemplateSequenceEditor\\Private\\AssetTools\\AssetDefinition_CameraAnimationSequence.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\TemplateSequence\\Source\\TemplateSequenceEditor\\Private\\AssetTools\\AssetDefinition_TemplateSequence.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\TemplateSequence\\Source\\TemplateSequenceEditor\\Private\\Factories\\TemplateSequenceFactoryNew.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\TemplateSequence\\Source\\TemplateSequenceEditor\\Private\\Factories\\CameraAnimationSequenceFactoryNew.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\MovieScene\\TemplateSequence\\Source\\TemplateSequenceEditor\\Private\\Misc\\TemplateSequenceEditorSettings.h"
+      ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\AvfMedia\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\AvfMediaFactory\\UHT\\AvfMediaFactory.gen",
       "SaveExportedHeaders": false,
@@ -12297,7 +12690,9 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\AndroidMedia\\Source\\AndroidMediaFactory\\Public\\AndroidMediaSettings.h"
       ],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Experimental\\MetaHuman\\MetaHumanProjectUtilities\\Source\\MetaHumanProjectUtilities\\Private\\MetaHumanProjectUtilitiesSettings.h"
+      ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\AndroidMedia\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\AndroidMediaFactory\\UHT\\AndroidMediaFactory.gen",
       "SaveExportedHeaders": false,
@@ -12311,7 +12706,9 @@
       "IncludeBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\AndroidMedia\\Source",
       "OutputDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\AndroidMedia\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\AndroidMediaEditor\\UHT",
       "ClassesHeaders": [],
-      "PublicHeaders": [],
+      "PublicHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Bridge\\Source\\MegascansPlugin\\Public\\MSSettings.h"
+      ],
       "InternalHeaders": [],
       "PrivateHeaders": [
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Media\\AndroidMedia\\Source\\AndroidMediaEditor\\Private\\AndroidFileMediaSourceFactory.h"
@@ -12333,7 +12730,11 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Source\\Utilities\\Public\\InterchangeOpenFileDialog.h"
       ],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Bridge\\Source\\Bridge\\Private\\NodeCommManager.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Bridge\\Source\\Bridge\\Private\\NodePort.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Bridge\\Source\\Bridge\\Private\\UI\\BrowserBinding.h"
+      ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Interchange\\Editor\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\InterchangeEditorUtilities\\UHT\\InterchangeEditorUtilities.gen",
       "SaveExportedHeaders": false,
@@ -12449,7 +12850,9 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\FX\\NiagaraSimCaching\\Source\\NiagaraSimCachingEditor\\Public\\Sequencer\\MovieSceneNiagaraTrackRecorder.h"
       ],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Media\\WmfMedia\\Source\\WmfMediaEditor\\Private\\WmfFileMediaSourceFactory.h"
+      ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\FX\\NiagaraSimCaching\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\NiagaraSimCachingEditor\\UHT\\NiagaraSimCachingEditor.gen",
       "SaveExportedHeaders": false,
@@ -12508,7 +12911,10 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Editor\\UVEditor\\Source\\UVEditorTools\\Public\\ContextObjects\\UVToolAssetInputsContext.h"
       ],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Media\\MediaCompositing\\Source\\MediaCompositingEditor\\Private\\Sequencer\\MediaPlayerRecording.h",
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Media\\MediaCompositing\\Source\\MediaCompositingEditor\\Private\\Sequencer\\MediaSequenceRecorderExtender.h"
+      ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Editor\\UVEditor\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\UVEditorTools\\UHT\\UVEditorTools.gen",
       "SaveExportedHeaders": false,
@@ -12569,7 +12975,9 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Editor\\UVEditor\\Source\\UVEditor\\Public\\UVEditorSubsystem.h"
       ],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Importers\\AlembicImporter\\Source\\AlembicLibrary\\Private\\AlembicTestCommandlet.h"
+      ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Editor\\UVEditor\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\UVEditor\\UHT\\UVEditor.gen",
       "SaveExportedHeaders": false,
@@ -12936,7 +13344,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "ChaosCachingEditor",
+      "Name": "ModelingToolsEditorMode",
       "ModuleType": "EngineEditor",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Experimental\\ChaosCaching\\Source\\ChaosCachingEditor",
@@ -12950,29 +13358,18 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Experimental\\ChaosCaching\\Source\\ChaosCachingEditor\\Public\\Sequencer\\TakeRecorderChaosCacheSource.h"
       ],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Editor\\ModelingToolsEditorMode\\Source\\ModelingToolsEditorMode\\Private\\ModelingToolsEditablePaletteConfig.h"
+      ],
       "PublicDefines": [
-        "WITH_CLOTH_COLLISION_DETECTION=1",
-        "WITH_CHAOS_VISUAL_DEBUGGER=1",
-        "INCLUDE_CHAOS=UE_DEPRECATED_MACRO(5.1, \u0022INCLUDE_CHAOS is deprecated and should always be considered 1.\u0022) 1",
-        "WITH_CHAOS=UE_DEPRECATED_MACRO(5.1, \u0022WITH_CHAOS is deprecated and should always be considered 1.\u0022) 1",
-        "WITH_CHAOS_CLOTHING=UE_DEPRECATED_MACRO(5.1, \u0022WITH_CHAOS_CLOTHING is deprecated and should always be considered 1.\u0022) 1",
-        "WITH_CHAOS_NEEDS_TO_BE_FIXED=UE_DEPRECATED_MACRO(5.1, \u0022WITH_CHAOS_NEEDS_TO_BE_FIXED is deprecated and should always be considered 1.\u0022) 1",
-        "WITH_PHYSX=UE_DEPRECATED_MACRO(5.1, \u0022WITH_PHYSX is deprecated and should always be considered 1.\u0022) 1",
-        "WITH_PHYSX_COOKING=UE_DEPRECATED_MACRO(5.1, \u0022WITH_PHYSX_COOKING is deprecated and should always be considered 0.\u0022) 0",
-        "PHYSICS_INTERFACE_PHYSX=UE_DEPRECATED_MACRO(5.1, \u0022PHYSICS_INTERFACE_PHYSX is deprecated and should always be considered 0.\u0022) 0",
-        "WITH_APEX=UE_DEPRECATED_MACRO(5.1, \u0022WITH_APEX is deprecated and should always be considered 0.\u0022) 0",
-        "WITH_APEX_CLOTHING=UE_DEPRECATED_MACRO(5.1, \u0022WITH_APEX_CLOTHING is deprecated and should always be considered 0.\u0022) 0",
-        "WITH_NVCLOTH=UE_DEPRECATED_MACRO(5.1, \u0022WITH_NVCLOTH is deprecated and should always be considered 0.\u0022) 0",
-        "WITH_IMMEDIATE_PHYSX=UE_DEPRECATED_MACRO(5.1, \u0022WITH_IMMEDIATE_PHYSX is deprecated and should always be considered 0.\u0022) 0",
-        "WITH_CUSTOM_SQ_STRUCTURE=UE_DEPRECATED_MACRO(5.1, \u0022WITH_CUSTOM_SQ_STRUCTURE is deprecated and should always be considered 0.\u0022) 0"
+        "WITH_PROXYLOD=1"
       ],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Experimental\\ChaosCaching\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\ChaosCachingEditor\\UHT\\ChaosCachingEditor.gen",
       "SaveExportedHeaders": false,
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "TemplateSequenceEditor",
+      "Name": "ACLPluginEditor",
       "ModuleType": "EngineEditor",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\MovieScene\\TemplateSequence\\Source\\TemplateSequenceEditor",
@@ -12994,7 +13391,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "GameplayCamerasEditor",
+      "Name": "Paper2DEditor",
       "ModuleType": "EngineEditor",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Cameras\\GameplayCameras\\Source\\GameplayCamerasEditor",
@@ -13035,7 +13432,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "MegascansPlugin",
+      "Name": "PaperTiledImporter",
       "ModuleType": "EngineEditor",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Bridge\\Source\\MegascansPlugin",
@@ -13109,7 +13506,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "BlendSpaceMotionAnalysis",
+      "Name": "PaperSpriteSheetImporter",
       "ModuleType": "EngineEditor",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Animation\\BlendSpaceMotionAnalysis\\Source\\BlendSpaceMotionAnalysis",
@@ -13300,7 +13697,9 @@
       ],
       "PublicHeaders": [],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Editor\\GeometryMode\\Source\\GeometryMode\\Private\\BrushEditingSubsystemImpl.h"
+      ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Runtime\\Synthesis\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\SynthesisEditor\\UHT\\SynthesisEditor.gen",
       "SaveExportedHeaders": false,
@@ -13337,7 +13736,6 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Runtime\\AudioSynesthesia\\Source\\AudioSynesthesiaEditor\\Classes\\AudioSynesthesiaNRTSettingsFactory.h",
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Runtime\\AudioSynesthesia\\Source\\AudioSynesthesiaEditor\\Classes\\AudioSynesthesiaSettingsFactory.h"
       ],
-      "PublicHeaders": [],
       "InternalHeaders": [],
       "PrivateHeaders": [],
       "PublicDefines": [],
@@ -13364,7 +13762,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "AndroidFileServerEditor",
+      "Name": "DataValidation",
       "ModuleType": "EngineEditor",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Runtime\\AndroidFileServer\\Source\\AndroidFileServerEditor",
@@ -13375,14 +13773,16 @@
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Runtime\\AndroidFileServer\\Source\\AndroidFileServerEditor\\Public\\AndroidFileServerRuntimeSettings.h"
       ],
       "InternalHeaders": [],
-      "PrivateHeaders": [],
+      "PrivateHeaders": [
+        "C:\\Program Files\\Epic Games\\UE_5.4\\Engine\\Plugins\\Editor\\DataValidation\\Source\\DataValidation\\Private\\WorldPartitionChangelistValidator.h"
+      ],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Runtime\\AndroidFileServer\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\AndroidFileServerEditor\\UHT\\AndroidFileServerEditor.gen",
       "SaveExportedHeaders": false,
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "AndroidDeviceProfileSelector",
+      "Name": "CurveEditorTools",
       "ModuleType": "EngineEditor",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Runtime\\AndroidDeviceProfileSelector\\Source\\AndroidDeviceProfileSelector",
@@ -13402,7 +13802,7 @@
       "UHTGeneratedCodeVersion": "None"
     },
     {
-      "Name": "AndroidDeviceProfileCommandlets",
+      "Name": "CryptoKeys",
       "ModuleType": "EngineEditor",
       "OverrideModuleType": "None",
       "BaseDirectory": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Runtime\\AndroidDeviceProfileSelector\\Source\\AndroidDeviceProfileCommandlets",
@@ -13435,6 +13835,8 @@
       "PrivateHeaders": [
         "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Experimental\\ToolPresets\\Source\\ToolPresetAsset\\Private\\AssetDefinition_ToolPresetAsset.h"
       ],
+      "InternalHeaders": [],
+      "PrivateHeaders": [],
       "PublicDefines": [],
       "GeneratedCPPFilenameBase": "D:\\Epic Games\\UE_5.4\\UE_5.4\\Engine\\Plugins\\Experimental\\ToolPresets\\Intermediate\\Build\\Win64\\UnrealEditor\\Inc\\ToolPresetAsset\\UHT\\ToolPresetAsset.gen",
       "SaveExportedHeaders": false,

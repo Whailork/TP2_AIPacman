@@ -14,6 +14,8 @@ class TP2_UNREAL_API AGhostCharacter : public AEntityCharacter
 {
 	GENERATED_BODY()
 
+	FVector targetLocation;
+
 public:
 	// Sets default values for this character's properties
 	AGhostCharacter();
@@ -28,4 +30,12 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+public:
+	
+	void MoveNPC();
+
+	FVector FindRandomReachableLocation();
+
+	FVector currentLocation();
 };
