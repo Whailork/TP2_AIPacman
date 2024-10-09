@@ -26,6 +26,8 @@ public:
 public:
 	UPROPERTY(VisibleAnywhere)
 	FVector PositionActuelle;
+	UPROPERTY(EditAnywhere)
+	bool ContinueOnContact = false;
 
 	UPROPERTY(EditAnywhere, Category = Corner, BlueprintReadWrite)
 	TArray<ACornerActor*> NeighborsArray;

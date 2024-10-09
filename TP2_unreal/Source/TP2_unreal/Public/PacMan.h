@@ -6,7 +6,9 @@
 #include "Corner/CornerActor.h"
 #include "Entity/EntityCharacter.h"
 #include "GameFramework/Pawn.h"
+#include "AIController.h"
 #include "PacMan.generated.h"
+
 
 UCLASS()
 class TP2_UNREAL_API APacMan : public AEntityCharacter
@@ -23,7 +25,11 @@ class TP2_UNREAL_API APacMan : public AEntityCharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	UPawnMovementComponent* MovementComponent;*/
 
+	UPROPERTY()
+	AAIController* PlayerAI;
+
 public:
+	
 	UPROPERTY(EditAnywhere, Category = Corner)
 	ACornerActor* UpCorner;
 	UPROPERTY(EditAnywhere, Category = Corner)
@@ -34,6 +40,8 @@ public:
 	ACornerActor* RightCorner;
 	UPROPERTY()
 	ACornerActor* CurrentTarget;
+	UPROPERTY()
+	ACornerActor* PreviousTarget;
 	bool isMoving;
 	// Sets default values for this pawn's properties
 	APacMan();
@@ -49,6 +57,10 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	void MoveUp();
+	void MoveDown();
+	void MoveLeft();
+	void MoveRight();
 
 private:
 	void Move(FVector Location);
@@ -63,8 +75,5 @@ private:
 	class UInputAction* LeftAction;
 	UPROPERTY(EditDefaultsOnly, Category= Input)
 	class UInputAction* RightAction;
-	void MoveUp();
-	void MoveDown();
-	void MoveLeft();
-	void MoveRight();
+
 };
