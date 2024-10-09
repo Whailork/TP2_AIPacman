@@ -2,12 +2,12 @@
 
 #pragma once
 
+#include "PacMan.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Entity/EntityCharacter.h"
 
 #include "GhostCharacter.generated.h"
-
 
 UCLASS()
 class TP2_UNREAL_API AGhostCharacter : public AEntityCharacter
@@ -15,6 +15,8 @@ class TP2_UNREAL_API AGhostCharacter : public AEntityCharacter
 	GENERATED_BODY()
 
 	FVector targetLocation;
+
+	AActor* PacManReference;
 
 public:
 	// Sets default values for this character's properties
@@ -33,5 +35,7 @@ public:
 
 public:
 
-	FVector currentLocation();
+	void OnCatchOverlapBegin(AActor* OtherActor); // (UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	void SetPacmanReference();
 };

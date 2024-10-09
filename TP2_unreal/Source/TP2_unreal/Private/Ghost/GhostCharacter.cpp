@@ -1,11 +1,17 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "Engine/StaticMeshActor.h"
 #include "GameFramework//FloatingPawnMovement.h"
 #include "Ghost/GhostCharacter.h"
 #include <Kismet/KismetSystemLibrary.h>
 #include "GameFramework/Actor.h"
-
 #include "Entity/EntityCharacter.h"
+#include "PacMan.h"
+#include "EngineUtils.h"
+#include"Corner/CornerActor.h"
+#include <Kismet/GameplayStatics.h>
+
+// GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ceci est un message!"));
 
 
 // Sets default values
@@ -20,26 +26,37 @@ void AGhostCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-	AEntityCharacter entity;
-
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ceci est un message à l'ecran from BeginPlay !"));
-
-	MoveTo(FVector(currentLocation().X + 20, currentLocation().Y, currentLocation().Z));
-
-	MovementComponent->AddInputVector(FVector(currentLocation().X + 20, currentLocation().Y, currentLocation().Z));
+    PacManReference = nullptr;
+    targetLocation = FVector::ZeroVector;
 }
 
 // Called every frame
 void AGhostCharacter::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
+    Super::Tick(DeltaTime);
 
-	// float distance = FVector::DistSquared(targetLocation, currentLocation);
-	// if (distance <= 5) { change targetLocation }
+    // float distance = FVector::DistSquared(targetLocation, currentLocation);
+    // if (distance <= 5) { change targetLocation }
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ceci est un message à l'ecran from Tick !"));
+    // MoveTo(Seek(FVector(currentLocation().X + 20, currentLocation().Y, currentLocation().Z)));
 
-	MoveTo(Seek(FVector(currentLocation().X + 20, currentLocation().Y, currentLocation().Z)));
+    // Comparer MonVecteur à ZeroVector
+    if (targetLocation != FVector::ZeroVector)
+    {
+        MoveTo(Seek(targetLocation));
+    }
+}
+
+void AGhostCharacter::OnCatchOverlapBegin(AActor* OtherActor)
+{
+    // Si je collisione avec un coin
+    if (OtherActor && OtherActor->IsA(ACornerActor::StaticClass()))
+    {
+        // TODO : trouve ou est pacman et va vers lui
+        SetPacmanReference();
+
+        targetLocation = PacManReference->GetActorLocation();
+    }
 }
 
 // Called to bind functionality to input
@@ -48,9 +65,32 @@ void AGhostCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
-
-
-FVector AGhostCharacter::currentLocation()
+void AGhostCharacter::SetPacmanReference()
 {
-    return GetActorLocation();
+    TArray<AActor*> TousLesActeurs;
+    UWorld* World = GetWorld();
+
+    if (World){
+        TousLesActeurs = GetLevel()->Actors;
+
+        for (AActor* Acteur : TousLesActeurs)
+        {
+
+            if (auto pacman = Cast<APacMan>(Acteur)) {
+
+                PacManReference = pacman;
+            }
+
+            /*
+            if (Acteur) //(Acteur ->IsA(APacMan::StaticClass))
+            {
+                PacManReference = Acteur;
+
+                //GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("IF : ") + Acteur->GetName());
+
+                break;
+            }
+            */
+        }
+    }
 }

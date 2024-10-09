@@ -5,6 +5,8 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"C:/Users/Coralie/Desktop/Intelligence artificielle pour le jeu video/TP2/Whailork/TP2_AIPacman/TP2_unreal/Content/Blueprints/BP_GhostCharacter.uasset",
+				"C:/Users/Coralie/Desktop/Intelligence artificielle pour le jeu video/TP2/Whailork/TP2_AIPacman/TP2_unreal/Content/Niveaux/Lvl_PacMan.umap",
 				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
 				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Niveaux/Lvl_PacMan.umap",
 				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Blueprints/BP_PacMan.uasset",
