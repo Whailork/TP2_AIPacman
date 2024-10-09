@@ -5,12 +5,6 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/15814/Desktop/projets_jni/TP2_AIPacman/TP2_unreal/Content/UI/WBP_Menu_PacMan.uasset",
-				"C:/Users/15814/Desktop/projets_jni/TP2_AIPacman/TP2_unreal/Content/Niveaux/Lvl_Menu.umap",
-				"C:/Users/15814/Desktop/projets_jni/TP2_AIPacman/TP2_unreal/Content/UI/Image/BG_Monster.uasset",
-				"C:/Users/15814/Desktop/projets_jni/TP2_AIPacman/TP2_unreal/Content/UI/Musique/Musique_Menu.uasset",
-				"C:/Users/15814/Desktop/projets_jni/TP2_AIPacman/TP2_unreal/Content/UI/Musique/fart-with-reverb.uasset",
-				"C:/Users/15814/Desktop/projets_jni/TP2_AIPacman/TP2_unreal/Content/UI/Musique/minecraft_click.uasset",
 				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
 				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Niveaux/Lvl_PacMan.umap",
 				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Blueprints/BP_PacMan.uasset",
@@ -19,7 +13,14 @@
 				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Input/IA_PacManLeft.uasset",
 				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Input/IA_PacManDown.uasset",
 				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Input/IA_PacManRight.uasset",
-				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Blueprints/BP_CornerActor.uasset"
+				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Blueprints/BP_CornerActor.uasset",
+				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/GameModes/GM_PacMan.uasset",
+				"C:/Users/15814/Desktop/projets_jni/TP2_AIPacman/TP2_unreal/Content/UI/WBP_Menu_PacMan.uasset",
+				"C:/Users/15814/Desktop/projets_jni/TP2_AIPacman/TP2_unreal/Content/Niveaux/Lvl_Menu.umap",
+				"C:/Users/15814/Desktop/projets_jni/TP2_AIPacman/TP2_unreal/Content/UI/Image/BG_Monster.uasset",
+				"C:/Users/15814/Desktop/projets_jni/TP2_AIPacman/TP2_unreal/Content/UI/Musique/Musique_Menu.uasset",
+				"C:/Users/15814/Desktop/projets_jni/TP2_AIPacman/TP2_unreal/Content/UI/Musique/fart-with-reverb.uasset",
+				"C:/Users/15814/Desktop/projets_jni/TP2_AIPacman/TP2_unreal/Content/UI/Musique/minecraft_click.uasset"
 			]
 		}
 	]

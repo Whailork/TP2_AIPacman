@@ -13,6 +13,15 @@ APacMan::APacMan()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	/*BoxCollision = CreateDefaultSubobject<UBoxComponent>("BoxCollision");
+	RootComponent = BoxCollision;
+
+	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh"));
+	StaticMesh->SetupAttachment(BoxCollision);
+
+	MovementComponent = CreateDefaultSubobject<UPawnMovementComponent, UFloatingPawnMovement>(TEXT("MovementComponent"));
+	MovementComponent->UpdatedComponent = BoxCollision;*/
 	
 }
 
@@ -35,7 +44,7 @@ void APacMan::BeginPlay()
 void APacMan::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if(CurrentTarget != nullptr)
+	if(CurrentTarget != nullptr && isMoving)
 	{
 		Move(Seek(CurrentTarget->GetActorLocation()));
 
@@ -62,11 +71,11 @@ void APacMan::Move(FVector Location)
 	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Location.ToString());
 	//SetActorLocation(CurrentTarget->GetActorLocation());
 	MovementComponent->AddInputVector(Location);
-	AddMovementInput(Location,5000000,true);
-	bool test = MovementComponent->IsMoveInputIgnored();
+	//AddMovementInput(Location,5000000,true);
+	//bool test = MovementComponent->IsMoveInputIgnored();
 }
 
-/*FVector APacMan::Seek(FVector Target)
+FVector APacMan::Seek(FVector Target)
 {
 
 	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Target.ToString());
@@ -83,14 +92,14 @@ void APacMan::Move(FVector Location)
 	Steering = Steering.GetClampedToMaxSize(MovementComponent->GetMaxSpeed());
 
 	return Steering;
-}*/
+}
 
 void APacMan::MoveUp()
 {
 	
 	if (UpCorner != nullptr && !isMoving)
 	{
-		//isMoving = true;
+		isMoving = true;
 		CurrentTarget = UpCorner;
 		
 		Move(Seek(UpCorner->GetActorLocation()));
@@ -102,7 +111,7 @@ void APacMan::MoveDown()
 {
 	if (DownCorner != nullptr  && !isMoving)
 	{
-		//isMoving = true;
+		isMoving = true;
 		CurrentTarget = DownCorner;
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
 		Move(Seek(DownCorner->GetActorLocation()));
@@ -115,7 +124,7 @@ void APacMan::MoveLeft()
 {
 	if (LeftCorner != nullptr && !isMoving)
 	{
-		//isMoving = true;
+		isMoving = true;
 		CurrentTarget = LeftCorner;
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
 		Move(Seek(LeftCorner->GetActorLocation()));
@@ -127,7 +136,7 @@ void APacMan::MoveRight()
 {
 	if (RightCorner != nullptr && !isMoving)
 	{
-		//isMoving = true;
+		isMoving = true;
 		CurrentTarget = RightCorner;
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
 		Move(Seek(RightCorner->GetActorLocation()));

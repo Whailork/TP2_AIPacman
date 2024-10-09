@@ -52,7 +52,7 @@ public:
 
 private:
 	void Move(FVector Location);
-	//FVector Seek(FVector Target);
+	FVector Seek(FVector Target);
 	UPROPERTY(EditDefaultsOnly, Category= Input)
 	class UInputMappingContext* DefaultMappingContext;
 	UPROPERTY(EditDefaultsOnly, Category= Input)
