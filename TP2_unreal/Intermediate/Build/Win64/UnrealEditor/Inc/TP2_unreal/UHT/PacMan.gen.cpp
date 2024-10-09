@@ -10,13 +10,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodePacMan() {}
 
 // Begin Cross Module References
-ENGINE_API UClass* Z_Construct_UClass_APawn();
-ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
-ENGINE_API UClass* Z_Construct_UClass_UPawnMovementComponent_NoRegister();
-ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 TP2_UNREAL_API UClass* Z_Construct_UClass_ACornerActor_NoRegister();
+TP2_UNREAL_API UClass* Z_Construct_UClass_AEntityCharacter();
 TP2_UNREAL_API UClass* Z_Construct_UClass_APacMan();
 TP2_UNREAL_API UClass* Z_Construct_UClass_APacMan_NoRegister();
 UPackage* Z_Construct_UPackage__Script_TP2_unreal();
@@ -37,22 +34,6 @@ struct Z_Construct_UClass_APacMan_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "HideCategories", "Navigation" },
 		{ "IncludePath", "PacMan.h" },
-		{ "ModuleRelativePath", "Public/PacMan.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BoxCollision_MetaData[] = {
-		{ "Category", "PacMan" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/PacMan.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StaticMesh_MetaData[] = {
-		{ "Category", "PacMan" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/PacMan.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MovementComponent_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "PacMan" },
-		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/PacMan.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_UpCorner_MetaData[] = {
@@ -76,7 +57,13 @@ struct Z_Construct_UClass_APacMan_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DefaultMappingContext_MetaData[] = {
 		{ "Category", "Input" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//FVector Seek(FVector Target);\n" },
+#endif
 		{ "ModuleRelativePath", "Public/PacMan.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "FVector Seek(FVector Target);" },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_UpAction_MetaData[] = {
 		{ "Category", "Input" },
@@ -95,9 +82,6 @@ struct Z_Construct_UClass_APacMan_Statics
 		{ "ModuleRelativePath", "Public/PacMan.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_BoxCollision;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_StaticMesh;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_MovementComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_UpCorner;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_DownCorner;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_LeftCorner;
@@ -115,9 +99,6 @@ struct Z_Construct_UClass_APacMan_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APacMan_Statics::NewProp_BoxCollision = { "BoxCollision", nullptr, (EPropertyFlags)0x0040000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APacMan, BoxCollision), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BoxCollision_MetaData), NewProp_BoxCollision_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APacMan_Statics::NewProp_StaticMesh = { "StaticMesh", nullptr, (EPropertyFlags)0x0040000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APacMan, StaticMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StaticMesh_MetaData), NewProp_StaticMesh_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APacMan_Statics::NewProp_MovementComponent = { "MovementComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APacMan, MovementComponent), Z_Construct_UClass_UPawnMovementComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MovementComponent_MetaData), NewProp_MovementComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APacMan_Statics::NewProp_UpCorner = { "UpCorner", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APacMan, UpCorner), Z_Construct_UClass_ACornerActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_UpCorner_MetaData), NewProp_UpCorner_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APacMan_Statics::NewProp_DownCorner = { "DownCorner", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APacMan, DownCorner), Z_Construct_UClass_ACornerActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DownCorner_MetaData), NewProp_DownCorner_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APacMan_Statics::NewProp_LeftCorner = { "LeftCorner", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APacMan, LeftCorner), Z_Construct_UClass_ACornerActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LeftCorner_MetaData), NewProp_LeftCorner_MetaData) };
@@ -129,9 +110,6 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APacMan_Static
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APacMan_Statics::NewProp_LeftAction = { "LeftAction", nullptr, (EPropertyFlags)0x0040000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APacMan, LeftAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_LeftAction_MetaData), NewProp_LeftAction_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APacMan_Statics::NewProp_RightAction = { "RightAction", nullptr, (EPropertyFlags)0x0040000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(APacMan, RightAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RightAction_MetaData), NewProp_RightAction_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APacMan_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APacMan_Statics::NewProp_BoxCollision,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APacMan_Statics::NewProp_StaticMesh,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APacMan_Statics::NewProp_MovementComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APacMan_Statics::NewProp_UpCorner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APacMan_Statics::NewProp_DownCorner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APacMan_Statics::NewProp_LeftCorner,
@@ -145,7 +123,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APacMan_S
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_APacMan_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_APacMan_Statics::DependentSingletons[])() = {
-	(UObject* (*)())Z_Construct_UClass_APawn,
+	(UObject* (*)())Z_Construct_UClass_AEntityCharacter,
 	(UObject* (*)())Z_Construct_UPackage__Script_TP2_unreal,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_APacMan_Statics::DependentSingletons) < 16);
@@ -184,10 +162,10 @@ APacMan::~APacMan() {}
 struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_APacMan, APacMan::StaticClass, TEXT("APacMan"), &Z_Registration_Info_UClass_APacMan, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APacMan), 2722554434U) },
+		{ Z_Construct_UClass_APacMan, APacMan::StaticClass, TEXT("APacMan"), &Z_Registration_Info_UClass_APacMan, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APacMan), 2540997503U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_3900033804(TEXT("/Script/TP2_unreal"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_356308100(TEXT("/Script/TP2_unreal"),
 	Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

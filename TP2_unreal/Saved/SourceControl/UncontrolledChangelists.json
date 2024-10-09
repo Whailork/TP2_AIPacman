@@ -5,15 +5,7 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
-				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Niveaux/Lvl_PacMan.umap",
-				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Blueprints/BP_PacMan.uasset",
-				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Input/IMC_PacManMovement.uasset",
-				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Input/IA_PacManUp.uasset",
-				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Input/IA_PacManLeft.uasset",
-				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Input/IA_PacManDown.uasset",
-				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Input/IA_PacManRight.uasset",
-				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/Blueprints/BP_CornerActor.uasset"
+				"D:/gitKrakenRepos/TP2_AIPacman/TP2_unreal/Content/StarterContent/Architecture/Floor_400x400.uasset"
 			]
 		}
 	]

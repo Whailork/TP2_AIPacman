@@ -9,10 +9,15 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 #ifdef TP2_UNREAL_CornerActor_generated_h
 #error "CornerActor.generated.h already included, missing '#pragma once' in CornerActor.h"
 #endif
 #define TP2_UNREAL_CornerActor_generated_h
+
+#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnOverlap);
+
 
 #define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_12_INCLASS_NO_PURE_DECLS \
 private: \
@@ -39,6 +44,7 @@ public: \
 #define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_12_INCLASS_NO_PURE_DECLS \
 	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_12_ENHANCED_CONSTRUCTORS \
 private: \

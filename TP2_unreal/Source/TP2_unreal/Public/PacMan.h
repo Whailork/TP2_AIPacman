@@ -4,15 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "Corner/CornerActor.h"
+#include "Entity/EntityCharacter.h"
 #include "GameFramework/Pawn.h"
 #include "PacMan.generated.h"
 
 UCLASS()
-class TP2_UNREAL_API APacMan : public APawn
+class TP2_UNREAL_API APacMan : public AEntityCharacter
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere)
+	/*UPROPERTY(EditAnywhere)
 	class UBoxComponent* BoxCollision;
 
 	UPROPERTY(EditAnywhere)
@@ -20,7 +21,7 @@ class TP2_UNREAL_API APacMan : public APawn
 
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	UPawnMovementComponent* MovementComponent;
+	UPawnMovementComponent* MovementComponent;*/
 
 public:
 	UPROPERTY(EditAnywhere, Category = Corner)
@@ -51,7 +52,7 @@ public:
 
 private:
 	void Move(FVector Location);
-	FVector Seek(FVector Target);
+	//FVector Seek(FVector Target);
 	UPROPERTY(EditDefaultsOnly, Category= Input)
 	class UInputMappingContext* DefaultMappingContext;
 	UPROPERTY(EditDefaultsOnly, Category= Input)
