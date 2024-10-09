@@ -27,6 +27,7 @@ public:
 	UPROPERTY(VisibleAnywhere)
 	FVector PositionActuelle;
 
+	UPROPERTY(EditAnywhere, Category = Corner, BlueprintReadWrite)
 	TArray<ACornerActor*> NeighborsArray;
 
 	void AddNeighborCorner(ACornerActor* neighbor);
