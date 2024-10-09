@@ -29,6 +29,16 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = Corner, BlueprintReadWrite)
 	TArray<ACornerActor*> NeighborsArray;
+	UPROPERTY(EditAnywhere, Category = Corner)
+	ACornerActor* UpCorner;
+	UPROPERTY(EditAnywhere, Category = Corner)
+	ACornerActor* DownCorner;
+	UPROPERTY(EditAnywhere, Category = Corner)
+	ACornerActor* LeftCorner;
+	UPROPERTY(EditAnywhere, Category = Corner)
+	ACornerActor* RightCorner;
 
 	void AddNeighborCorner(ACornerActor* neighbor);
+	UFUNCTION()
+	void OnOverlap(AActor* MyActor, AActor* OtherActor);
 };

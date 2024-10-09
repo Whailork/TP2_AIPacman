@@ -15,6 +15,7 @@ ACornerActor::ACornerActor()
 void ACornerActor::BeginPlay()
 {
 	Super::BeginPlay();
+	this->OnActorBeginOverlap.AddDynamic(this, &ACornerActor::OnOverlap);
 	
 }
 
@@ -28,5 +29,10 @@ void ACornerActor::Tick(float DeltaTime)
 void ACornerActor::AddNeighborCorner(ACornerActor* neighbor)
 {
 	NeighborsArray.Add(neighbor);
+}
+
+void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
+{
+	
 }
 
