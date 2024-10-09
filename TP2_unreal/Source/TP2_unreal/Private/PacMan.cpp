@@ -23,7 +23,7 @@ APacMan::APacMan()
 
 	
 	MovementComponent = CreateDefaultSubobject<UPawnMovementComponent, UFloatingPawnMovement>(TEXT("MovementComponent0"));
-	MovementComponent->UpdatedComponent = BoxCollision;
+	MovementComponent->UpdatedComponent = StaticMesh;
 	
 }
 
@@ -46,6 +46,12 @@ void APacMan::BeginPlay()
 void APacMan::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if(CurrentTarget != nullptr)
+	{
+		Move(Seek(CurrentTarget->GetActorLocation()));
+
+	}
+
 
 }
 
@@ -53,7 +59,6 @@ void APacMan::Tick(float DeltaTime)
 void APacMan::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
 	if(UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
 		EnhancedInputComponent->BindAction(UpAction,ETriggerEvent::Triggered,this,&APacMan::MoveUp);
@@ -63,16 +68,27 @@ void APacMan::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	}
 }
 
-void APacMan::MoveTo(FVector Location)
+void APacMan::Move(FVector Location)
 {
+	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Location.ToString());
+	//SetActorLocation(CurrentTarget->GetActorLocation());
 	MovementComponent->AddInputVector(Location);
+	AddMovementInput(Location,5000000,true);
+	bool test = MovementComponent->IsMoveInputIgnored();
 }
 
 FVector APacMan::Seek(FVector Target)
 {
+
+	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Target.ToString());
+	
 	FVector DesiredVelocity = Target - GetActorLocation();
+	DesiredVelocity.Z = 0;
+	
 	DesiredVelocity.Normalize();
+	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, DesiredVelocity.ToString());
 	DesiredVelocity *= MovementComponent->GetMaxSpeed();
+	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, DesiredVelocity.ToString());
 
 	FVector Steering = DesiredVelocity - MovementComponent->Velocity;
 	Steering = Steering.GetClampedToMaxSize(MovementComponent->GetMaxSpeed());
@@ -85,17 +101,24 @@ void APacMan::MoveUp()
 	
 	if (UpCorner != nullptr && !isMoving)
 	{
-		MoveTo(Seek(UpCorner->GetActorLocation()));
-		isMoving = true;
+		//isMoving = true;
+		CurrentTarget = UpCorner;
+		
+		Move(Seek(UpCorner->GetActorLocation()));
+		
 	}
 }
 
 void APacMan::MoveDown()
 {
-	if (DownCorner != nullptr && !isMoving)
+	if (DownCorner != nullptr  && !isMoving)
 	{
-		MoveTo(Seek(DownCorner->GetActorLocation()));
-		isMoving = true;
+		//isMoving = true;
+		CurrentTarget = DownCorner;
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
+		Move(Seek(DownCorner->GetActorLocation()));
+		
+		
 	}
 }
 
@@ -103,8 +126,11 @@ void APacMan::MoveLeft()
 {
 	if (LeftCorner != nullptr && !isMoving)
 	{
-		MoveTo(Seek(LeftCorner->GetActorLocation()));
-		isMoving = true;	
+		//isMoving = true;
+		CurrentTarget = LeftCorner;
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
+		Move(Seek(LeftCorner->GetActorLocation()));
+	
 	}
 }
 
@@ -112,8 +138,11 @@ void APacMan::MoveRight()
 {
 	if (RightCorner != nullptr && !isMoving)
 	{
-		MoveTo(Seek(RightCorner->GetActorLocation()));
-		isMoving = true;
+		//isMoving = true;
+		CurrentTarget = RightCorner;
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
+		Move(Seek(RightCorner->GetActorLocation()));
+		
 	}
 }
 

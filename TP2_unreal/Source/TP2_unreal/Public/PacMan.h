@@ -31,6 +31,8 @@ public:
 	ACornerActor* LeftCorner;
 	UPROPERTY(EditAnywhere, Category = Corner)
 	ACornerActor* RightCorner;
+	UPROPERTY()
+	ACornerActor* CurrentTarget;
 	bool isMoving;
 	// Sets default values for this pawn's properties
 	APacMan();
@@ -48,7 +50,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
-	void MoveTo(FVector Location);
+	void Move(FVector Location);
 	FVector Seek(FVector Target);
 	UPROPERTY(EditDefaultsOnly, Category= Input)
 	class UInputMappingContext* DefaultMappingContext;
