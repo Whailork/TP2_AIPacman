@@ -13,17 +13,6 @@ APacMan::APacMan()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
-	
-	BoxCollision = CreateDefaultSubobject<UBoxComponent>("BoxColision");
-	BoxCollision->SetupAttachment(StaticMesh);
-
-	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>("StaticMesh");
-	RootComponent = StaticMesh;
-
-	
-	MovementComponent = CreateDefaultSubobject<UPawnMovementComponent, UFloatingPawnMovement>(TEXT("MovementComponent0"));
-	MovementComponent->UpdatedComponent = StaticMesh;
 	
 }
 
@@ -77,7 +66,7 @@ void APacMan::Move(FVector Location)
 	bool test = MovementComponent->IsMoveInputIgnored();
 }
 
-FVector APacMan::Seek(FVector Target)
+/*FVector APacMan::Seek(FVector Target)
 {
 
 	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Target.ToString());
@@ -94,7 +83,7 @@ FVector APacMan::Seek(FVector Target)
 	Steering = Steering.GetClampedToMaxSize(MovementComponent->GetMaxSpeed());
 
 	return Steering;
-}
+}*/
 
 void APacMan::MoveUp()
 {
