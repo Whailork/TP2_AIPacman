@@ -297,6 +297,7 @@
     <None Include="..\..\TP2_unreal.uproject"/>
     <None Include="..\..\Source\TP2_unreal.Target.cs"/>
     <None Include="..\..\Source\TP2_unrealEditor.Target.cs"/>
+    <None Include="..\..\.vsconfig"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
@@ -324,6 +325,12 @@
     <ClCompile Include="..\..\Source\TP2_unreal\Private\PacmanAIController.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\AEatable\AEatables.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\AEatable\APacGomme.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\TP2_unreal\Private\Corner\CornerActor.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -339,6 +346,8 @@
     <ClInclude Include="..\..\Source\TP2_unreal\Public\APlayerInputManager.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\PacMan.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\PacmanAIController.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\AEatable\AEatables.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\AEatable\APacGomme.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Corner\CornerActor.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Entity\EntityCharacter.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\GhostCharacter.h"/>
