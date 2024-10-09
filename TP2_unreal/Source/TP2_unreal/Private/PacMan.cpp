@@ -11,9 +11,12 @@
 // Sets default values
 APacMan::APacMan()
 {
+	
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	
+	
+	
 	/*BoxCollision = CreateDefaultSubobject<UBoxComponent>("BoxCollision");
 	RootComponent = BoxCollision;
 
@@ -29,14 +32,23 @@ APacMan::APacMan()
 void APacMan::BeginPlay()
 {
 	Super::BeginPlay();
-	isMoving = false;
-	if (APlayerController* PlayerController = Cast<APlayerController>(Controller))
+	
+	if (AAIController* aiController = Cast<AAIController>(Controller))
 	{
+		PlayerAI = aiController;
+	}
+	/*PlayerAI = GetWorld()->SpawnActor<AAIController>(MyAIControllerClass,FVector(0,0,0),FRotator(0,0,0),FActorSpawnParameters());
+
+	
+	isMoving = false;
+	if (APlayerController* playerController = Cast<APlayerController>(Controller))
+	{
+		this->PlayerController = playerController;
 		if(UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
 		{
 			Subsystem->AddMappingContext(DefaultMappingContext,0);
 		}
-	}
+	}*/
 	
 }
 
@@ -44,11 +56,11 @@ void APacMan::BeginPlay()
 void APacMan::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	if(CurrentTarget != nullptr && isMoving)
+	/*if(CurrentTarget != nullptr && isMoving)
 	{
 		Move(Seek(CurrentTarget->GetActorLocation()));
 
-	}
+	}*/
 
 
 }
@@ -57,13 +69,13 @@ void APacMan::Tick(float DeltaTime)
 void APacMan::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	if(UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
+	/*if(UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
 		EnhancedInputComponent->BindAction(UpAction,ETriggerEvent::Triggered,this,&APacMan::MoveUp);
 		EnhancedInputComponent->BindAction(DownAction,ETriggerEvent::Triggered,this,&APacMan::MoveDown);
 		EnhancedInputComponent->BindAction(LeftAction,ETriggerEvent::Triggered,this,&APacMan::MoveLeft);
 		EnhancedInputComponent->BindAction(RightAction,ETriggerEvent::Triggered,this,&APacMan::MoveRight);
-	}
+	}*/
 }
 
 void APacMan::Move(FVector Location)
@@ -97,24 +109,29 @@ FVector APacMan::Seek(FVector Target)
 void APacMan::MoveUp()
 {
 	
-	if (UpCorner != nullptr && !isMoving)
+	if (UpCorner != nullptr)
 	{
+		//Controller->UnPossess();
 		isMoving = true;
 		CurrentTarget = UpCorner;
-		
-		Move(Seek(UpCorner->GetActorLocation()));
+		//PlayerAI->Possess(this);
+		PlayerAI->MoveToLocation(UpCorner->GetActorLocation());
+		//Move(Seek(UpCorner->GetActorLocation()));
 		
 	}
 }
 
 void APacMan::MoveDown()
 {
-	if (DownCorner != nullptr  && !isMoving)
+	if (DownCorner != nullptr)
 	{
+		//Controller->UnPossess();
 		isMoving = true;
 		CurrentTarget = DownCorner;
+		//PlayerAI->Possess(this);
+		PlayerAI->MoveToLocation(DownCorner->GetActorLocation());
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
-		Move(Seek(DownCorner->GetActorLocation()));
+		//Move(Seek(DownCorner->GetActorLocation()));
 		
 		
 	}
@@ -122,24 +139,30 @@ void APacMan::MoveDown()
 
 void APacMan::MoveLeft()
 {
-	if (LeftCorner != nullptr && !isMoving)
+	if (LeftCorner != nullptr)
 	{
+		//Controller->UnPossess();
 		isMoving = true;
 		CurrentTarget = LeftCorner;
+		//PlayerAI->Possess(this);
+		PlayerAI->MoveToLocation(LeftCorner->GetActorLocation(),0,false);
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
-		Move(Seek(LeftCorner->GetActorLocation()));
+		//Move(Seek(LeftCorner->GetActorLocation()));
 	
 	}
 }
 
 void APacMan::MoveRight()
 {
-	if (RightCorner != nullptr && !isMoving)
+	if (RightCorner != nullptr)
 	{
+		//Controller->UnPossess();
 		isMoving = true;
 		CurrentTarget = RightCorner;
+		//PlayerAI->Possess(this);
+		PlayerAI->MoveToLocation(RightCorner->GetActorLocation());
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
-		Move(Seek(RightCorner->GetActorLocation()));
+		//Move(Seek(RightCorner->GetActorLocation()));
 		
 	}
 }
