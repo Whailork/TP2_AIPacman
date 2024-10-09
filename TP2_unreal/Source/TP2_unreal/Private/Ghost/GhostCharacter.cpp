@@ -58,7 +58,7 @@ FVector AGhostCharacter::FindRandomReachableLocation()
     FVector RandomLocation = FVector(0, 0, 0);;
 
     // Get the navigation system
-    UNavigationSystemV1* navigationSystem = UNavigationSystemV1::GetCurrent(GetWorld());
+   /* UNavigationSystemV1* navigationSystem = UNavigationSystemV1::GetCurrent(GetWorld());
 
     if (navigationSystem)
     {
@@ -69,7 +69,7 @@ FVector AGhostCharacter::FindRandomReachableLocation()
         if (RandomPointFound) {
             RandomLocation = navLocation.Location;
         }
-    }
+    }*/
 
     return RandomLocation;
 }
