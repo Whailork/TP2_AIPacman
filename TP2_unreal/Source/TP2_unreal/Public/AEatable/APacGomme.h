@@ -26,4 +26,5 @@ protected:
 public:	
 	// Called every frame
 	void OnEat(AActor* OtherActor);
+	//void OnOverlap(AActor* MyActor, AActor* OtherActor);
 };

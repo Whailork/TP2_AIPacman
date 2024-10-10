@@ -32,6 +32,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	UFUNCTION()
 	void OnOverlap(AActor* MyActor, AActor* OtherActor);
-	void OnEat(AActor* OtherActor);
+	virtual void OnEat(AActor* OtherActor);
 
 };
