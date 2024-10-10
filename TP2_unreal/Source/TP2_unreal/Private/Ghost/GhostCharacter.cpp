@@ -12,6 +12,10 @@
 #include <Kismet/GameplayStatics.h>
 #include "AIController.h"
 
+#include "AiController/Ghost_AIController.h"
+#include "Ghost_AIController.generated.h"
+#include "AIController.h"
+
 // GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ceci est un message!"));
 
 
@@ -27,6 +31,7 @@ void AGhostCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
+<<<<<<< Updated upstream
     this->OnActorBeginOverlap.AddDynamic(this, &AGhostCharacter::OnCatchOverlapBegin);
     if (AAIController* aiController = Cast<AAIController>(Controller))
     {
@@ -36,6 +41,11 @@ void AGhostCharacter::BeginPlay()
     SetPacmanReference();
     GhostAI->MoveToLocation(PacManReference->GetActorLocation());
 
+=======
+    targetLocation = FVector::ZeroVector;
+
+    AIController.MoveToLocation(targetLocation, 10);
+>>>>>>> Stashed changes
 }
 
 // Called every frame
@@ -60,8 +70,19 @@ void AGhostCharacter::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
     // Si je collisione avec un coin
     if (OtherActor && OtherActor->IsA(ACornerActor::StaticClass()))
     {
+<<<<<<< Updated upstream
         // TODO : trouve ou est pacman et va vers lui
         GhostAI->MoveToLocation(PacManReference->GetActorLocation());
+=======
+        // Trouve ou est pacman et va vers lui
+        targetLocation = GetPacmanLocation();
+
+        // Autres comportements
+
+        //
+
+        //
+>>>>>>> Stashed changes
     }
 }
 
@@ -71,7 +92,7 @@ void AGhostCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
-void AGhostCharacter::SetPacmanReference()
+FVector AGhostCharacter::GetPacmanLocation()
 {
     TArray<AActor*> TousLesActeurs;
     UWorld* World = GetWorld();
@@ -79,24 +100,81 @@ void AGhostCharacter::SetPacmanReference()
     if (World){
         TousLesActeurs = GetLevel()->Actors;
 
-        for (AActor* Acteur : TousLesActeurs)
-        {
+        for (AActor* Acteur : TousLesActeurs) {
 
             if (auto pacman = Cast<APacMan>(Acteur)) {
 
-                PacManReference = pacman;
-            }
-
-            /*
-            if (Acteur) //(Acteur ->IsA(APacMan::StaticClass))
-            {
-                PacManReference = Acteur;
-
-                //GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("IF : ") + Acteur->GetName());
-
+                return pacman->GetActorLocation();
                 break;
             }
-            */
         }
     }
+
+    // if (no world || no pacman)
+    return FVector::ZeroVector;
 }
+
+
+/*
+Ghosts Behaviour
+
+Blinky (ROUGE)
+Pour simplifier le comportement de Blinky, tu peux diviser son comportement en deux phases principales : Chase et Scatter.
+
+1. Chase Mode (Mode poursuite)
+Comportement : Blinky suit directement Pac-Man en ciblant sa position actuelle.
+Cible : Le carreau où se trouve Pac-Man (tu pourrais utiliser un algorithme de pathfinding simple comme A* ou Dijkstra pour diriger Blinky vers cette cible).
+Vitesse : Sa vitesse peut être normale ou augmentée après un certain nombre de points collectés par Pac-Man (à définir selon ton niveau).
+Conditions de transition : Ce mode est activé presque tout le temps, sauf en début de niveau ou lorsque le mode Scatter est forcé.
+
+2. Scatter Mode (Mode dispersion)
+Comportement standard : Normalement, Blinky se dirige vers un coin fixe du labyrinthe, mais dans son cas particulier, il continue de poursuivre Pac-Man, même en mode Scatter (comme en mode Chase).
+Cible : Pac-Man, comme en mode Chase.
+Conditions de transition : Blinky change de direction à intervalles réguliers quand il passe du mode Chase au mode Scatter, mais il continue de suivre Pac-Man.
+
+3. Cruise Elroy Mode (Mode accéléré)
+Déclenchement : Lorsque Pac-Man a mangé un certain nombre de points (à définir en fonction du niveau), Blinky accélère de 5 % et reste en mode Chase, même lorsqu’il devrait être en mode Scatter.
+Comportement : Même comportement que dans Chase mode, mais avec une vitesse augmentée.
+
+*****************************************************************************************************************************************************************************************************************************************************************************
+
+Pinky (ROSE)
+Pour simplifier le comportement de Pinky, voici une version plus concise de sa logique de mouvement en mode "Chase" :
+
+Sortie de la maison des fantômes : Dès que le jeu commence, Pinky quitte immédiatement la maison des fantômes et commence à chasser Pac-Man.
+Cible principale : En mode "Chase", Pinky essaie de prédire où Pac-Man se dirigera. Il vise toujours une case située quatre cases devant Pac-Man dans la direction actuelle de ce dernier :
+
+*****************************************************************************************************************************************************************************************************************************************************************************
+
+Inky (BLEU)
+Pour simplifier le comportement d'Inky, conservant son caractère imprévisible.
+
+1. Comportement de base :
+Inky commence dans la maison des fantômes et ne sort qu'après que Pac-Man a mangé 30 points.
+Ensuite, Inky alterne entre deux comportements simples :
+Chase (Poursuite) : Inky poursuit Pac-Man lorsque Blinky est proche de Pac-Man (par exemple, à moins de 5 tuiles).
+Random (Aléatoire) : Si Blinky est loin, Inky se déplace de manière aléatoire dans le labyrinthe.
+
+2. Détermination de la cible d'Inky :
+Lorsque Inky est en mode "Poursuite" :
+Sélectionne une tuile 2 cases devant Pac-Man, selon sa direction (haut, bas, gauche, droite).
+Si Blinky est à moins de 5 tuiles de Pac-Man, Inky se dirige vers cette tuile.
+Lorsque Inky est en mode "Aléatoire" :
+Inky choisit une direction aléatoire parmi les directions possibles à chaque intersection.
+
+*****************************************************************************************************************************************************************************************************************************************************************************
+
+Clyde (ORANGE)
+Le comportement de Clyde peut être simplifié en deux modes basés sur sa distance par rapport à Pac-Man :
+
+Mode Chasse (plus de 8 cases de Pac-Man) :
+Si Clyde est à plus de 8 cases de Pac-Man, il se comporte comme Blinky (le fantôme rouge) et cible directement la position actuelle de Pac-Man.
+
+Mode Fuite (moins de 8 cases de Pac-Man) :
+Si Clyde est à moins de 8 cases de Pac-Man, il change de direction et se dirige vers une position fixe dans le coin inférieur gauche du labyrinthe.
+
+Résumé du comportement :
+Clyde poursuit Pac-Man lorsqu'il est éloigné (plus de 8 cases). Lorsqu'il s'approche trop près (moins de 8 cases), il "change d'avis" et retourne vers son coin.
+Il alterne continuellement entre ces deux modes en fonction de la distance, ce qui donne l'impression qu'il hésite.
+En codant cela, tu peux utiliser une fonction qui calcule la distance entre Clyde et Pac-Man à chaque frame, et en fonction de cette distance, changer sa cible de Pac-Man à la position du coin inférieur gauche.
+*/
