@@ -75,6 +75,9 @@
     <ClCompile Include="..\..\Source\TP2_unreal\Private\AEatable\APacGomme.cpp">
       <Filter>Source\TP2_unreal\Private\AEatable</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\AEatable\SuperPacGomme.cpp">
+      <Filter>Source\TP2_unreal\Private\AEatable</Filter>
+    </ClCompile>
     <Filter Include="Source\TP2_unreal\Private\Corner">
       <UniqueIdentifier>{052EE198-0A4C-3866-9A46-2ED882BC15AB}</UniqueIdentifier>
     </Filter>
@@ -118,6 +121,9 @@
       <Filter>Source\TP2_unreal\Public\AEatable</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\AEatable\APacGomme.h">
+      <Filter>Source\TP2_unreal\Public\AEatable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\AEatable\SuperPacGomme.h">
       <Filter>Source\TP2_unreal\Public\AEatable</Filter>
     </ClInclude>
     <Filter Include="Source\TP2_unreal\Public\Corner">

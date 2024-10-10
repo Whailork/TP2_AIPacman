@@ -69,6 +69,13 @@ void APacMan::Tick(float DeltaTime)
 
 void APacMan::OnEat(int earnedScore, bool isPacGomme)
 {
+	if(isPacGomme)
+	{
+		nbEaten++;
+		score+=earnedScore;
+		FString stringScore = FString::FromInt(score);
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, stringScore);
+	}
 }
 
 // Called to bind functionality to input
