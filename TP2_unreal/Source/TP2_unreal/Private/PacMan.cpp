@@ -31,6 +31,8 @@ APacMan::APacMan()
 // Called when the game starts or when spawned
 void APacMan::BeginPlay()
 {
+	nbEaten = 0;
+	score = 0;
 	Super::BeginPlay();
 	
 	if (AAIController* aiController = Cast<AAIController>(Controller))
@@ -63,6 +65,17 @@ void APacMan::Tick(float DeltaTime)
 	}*/
 
 
+}
+
+void APacMan::OnEat(int earnedScore, bool isPacGomme)
+{
+	if(isPacGomme)
+	{
+		nbEaten++;
+		score+=earnedScore;
+		FString stringScore = FString::FromInt(score);
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, stringScore);
+	}
 }
 
 // Called to bind functionality to input
@@ -115,7 +128,7 @@ void APacMan::MoveUp()
 		isMoving = true;
 		CurrentTarget = UpCorner;
 		//PlayerAI->Possess(this);
-		PlayerAI->MoveToLocation(UpCorner->GetActorLocation());
+		PlayerAI->MoveToLocation(UpCorner->GetActorLocation(),0,false);
 		//Move(Seek(UpCorner->GetActorLocation()));
 		
 	}
@@ -129,7 +142,7 @@ void APacMan::MoveDown()
 		isMoving = true;
 		CurrentTarget = DownCorner;
 		//PlayerAI->Possess(this);
-		PlayerAI->MoveToLocation(DownCorner->GetActorLocation());
+		PlayerAI->MoveToLocation(DownCorner->GetActorLocation(),0,false);
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
 		//Move(Seek(DownCorner->GetActorLocation()));
 		
@@ -160,7 +173,7 @@ void APacMan::MoveRight()
 		isMoving = true;
 		CurrentTarget = RightCorner;
 		//PlayerAI->Possess(this);
-		PlayerAI->MoveToLocation(RightCorner->GetActorLocation());
+		PlayerAI->MoveToLocation(RightCorner->GetActorLocation(),0,false);
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
 		//Move(Seek(RightCorner->GetActorLocation()));
 		
