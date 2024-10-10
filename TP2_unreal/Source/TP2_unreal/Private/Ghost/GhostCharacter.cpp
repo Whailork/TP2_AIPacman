@@ -10,6 +10,7 @@
 #include "EngineUtils.h"
 #include"Corner/CornerActor.h"
 #include <Kismet/GameplayStatics.h>
+#include "AIController.h"
 
 // GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ceci est un message!"));
 
@@ -26,8 +27,15 @@ void AGhostCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
+    this->OnActorBeginOverlap.AddDynamic(this, &AGhostCharacter::OnCatchOverlapBegin);
+    if (AAIController* aiController = Cast<AAIController>(Controller))
+    {
+        GhostAI = aiController;
+    }
     PacManReference = nullptr;
-    targetLocation = FVector::ZeroVector;
+    SetPacmanReference();
+    GhostAI->MoveToLocation(PacManReference->GetActorLocation());
+
 }
 
 // Called every frame
@@ -40,22 +48,20 @@ void AGhostCharacter::Tick(float DeltaTime)
 
     // MoveTo(Seek(FVector(currentLocation().X + 20, currentLocation().Y, currentLocation().Z)));
 
-    // Comparer MonVecteur à ZeroVector
-    if (targetLocation != FVector::ZeroVector)
+    // Comparer MonVecteur ï¿½ ZeroVector
+    /*if (targetLocation != FVector::ZeroVector)
     {
         MoveTo(Seek(targetLocation));
-    }
+    }*/
 }
 
-void AGhostCharacter::OnCatchOverlapBegin(AActor* OtherActor)
+void AGhostCharacter::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
 {
     // Si je collisione avec un coin
     if (OtherActor && OtherActor->IsA(ACornerActor::StaticClass()))
     {
         // TODO : trouve ou est pacman et va vers lui
-        SetPacmanReference();
-
-        targetLocation = PacManReference->GetActorLocation();
+        GhostAI->MoveToLocation(PacManReference->GetActorLocation());
     }
 }
 
