@@ -8,13 +8,12 @@
 #include "Entity/EntityCharacter.h"
 #include "PacMan.h"
 #include "EngineUtils.h"
-#include"Corner/CornerActor.h"
+#include "Corner/CornerActor.h"
 #include <Kismet/GameplayStatics.h>
 #include "AIController.h"
 
-#include "AiController/Ghost_AIController.h"
-#include "Ghost_AIController.generated.h"
-#include "AIController.h"
+#include "NavigationSystem.h"
+
 
 // GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ceci est un message!"));
 
@@ -31,38 +30,23 @@ void AGhostCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-<<<<<<< Updated upstream
+    // Initialisation
+    targetLocation = FVector::ZeroVector;
+
     this->OnActorBeginOverlap.AddDynamic(this, &AGhostCharacter::OnCatchOverlapBegin);
+
     if (AAIController* aiController = Cast<AAIController>(Controller))
     {
         GhostAI = aiController;
     }
-    PacManReference = nullptr;
-    SetPacmanReference();
-    GhostAI->MoveToLocation(PacManReference->GetActorLocation());
 
-=======
-    targetLocation = FVector::ZeroVector;
-
-    AIController.MoveToLocation(targetLocation, 10);
->>>>>>> Stashed changes
+    //GhostAI->MoveToLocation(PacManReference->GetActorLocation());
 }
 
 // Called every frame
 void AGhostCharacter::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
-
-    // float distance = FVector::DistSquared(targetLocation, currentLocation);
-    // if (distance <= 5) { change targetLocation }
-
-    // MoveTo(Seek(FVector(currentLocation().X + 20, currentLocation().Y, currentLocation().Z)));
-
-    // Comparer MonVecteur ï¿½ ZeroVector
-    /*if (targetLocation != FVector::ZeroVector)
-    {
-        MoveTo(Seek(targetLocation));
-    }*/
 }
 
 void AGhostCharacter::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
@@ -70,48 +54,23 @@ void AGhostCharacter::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
     // Si je collisione avec un coin
     if (OtherActor && OtherActor->IsA(ACornerActor::StaticClass()))
     {
-<<<<<<< Updated upstream
         // TODO : trouve ou est pacman et va vers lui
-        GhostAI->MoveToLocation(PacManReference->GetActorLocation());
-=======
+        //GhostAI->MoveToLocation(PacManReference->GetActorLocation());
+
         // Trouve ou est pacman et va vers lui
-        targetLocation = GetPacmanLocation();
 
         // Autres comportements
 
         //
 
         //
->>>>>>> Stashed changes
     }
 }
 
 // Called to bind functionality to input
 void AGhostCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-}
-
-FVector AGhostCharacter::GetPacmanLocation()
-{
-    TArray<AActor*> TousLesActeurs;
-    UWorld* World = GetWorld();
-
-    if (World){
-        TousLesActeurs = GetLevel()->Actors;
-
-        for (AActor* Acteur : TousLesActeurs) {
-
-            if (auto pacman = Cast<APacMan>(Acteur)) {
-
-                return pacman->GetActorLocation();
-                break;
-            }
-        }
-    }
-
-    // if (no world || no pacman)
-    return FVector::ZeroVector;
+    Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
 
@@ -123,7 +82,7 @@ Pour simplifier le comportement de Blinky, tu peux diviser son comportement en d
 
 1. Chase Mode (Mode poursuite)
 Comportement : Blinky suit directement Pac-Man en ciblant sa position actuelle.
-Cible : Le carreau où se trouve Pac-Man (tu pourrais utiliser un algorithme de pathfinding simple comme A* ou Dijkstra pour diriger Blinky vers cette cible).
+Cible : Le carreau où se trouve Pac-Man.
 Vitesse : Sa vitesse peut être normale ou augmentée après un certain nombre de points collectés par Pac-Man (à définir selon ton niveau).
 Conditions de transition : Ce mode est activé presque tout le temps, sauf en début de niveau ou lorsque le mode Scatter est forcé.
 

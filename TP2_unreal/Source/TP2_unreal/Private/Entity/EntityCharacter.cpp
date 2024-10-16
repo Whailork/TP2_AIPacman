@@ -5,6 +5,8 @@
 #include "Components/BoxComponent.h"
 #include "GameFramework//FloatingPawnMovement.h"
 #include "GameFramework/MovementComponent.h"
+#include"Corner/CornerActor.h"
+#include"PacMan.h"
 
 // Sets default values
 AEntityCharacter::AEntityCharacter()
@@ -26,6 +28,8 @@ AEntityCharacter::AEntityCharacter()
 void AEntityCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+    SetPacmanReference();
 }
 
 // Called every frame
@@ -57,4 +61,22 @@ FVector AEntityCharacter::Seek(FVector Target)
 	Steering = Steering.GetClampedToMaxSize(MovementComponent->GetMaxSpeed());
 
 	return Steering;
+}
+
+void AEntityCharacter::SetPacmanReference()
+{
+    PacManReference = nullptr;
+    TArray<AActor*> TousLesActeurs;
+    UWorld* World = GetWorld();
+
+    if (World) {
+        TousLesActeurs = GetLevel()->Actors;
+
+        for (AActor* Acteur : TousLesActeurs) {
+
+            if (auto pacman = Cast<APacMan>(Acteur)) {
+				PacManReference = pacman;
+			}
+        }
+    }
 }

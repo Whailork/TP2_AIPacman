@@ -1,9 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Corner/CornerActor.h"
 #include "EntityCharacter.generated.h"
 
 UCLASS()
@@ -13,6 +13,8 @@ class TP2_UNREAL_API AEntityCharacter : public APawn
 
 public:
 
+	class APacMan* PacManReference;
+
 	UPROPERTY(Category = Pawn, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	UPawnMovementComponent* MovementComponent;
 
@@ -21,6 +23,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	class UBoxComponent* BoxCollision;
+
+	UPROPERTY(EditAnywhere, Category = "coin")
+	TArray<ACornerActor*> coinsScatter;
 
 public:
 	// Sets default values for this character's properties
@@ -42,4 +47,5 @@ protected:
 	void MoveTo(FVector Location);
 	FVector Seek(FVector Target);
 
+	void SetPacmanReference();
 };
