@@ -26,6 +26,7 @@ public:
 public:
 	UPROPERTY(VisibleAnywhere)
 	FVector PositionActuelle;
+
 	UPROPERTY(EditAnywhere)
 	bool ContinueOnContact = false;
 
@@ -43,4 +44,6 @@ public:
 	void AddNeighborCorner(ACornerActor* neighbor);
 	UFUNCTION()
 	void OnOverlap(AActor* MyActor, AActor* OtherActor);
+
+	//void HandleScatterMode(AGhostCharacter* ghost, AActor* MyActor); #include "Ghost/GhostCharacter.h"
 };

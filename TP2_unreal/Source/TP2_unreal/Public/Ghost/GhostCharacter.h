@@ -3,16 +3,10 @@
 #pragma once
 
 #include "AIController.h"
-#include "AiController/Ghost_AIController.h"
-#include "Ghost_AIController.generated.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Entity/EntityCharacter.h"
-<<<<<<< Updated upstream
-#include "AIController.h"
-=======
 #include "PacMan.h"
->>>>>>> Stashed changes
 #include "GhostCharacter.generated.h"
 
 UCLASS()
@@ -20,14 +14,14 @@ class TP2_UNREAL_API AGhostCharacter : public AEntityCharacter
 {
 	GENERATED_BODY()
 
+public:
 	FVector targetLocation;
-	AGhost_AIController AIController;
 
 public:
 	UPROPERTY()
 	AAIController* GhostAI;
-	// Sets default values for this character's properties
 	AGhostCharacter();
+
 
 protected:
 	// Called when the game starts or when spawned
@@ -45,5 +39,5 @@ public:
 	UFUNCTION()
 	void OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor); // (UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
-	FVector GetPacmanLocation();
+	
 };
