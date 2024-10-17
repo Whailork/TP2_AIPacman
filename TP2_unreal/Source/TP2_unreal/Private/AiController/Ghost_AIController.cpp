@@ -15,7 +15,7 @@
 // Behavior tree
 AGhost_AIController::AGhost_AIController(const FObjectInitializer& ObjectInitializer)
 {
-    // Create BehaviorTree Component
+    // Create BT Component
     BehaviorTreeComponent = CreateDefaultSubobject<UBehaviorTreeComponent>(TEXT("BehaviorTree Component"));
 }
 
@@ -30,7 +30,7 @@ void AGhost_AIController::OnPossess(APawn* InPawn)
         // Check if the assets has been selected in the editor
         if (AICharactere->TreeAsset) {
 
-            // Run the behavior tree
+            // Run the BT
             BehaviorTreeComponent->StartTree(*AICharactere->TreeAsset);
         }
     }

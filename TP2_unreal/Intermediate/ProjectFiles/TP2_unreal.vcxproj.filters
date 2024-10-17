@@ -11,7 +11,6 @@
     <None Include="..\..\Source\TP2_unrealEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
-    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -102,6 +101,9 @@
     <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\BlueGhostPawn.cpp">
       <Filter>Source\TP2_unreal\Private\Ghost</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\Ghost.cpp">
+      <Filter>Source\TP2_unreal\Private\Ghost</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\OrangeGhostPawn.cpp">
       <Filter>Source\TP2_unreal\Private\Ghost</Filter>
     </ClCompile>
@@ -165,6 +167,9 @@
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\BlueGhostPawn.h">
       <Filter>Source\TP2_unreal\Public\Ghost</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\Ghost.h">
+      <Filter>Source\TP2_unreal\Public\Ghost</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\OrangeGhostPawn.h">
       <Filter>Source\TP2_unreal\Public\Ghost</Filter>
     </ClInclude>
@@ -179,16 +184,6 @@
     </Filter>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Map\Wall.h">
       <Filter>Source\TP2_unreal\Public\Map</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\Ghost.cpp">
-      <Filter>Source\TP2_unreal\Private\Ghost</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\Ghost.h">
-      <Filter>Source\TP2_unreal\Public\Ghost</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
