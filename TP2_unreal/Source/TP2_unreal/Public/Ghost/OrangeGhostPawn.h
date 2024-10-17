@@ -7,7 +7,7 @@
 #include "OrangeGhostPawn.generated.h"
 
 UCLASS()
-class TP2_UNREAL_API AOrangeGhostPawn : public AGhostCharacter
+class TP2_UNREAL_API AOrangeGhostPawn : public AGhost
 {
 	GENERATED_BODY()
 

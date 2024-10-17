@@ -7,7 +7,7 @@
 #include "BlueGhostPawn.generated.h"
 
 UCLASS()
-class TP2_UNREAL_API ABlueGhostPawn : public AGhostCharacter
+class TP2_UNREAL_API ABlueGhostPawn : public AGhost
 {
 	GENERATED_BODY()
 

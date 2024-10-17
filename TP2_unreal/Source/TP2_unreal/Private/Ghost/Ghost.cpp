@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "..\..\Public\Ghost\Ghost.h"
-#include "GameFramework/Actor.h"
+#include "Ghost\Ghost.h"
 #include "Entity/EntityCharacter.h"
 #include "Corner/CornerActor.h"
 #include "AIController.h"
+#include "../../../../../../../../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h"
 
 
 
@@ -12,37 +12,41 @@
 
 
 // Sets default values
-AGhostCharacter::AGhostCharacter()
+AGhost::AGhost()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 }
 
 // Called when the game starts or when spawned
-void AGhostCharacter::BeginPlay()
+void AGhost::BeginPlay()
 {
 	Super::BeginPlay();
 
     // Initialisation
     targetLocation = FVector::ZeroVector;
 
-    this->OnActorBeginOverlap.AddDynamic(this, &AGhostCharacter::OnCatchOverlapBegin);
+    this->OnActorBeginOverlap.AddDynamic(this, &AGhost::OnCatchOverlapBegin);
 
     if (AAIController* aiController = Cast<AAIController>(Controller))
     {
         GhostAI = aiController;
     }
 
-    //GhostAI->MoveToLocation(PacManReference->GetActorLocation());
+    /*
+    if (UseBlackboard(GhostBlackboard, BlackboardComponent))
+    {
+        RunBehaviorTree(GhostBehaviorTree);
+    }*/
 }
 
 // Called every frame
-void AGhostCharacter::Tick(float DeltaTime)
+void AGhost::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 }
 
-void AGhostCharacter::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
+void AGhost::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
 {
     // Si je collisione avec un coin
     if (OtherActor && OtherActor->IsA(ACornerActor::StaticClass()))
@@ -61,7 +65,7 @@ void AGhostCharacter::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
 }
 
 // Called to bind functionality to input
-void AGhostCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void AGhost::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
 }

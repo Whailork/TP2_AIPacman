@@ -18,11 +18,11 @@ void ARedGhostPawn::BeginPlay()
     Super::BeginPlay();
 
     // TODO: appeler au bon endroit
-    SetOnScatterMode(true);
+    //SetOnScatterMode(true);
 
-    targetLocation = coinsScatter[0]->GetActorLocation();
+    //targetLocation = coinsScatter[0]->GetActorLocation();
 
-    GhostAI->MoveToLocation(targetLocation);
+    //GhostAI->MoveToLocation(targetLocation);
 }
 
 // Called every frame

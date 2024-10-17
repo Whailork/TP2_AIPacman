@@ -8,7 +8,7 @@
 
 
 UCLASS()
-class TP2_UNREAL_API AGhostCharacter : public AEntityCharacter
+class TP2_UNREAL_API AGhost : public AEntityCharacter
 {
 	GENERATED_BODY()
 
@@ -18,7 +18,7 @@ public:
 public:
 	UPROPERTY()
 	AAIController* GhostAI;
-	AGhostCharacter();
+	AGhost();
 
 
 protected:
