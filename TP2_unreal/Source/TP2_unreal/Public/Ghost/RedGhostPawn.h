@@ -7,9 +7,14 @@
 #include "RedGhostPawn.generated.h"
 
 UCLASS()
-class TP2_UNREAL_API ARedGhostPawn : public AGhostCharacter
+class TP2_UNREAL_API ARedGhostPawn : public AGhost
 {
 	GENERATED_BODY()
+
+// Behavior tree
+public:
+	UPROPERTY(EditAnywhere, Category = "AI")
+	class UBehaviorTree* TreeAsset;
 
 public:
 	bool onScatterMode;

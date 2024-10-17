@@ -10,6 +10,15 @@ UCLASS()
 class TP2_UNREAL_API AGhost_AIController : public AAIController
 {
 	GENERATED_BODY()
+
+public:
+
+	AGhost_AIController(const FObjectInitializer& ObjectInitializer);
+
+	virtual void OnPossess(APawn* InPawn) override;
+
+	UPROPERTY(Transient)
+	class UBehaviorTreeComponent* BehaviorTreeComponent;
 	
 public:
 	void MoveToLocation(const FVector& Destination, float AcceptanceRadius);

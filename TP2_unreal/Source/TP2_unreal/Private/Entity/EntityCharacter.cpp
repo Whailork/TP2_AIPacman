@@ -3,7 +3,7 @@
 
 #include "Entity/EntityCharacter.h"
 #include "Components/BoxComponent.h"
-#include "GameFramework//FloatingPawnMovement.h"
+#include "GameFramework/FloatingPawnMovement.h"
 #include "GameFramework/MovementComponent.h"
 #include"Corner/CornerActor.h"
 #include"PacMan.h"

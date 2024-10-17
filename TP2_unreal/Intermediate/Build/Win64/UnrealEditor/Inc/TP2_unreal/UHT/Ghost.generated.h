@@ -15,46 +15,46 @@ class AActor;
 #endif
 #define TP2_UNREAL_Ghost_generated_h
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnCatchOverlapBegin);
 
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_INCLASS_NO_PURE_DECLS \
 private: \
-	static void StaticRegisterNativesAGhostCharacter(); \
-	friend struct Z_Construct_UClass_AGhostCharacter_Statics; \
+	static void StaticRegisterNativesAGhost(); \
+	friend struct Z_Construct_UClass_AGhost_Statics; \
 public: \
-	DECLARE_CLASS(AGhostCharacter, AEntityCharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/TP2_unreal"), NO_API) \
-	DECLARE_SERIALIZER(AGhostCharacter)
+	DECLARE_CLASS(AGhost, AEntityCharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/TP2_unreal"), NO_API) \
+	DECLARE_SERIALIZER(AGhost)
 
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
-	AGhostCharacter(AGhostCharacter&&); \
-	AGhostCharacter(const AGhostCharacter&); \
+	AGhost(AGhost&&); \
+	AGhost(const AGhost&); \
 public: \
-	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AGhostCharacter); \
-	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGhostCharacter); \
-	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGhostCharacter) \
-	NO_API virtual ~AGhostCharacter();
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AGhost); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGhost); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGhost) \
+	NO_API virtual ~AGhost();
 
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_10_PROLOG
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_GENERATED_BODY \
+#define FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_10_PROLOG
+#define FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_INCLASS_NO_PURE_DECLS \
-	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_ENHANCED_CONSTRUCTORS \
+	FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-template<> TP2_UNREAL_API UClass* StaticClass<class AGhostCharacter>();
+template<> TP2_UNREAL_API UClass* StaticClass<class AGhost>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h
+#define CURRENT_FILE_ID FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

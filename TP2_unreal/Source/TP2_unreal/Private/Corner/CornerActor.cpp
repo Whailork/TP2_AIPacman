@@ -61,6 +61,7 @@ void ACornerActor::HandleScatterMode(AGhostCharacter* ghost, AActor* MyActor) {
 
 void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 {
+	/*
 	if (auto redGhost = Cast<ARedGhostPawn>(OtherActor)) {
 		
 		if (redGhost->onScatterMode) {
@@ -85,8 +86,8 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 		}
 		
 		redGhost->GhostAI->MoveToLocation(redGhost->targetLocation, 0, false);
-	}
-	else if (auto blueGhost = Cast<ABlueGhostPawn>(OtherActor)) {
+	}*/
+	if (auto blueGhost = Cast<ABlueGhostPawn>(OtherActor)) {
 
 		if (blueGhost->onScatterMode) {
 
