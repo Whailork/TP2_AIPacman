@@ -13,6 +13,7 @@ class TP2_UNREAL_API ARedGhostPawn : public AGhost
 
 // Behavior tree
 public:
+
 	UPROPERTY(EditAnywhere, Category = "AI")
 	class UBehaviorTree* TreeAsset;
 

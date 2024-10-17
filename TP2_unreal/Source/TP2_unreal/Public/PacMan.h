@@ -29,6 +29,11 @@ class TP2_UNREAL_API APacMan : public AEntityCharacter
 	AAIController* PlayerAI;
 
 public:
+
+	UPROPERTY(EditAnywhere, Category = "AI")
+	class UBehaviorTree* TreeAsset;
+
+public:
 	UPROPERTY()
 	int nbEaten;
 	UPROPERTY()

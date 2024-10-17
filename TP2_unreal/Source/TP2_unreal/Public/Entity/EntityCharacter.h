@@ -13,6 +13,7 @@ class TP2_UNREAL_API AEntityCharacter : public APawn
 
 public:
 
+	UPROPERTY(EditAnywhere, Category = "PacManReferenceInEntity")
 	class APacMan* PacManReference;
 
 	UPROPERTY(Category = Pawn, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
