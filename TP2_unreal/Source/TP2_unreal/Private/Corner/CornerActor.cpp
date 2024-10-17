@@ -3,8 +3,7 @@
 
 #include "Corner/CornerActor.h"
 #include "PacMan.h"
-#include "Ghost/GhostCharacter.h"
-#include "GhostCharacter.generated.h"
+#include "..\..\Public\Ghost\Ghost.h"
 #include "ghost/RedGhostPawn.h"
 #include <Ghost/BlueGhostPawn.h>
 #include <Ghost/OrangeGhostPawn.h>

@@ -2,6 +2,7 @@
 
 
 #include "ghost/RedGhostPawn.h"
+#include "PacMan.h"
 
 // Sets default values
 ARedGhostPawn::ARedGhostPawn()

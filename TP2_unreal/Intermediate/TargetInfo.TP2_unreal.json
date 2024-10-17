@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "TP2_unreal",
+			"Path": "..\\Source\\TP2_unreal.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "TP2_unrealEditor",
+			"Path": "..\\Source\\TP2_unrealEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

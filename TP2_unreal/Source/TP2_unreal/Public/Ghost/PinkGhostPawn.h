@@ -3,7 +3,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "GhostCharacter.h"
+#include "Ghost.h"
 #include "PinkGhostPawn.generated.h"
 
 UCLASS()
