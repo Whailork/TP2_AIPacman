@@ -261,15 +261,15 @@
     <ClCompile Include="..\..\Source\TP2_unreal\TP2_unreal.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unreal.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unreal.h" />
     <ClCompile Include="..\..\Source\TP2_unreal\TP2_unrealCharacter.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unrealCharacter.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unrealCharacter.h" />
     <ClCompile Include="..\..\Source\TP2_unreal\TP2_unrealGameMode.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unrealGameMode.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unrealGameMode.h" />
     <ClCompile Include="..\..\Source\TP2_unreal\Private\APlayerInputManager.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -339,7 +339,8 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <PropertyGroup>
     <CleanDependsOn> $(CleanDependsOn); </CleanDependsOn>
-    <CppCleanDependsOn></CppCleanDependsOn>
+    <CppCleanDependsOn>
+    </CppCleanDependsOn>
   </PropertyGroup>
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
