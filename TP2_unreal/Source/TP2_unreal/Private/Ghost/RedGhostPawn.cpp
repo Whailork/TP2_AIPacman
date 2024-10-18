@@ -3,6 +3,8 @@
 
 #include "ghost/RedGhostPawn.h"
 #include "PacMan.h"
+#include <AiController/BaseAIController.h>
+#include <Kismet/GameplayStatics.h>
 
 // Sets default values
 ARedGhostPawn::ARedGhostPawn()
@@ -23,6 +25,10 @@ void ARedGhostPawn::BeginPlay()
     //targetLocation = coinsScatter[0]->GetActorLocation();
 
     //GhostAI->MoveToLocation(targetLocation);
+
+    // Find the PacMan actor in the level (assuming only one PacMan)
+
+    
 }
 
 // Called every frame

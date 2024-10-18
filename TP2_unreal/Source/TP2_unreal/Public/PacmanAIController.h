@@ -14,12 +14,6 @@ class TP2_UNREAL_API APacmanAIController : public AAIController
 {
 	GENERATED_BODY()
 
-public:
-	APacmanAIController(const FObjectInitializer& ObjectInitializer);
 
-	virtual void OnPossess(APawn* InPawn) override;
-
-	UPROPERTY(Transient)
-	class UBehaviorTreeComponent* BehaviorTreeComponent;
 	
 };
