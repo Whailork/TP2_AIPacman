@@ -43,10 +43,11 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-protected:
+public:
 
 	void MoveTo(FVector Location);
 	FVector Seek(FVector Target);
 
 	void SetPacmanReference();
+	APacMan* GetPacmanReference();
 };

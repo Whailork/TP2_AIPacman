@@ -80,3 +80,8 @@ void AEntityCharacter::SetPacmanReference()
         }
     }
 }
+
+APacMan* AEntityCharacter::GetPacmanReference()
+{
+	return PacManReference;
+}

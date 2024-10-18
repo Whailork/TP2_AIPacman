@@ -252,24 +252,26 @@
     <None Include="..\..\TP2_unreal.uproject"/>
     <None Include="..\..\Source\TP2_unreal.Target.cs"/>
     <None Include="..\..\Source\TP2_unrealEditor.Target.cs"/>
+    <None Include="..\..\.vsconfig"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
+    <None Include="..\..\Config\DefaultGameplayTags.ini"/>
     <None Include="..\..\Config\DefaultInput.ini"/>
     <None Include="..\..\Source\TP2_unreal\TP2_unreal.Build.cs"/>
     <ClCompile Include="..\..\Source\TP2_unreal\TP2_unreal.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unreal.h" />
+    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unreal.h"/>
     <ClCompile Include="..\..\Source\TP2_unreal\TP2_unrealCharacter.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unrealCharacter.h" />
+    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unrealCharacter.h"/>
     <ClCompile Include="..\..\Source\TP2_unreal\TP2_unrealGameMode.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unrealGameMode.h" />
+    <ClInclude Include="..\..\Source\TP2_unreal\TP2_unrealGameMode.h"/>
     <ClCompile Include="..\..\Source\TP2_unreal\Private\APlayerInputManager.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -286,6 +288,9 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\TP2_unreal\Private\AEatable\SuperPacGomme.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\AiController\BaseAIController.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\TP2_unreal\Private\AiController\Ghost_AIController.cpp">
@@ -321,6 +326,7 @@
     <ClInclude Include="..\..\Source\TP2_unreal\Public\AEatable\AEatables.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\AEatable\APacGomme.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\AEatable\SuperPacGomme.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\AiController\BaseAIController.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\AiController\Ghost_AIController.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Corner\CornerActor.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Entity\EntityCharacter.h"/>
@@ -339,8 +345,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <PropertyGroup>
     <CleanDependsOn> $(CleanDependsOn); </CleanDependsOn>
-    <CppCleanDependsOn>
-    </CppCleanDependsOn>
+    <CppCleanDependsOn></CppCleanDependsOn>
   </PropertyGroup>
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
