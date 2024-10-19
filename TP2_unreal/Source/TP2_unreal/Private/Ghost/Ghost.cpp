@@ -85,6 +85,9 @@ void AGhost::OnFleeMode()
     
 }
 
+void AGhost::OnChaseMode()
+{
+}
 
 void AGhost::SetOnScatterMode(bool isOnScatterMode)
 {

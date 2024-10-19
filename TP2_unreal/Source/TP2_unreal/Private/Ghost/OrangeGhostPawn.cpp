@@ -35,3 +35,18 @@ void AOrangeGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
+
+// TODO : voir si ca marche et comment le mettre dans le behaviour tree
+void AOrangeGhostPawn::OnChaseMode()
+{
+	/*
+	SetOnScatterMode(false);
+	SetOnFleeMode(false);
+	SetIsDead(false);
+	SetOnChaseMode(true);
+
+	//targetLocation
+	targetLocation = PacManReference->GetActorLocation();
+	GhostAI->MoveToLocation(targetLocation, 0, false);
+	*/
+}
