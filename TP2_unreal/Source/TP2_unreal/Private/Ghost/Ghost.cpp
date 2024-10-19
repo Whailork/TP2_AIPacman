@@ -100,17 +100,17 @@ void AGhost::SetOnChaseMode(bool isInChaseMode)
 {
     this->inChaseMode = isInChaseMode;
 }
-void AGhost::SetIsDead(bool isDead)
+void AGhost::SetIsDead(bool isDeadBln)
 {
-    this->isDeadMode = isDead;
+    this->isDeadMode = isDeadBln;
 }
 
-void AGhost::setModes(bool isOnScatterMode, bool isInFleeMode, bool isInChaseMode, bool isDead) {
+void AGhost::setModes(bool isOnScatterMode, bool isInFleeMode, bool isInChaseMode, bool isDeadBln) {
 
     SetOnScatterMode(isOnScatterMode);
     SetOnFleeMode(isInFleeMode);
     SetOnChaseMode(isInChaseMode);
-    SetIsDead(isDead);
+    SetIsDead(isDeadBln);
 }
 void AGhost::setFleeMode(bool value)
 {
