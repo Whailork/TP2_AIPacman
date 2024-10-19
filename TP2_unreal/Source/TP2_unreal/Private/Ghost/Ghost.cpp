@@ -103,13 +103,7 @@ void AGhost::SetIsDead(bool isDeadBln)
     this->isDeadMode = isDeadBln;
 }
 
-void AGhost::setModes(bool isOnScatterMode, bool isInFleeMode, bool isInChaseMode, bool isDeadBln) {
 
-    SetOnScatterMode(isOnScatterMode);
-    SetOnFleeMode(isInFleeMode);
-    SetOnChaseMode(isInChaseMode);
-    SetIsDead(isDeadBln);
-}
 void AGhost::setFleeMode(bool value)
 {
     inFleeMode = value;

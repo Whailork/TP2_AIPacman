@@ -58,8 +58,7 @@ public:
 	UFUNCTION()
 	void SetIsDead(bool isDead);
 
-	UFUNCTION()
-	void setModes(bool isOnScatterMode, bool isInFleeMode, bool isInChaseMode, bool isDead);
+	
 
 	void setFleeMode(bool value);
 	UFUNCTION(BlueprintCallable)
