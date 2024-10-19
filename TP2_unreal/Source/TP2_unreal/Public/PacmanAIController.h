@@ -13,5 +13,7 @@ UCLASS()
 class TP2_UNREAL_API APacmanAIController : public AAIController
 {
 	GENERATED_BODY()
+
+
 	
 };

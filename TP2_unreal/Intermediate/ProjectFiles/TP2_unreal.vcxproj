@@ -79,7 +79,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{16DAA08F-B852-3B13-A5E0-215B2121A0A5}</ProjectGuid>
+    <ProjectGuid>{2C4358E9-AEAA-38FE-8350-F4FEEF47D314}</ProjectGuid>
     <RootNamespace>TP2_unreal</RootNamespace>
   </PropertyGroup>
   <Import Project="UECommon.props" />
@@ -297,11 +297,11 @@
     <None Include="..\..\TP2_unreal.uproject"/>
     <None Include="..\..\Source\TP2_unreal.Target.cs"/>
     <None Include="..\..\Source\TP2_unrealEditor.Target.cs"/>
-    <None Include="..\..\.vsconfig"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
+    <None Include="..\..\Config\DefaultGameplayTags.ini"/>
     <None Include="..\..\Config\DefaultInput.ini"/>
     <None Include="..\..\Source\TP2_unreal\TP2_unreal.Build.cs"/>
     <ClCompile Include="..\..\Source\TP2_unreal\TP2_unreal.cpp">
@@ -334,13 +334,31 @@
     <ClCompile Include="..\..\Source\TP2_unreal\Private\AEatable\SuperPacGomme.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\AiController\BaseAIController.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\AiController\Ghost_AIController.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\TP2_unreal\Private\Corner\CornerActor.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\TP2_unreal\Private\Entity\EntityCharacter.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\GhostCharacter.cpp">
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\BlueGhostPawn.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\Ghost.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\OrangeGhostPawn.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\PinkGhostPawn.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\RedGhostPawn.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\TP2_unreal\Private\Map\Wall.cpp">
@@ -352,9 +370,15 @@
     <ClInclude Include="..\..\Source\TP2_unreal\Public\AEatable\AEatables.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\AEatable\APacGomme.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\AEatable\SuperPacGomme.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\AiController\BaseAIController.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\AiController\Ghost_AIController.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Corner\CornerActor.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Entity\EntityCharacter.h"/>
-    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\GhostCharacter.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\BlueGhostPawn.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\Ghost.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\OrangeGhostPawn.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\PinkGhostPawn.h"/>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\RedGhostPawn.h"/>
     <ClInclude Include="..\..\Source\TP2_unreal\Public\Map\Wall.h"/>
   </ItemGroup>
   <PropertyGroup>

@@ -11,7 +11,6 @@
     <None Include="..\..\Source\TP2_unrealEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
-    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -25,6 +24,9 @@
       <Filter>Config</Filter>
     </None>
     <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGameplayTags.ini">
       <Filter>Config</Filter>
     </None>
     <None Include="..\..\Config\DefaultInput.ini">
@@ -78,6 +80,15 @@
     <ClCompile Include="..\..\Source\TP2_unreal\Private\AEatable\SuperPacGomme.cpp">
       <Filter>Source\TP2_unreal\Private\AEatable</Filter>
     </ClCompile>
+    <Filter Include="Source\TP2_unreal\Private\AiController">
+      <UniqueIdentifier>{732E86EB-4E7E-34DD-8F11-A910FE1D37C0}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\AiController\BaseAIController.cpp">
+      <Filter>Source\TP2_unreal\Private\AiController</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\AiController\Ghost_AIController.cpp">
+      <Filter>Source\TP2_unreal\Private\AiController</Filter>
+    </ClCompile>
     <Filter Include="Source\TP2_unreal\Private\Corner">
       <UniqueIdentifier>{052EE198-0A4C-3866-9A46-2ED882BC15AB}</UniqueIdentifier>
     </Filter>
@@ -93,7 +104,19 @@
     <Filter Include="Source\TP2_unreal\Private\Ghost">
       <UniqueIdentifier>{E81E8B1E-B41A-37C5-A6D6-6151D18648AB}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\GhostCharacter.cpp">
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\BlueGhostPawn.cpp">
+      <Filter>Source\TP2_unreal\Private\Ghost</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\Ghost.cpp">
+      <Filter>Source\TP2_unreal\Private\Ghost</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\OrangeGhostPawn.cpp">
+      <Filter>Source\TP2_unreal\Private\Ghost</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\PinkGhostPawn.cpp">
+      <Filter>Source\TP2_unreal\Private\Ghost</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\TP2_unreal\Private\Ghost\RedGhostPawn.cpp">
       <Filter>Source\TP2_unreal\Private\Ghost</Filter>
     </ClCompile>
     <Filter Include="Source\TP2_unreal\Private\Map">
@@ -126,6 +149,15 @@
     <ClInclude Include="..\..\Source\TP2_unreal\Public\AEatable\SuperPacGomme.h">
       <Filter>Source\TP2_unreal\Public\AEatable</Filter>
     </ClInclude>
+    <Filter Include="Source\TP2_unreal\Public\AiController">
+      <UniqueIdentifier>{F881D774-9E7B-3AF0-A613-233B6DCC9484}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\AiController\BaseAIController.h">
+      <Filter>Source\TP2_unreal\Public\AiController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\AiController\Ghost_AIController.h">
+      <Filter>Source\TP2_unreal\Public\AiController</Filter>
+    </ClInclude>
     <Filter Include="Source\TP2_unreal\Public\Corner">
       <UniqueIdentifier>{9E2553D5-1CAA-3193-9A0A-A941141EE2A5}</UniqueIdentifier>
     </Filter>
@@ -141,7 +173,19 @@
     <Filter Include="Source\TP2_unreal\Public\Ghost">
       <UniqueIdentifier>{86506D56-2E02-3642-8560-1FC66175C447}</UniqueIdentifier>
     </Filter>
-    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\GhostCharacter.h">
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\BlueGhostPawn.h">
+      <Filter>Source\TP2_unreal\Public\Ghost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\Ghost.h">
+      <Filter>Source\TP2_unreal\Public\Ghost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\OrangeGhostPawn.h">
+      <Filter>Source\TP2_unreal\Public\Ghost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\PinkGhostPawn.h">
+      <Filter>Source\TP2_unreal\Public\Ghost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TP2_unreal\Public\Ghost\RedGhostPawn.h">
       <Filter>Source\TP2_unreal\Public\Ghost</Filter>
     </ClInclude>
     <Filter Include="Source\TP2_unreal\Public\Map">

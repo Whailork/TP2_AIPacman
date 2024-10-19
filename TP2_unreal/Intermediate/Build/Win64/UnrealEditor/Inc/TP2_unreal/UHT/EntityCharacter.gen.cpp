@@ -14,8 +14,10 @@ ENGINE_API UClass* Z_Construct_UClass_APawn();
 ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UPawnMovementComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+TP2_UNREAL_API UClass* Z_Construct_UClass_ACornerActor_NoRegister();
 TP2_UNREAL_API UClass* Z_Construct_UClass_AEntityCharacter();
 TP2_UNREAL_API UClass* Z_Construct_UClass_AEntityCharacter_NoRegister();
+TP2_UNREAL_API UClass* Z_Construct_UClass_APacMan_NoRegister();
 UPackage* Z_Construct_UPackage__Script_TP2_unreal();
 // End Cross Module References
 
@@ -36,6 +38,10 @@ struct Z_Construct_UClass_AEntityCharacter_Statics
 		{ "IncludePath", "Entity/EntityCharacter.h" },
 		{ "ModuleRelativePath", "Public/Entity/EntityCharacter.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PacManReference_MetaData[] = {
+		{ "Category", "PacManReferenceInEntity" },
+		{ "ModuleRelativePath", "Public/Entity/EntityCharacter.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MovementComponent_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Pawn" },
@@ -53,10 +59,17 @@ struct Z_Construct_UClass_AEntityCharacter_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Entity/EntityCharacter.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_coinsScatter_MetaData[] = {
+		{ "Category", "coin" },
+		{ "ModuleRelativePath", "Public/Entity/EntityCharacter.h" },
+	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_PacManReference;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MovementComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_StaticMesh;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BoxCollision;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_coinsScatter_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_coinsScatter;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -64,13 +77,19 @@ struct Z_Construct_UClass_AEntityCharacter_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEntityCharacter_Statics::NewProp_PacManReference = { "PacManReference", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEntityCharacter, PacManReference), Z_Construct_UClass_APacMan_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PacManReference_MetaData), NewProp_PacManReference_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEntityCharacter_Statics::NewProp_MovementComponent = { "MovementComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEntityCharacter, MovementComponent), Z_Construct_UClass_UPawnMovementComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MovementComponent_MetaData), NewProp_MovementComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEntityCharacter_Statics::NewProp_StaticMesh = { "StaticMesh", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEntityCharacter, StaticMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StaticMesh_MetaData), NewProp_StaticMesh_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEntityCharacter_Statics::NewProp_BoxCollision = { "BoxCollision", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEntityCharacter, BoxCollision), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BoxCollision_MetaData), NewProp_BoxCollision_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEntityCharacter_Statics::NewProp_coinsScatter_Inner = { "coinsScatter", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ACornerActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AEntityCharacter_Statics::NewProp_coinsScatter = { "coinsScatter", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEntityCharacter, coinsScatter), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_coinsScatter_MetaData), NewProp_coinsScatter_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEntityCharacter_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEntityCharacter_Statics::NewProp_PacManReference,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEntityCharacter_Statics::NewProp_MovementComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEntityCharacter_Statics::NewProp_StaticMesh,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEntityCharacter_Statics::NewProp_BoxCollision,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEntityCharacter_Statics::NewProp_coinsScatter_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEntityCharacter_Statics::NewProp_coinsScatter,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AEntityCharacter_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AEntityCharacter_Statics::DependentSingletons[])() = {
@@ -113,10 +132,10 @@ AEntityCharacter::~AEntityCharacter() {}
 struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEntityCharacter, AEntityCharacter::StaticClass, TEXT("AEntityCharacter"), &Z_Registration_Info_UClass_AEntityCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEntityCharacter), 2528489036U) },
+		{ Z_Construct_UClass_AEntityCharacter, AEntityCharacter::StaticClass, TEXT("AEntityCharacter"), &Z_Registration_Info_UClass_AEntityCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEntityCharacter), 3713551426U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_3904190552(TEXT("/Script/TP2_unreal"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_1598568653(TEXT("/Script/TP2_unreal"),
 	Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Entity_EntityCharacter_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
