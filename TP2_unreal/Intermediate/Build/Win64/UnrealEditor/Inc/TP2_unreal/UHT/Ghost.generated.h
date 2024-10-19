@@ -9,14 +9,12 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class AActor;
 #ifdef TP2_UNREAL_Ghost_generated_h
 #error "Ghost.generated.h already included, missing '#pragma once' in Ghost.h"
 #endif
 #define TP2_UNREAL_Ghost_generated_h
 
 #define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execOnCatchOverlapBegin); \
 	DECLARE_FUNCTION(execSetOnScatterMode);
 
 

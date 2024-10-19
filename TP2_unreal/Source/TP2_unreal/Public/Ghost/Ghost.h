@@ -24,6 +24,8 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	bool inFleeMode;
+	bool isDead;
 
 public:	
 	// Called every frame
@@ -35,10 +37,10 @@ public:
 	UFUNCTION()
 	void SetOnScatterMode(bool isOnScatterMode);
 	bool onScatterMode;
-	bool inFleeMode;
-	bool isDead;
-	UFUNCTION()
-	void OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor); // (UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
+	void setFleeMode(bool value);
+	bool getFleeMode();
+	void setDeath(bool value);
+	bool getIsDead();
 	
 };
