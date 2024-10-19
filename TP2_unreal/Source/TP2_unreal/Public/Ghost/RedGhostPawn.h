@@ -11,14 +11,12 @@ class TP2_UNREAL_API ARedGhostPawn : public AGhost
 {
 	GENERATED_BODY()
 
-// Behavior tree
 public:
 
+	/*
 	UPROPERTY(EditAnywhere, Category = "AI")
 	class UBehaviorTree* TreeAsset;
-
-public:
-
+	*/
 
 public:
 	// Sets default values for this pawn's properties
@@ -35,9 +33,11 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	
+
 	UFUNCTION(BlueprintCallable)
 	void OnChaseMode();
 	UFUNCTION(BlueprintCallable)
 	void OnScatterMode();
+	UFUNCTION(BlueprintCallable)
+	void OnFrightenedMode();
 };
