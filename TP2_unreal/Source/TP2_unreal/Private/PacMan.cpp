@@ -131,6 +131,7 @@ void APacMan::MoveUp()
 		PlayerAI->MoveToLocation(UpCorner->GetActorLocation(),0,false);
 		//Move(Seek(UpCorner->GetActorLocation()));
 		
+		direction = "UP";
 	}
 }
 
@@ -146,7 +147,7 @@ void APacMan::MoveDown()
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
 		//Move(Seek(DownCorner->GetActorLocation()));
 		
-		
+		direction = "DOWN";
 	}
 }
 
@@ -162,6 +163,7 @@ void APacMan::MoveLeft()
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
 		//Move(Seek(LeftCorner->GetActorLocation()));
 	
+		direction = "LEFT";
 	}
 }
 
@@ -177,6 +179,7 @@ void APacMan::MoveRight()
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Some debug message!"));
 		//Move(Seek(RightCorner->GetActorLocation()));
 		
+		direction = "RIGHT";
 	}
 }
 
