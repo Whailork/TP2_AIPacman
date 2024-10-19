@@ -392,7 +392,9 @@ void AGhost::StaticRegisterNativesAGhost()
 {
 	UClass* Class = AGhost::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
-		{ "OnCatchOverlapBegin", &AGhost::execOnCatchOverlapBegin },
+		{ "OnChaseMode", &AGhost::execOnChaseMode },
+		{ "OnFleeMode", &AGhost::execOnFleeMode },
+		{ "OnScatterMode", &AGhost::execOnScatterMode },
 		{ "SetIsDead", &AGhost::execSetIsDead },
 		{ "setModes", &AGhost::execsetModes },
 		{ "SetOnChaseMode", &AGhost::execSetOnChaseMode },
@@ -427,7 +429,9 @@ struct Z_Construct_UClass_AGhost_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AGhost_OnCatchOverlapBegin, "OnCatchOverlapBegin" }, // 463316576
+		{ &Z_Construct_UFunction_AGhost_OnChaseMode, "OnChaseMode" }, // 3265030985
+		{ &Z_Construct_UFunction_AGhost_OnFleeMode, "OnFleeMode" }, // 1568879758
+		{ &Z_Construct_UFunction_AGhost_OnScatterMode, "OnScatterMode" }, // 3156733108
 		{ &Z_Construct_UFunction_AGhost_SetIsDead, "SetIsDead" }, // 2953266396
 		{ &Z_Construct_UFunction_AGhost_setModes, "setModes" }, // 797910520
 		{ &Z_Construct_UFunction_AGhost_SetOnChaseMode, "SetOnChaseMode" }, // 858916497
@@ -487,11 +491,11 @@ AGhost::~AGhost() {}
 struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AGhost, AGhost::StaticClass, TEXT("AGhost"), &Z_Registration_Info_UClass_AGhost, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGhost), 1852501128U) },
+		{ Z_Construct_UClass_AGhost, AGhost::StaticClass, TEXT("AGhost"), &Z_Registration_Info_UClass_AGhost, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGhost), 3743441821U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_2018847084(TEXT("/Script/TP2_unreal"),
-	Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_1591346274(TEXT("/Script/TP2_unreal"),
+	Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
