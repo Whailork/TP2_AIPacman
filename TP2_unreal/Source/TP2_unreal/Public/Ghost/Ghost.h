@@ -3,6 +3,8 @@
 
 #include "AIController.h"
 #include "CoreMinimal.h"
+#include "AiController/BaseAIController.h"
+#include "BehaviorTree/BehaviorTreeTypes.h"
 #include "Entity/EntityCharacter.h"
 #include "Ghost.generated.h"
 
@@ -18,10 +20,11 @@ public:
 	class UBehaviorTree* TreeAsset;
 
 	FVector targetLocation;
+	FBlackboardKeySelector BlackboardKey;
 
 public:
 	UPROPERTY()
-	AAIController* GhostAI;
+	ABaseAIController* GhostAI;
 	AGhost();
 
 
@@ -37,7 +40,12 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	
+	UFUNCTION(BlueprintCallable)
+	bool OnScatterMode();
+	UFUNCTION(BlueprintCallable)
+	void OnFleeMode();
+	UFUNCTION(BlueprintCallable)
+	void OnChaseMode();
 	UFUNCTION()
 	void SetOnScatterMode(bool isOnScatterMode);
 	bool onScatterMode;

@@ -24,7 +24,7 @@ void ABaseAIController::OnPossess(APawn* InPawn)
 	Super::OnPossess(InPawn);
 
 	// Cast your Character/Pawn to get access to the attributes
-	if (auto AICharactere = Cast<ARedGhostPawn>(InPawn))
+	if (auto AICharactere = Cast<AGhost>(InPawn))
 	{
 
 		// Check if the assets has been selected in the editor

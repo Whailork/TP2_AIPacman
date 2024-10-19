@@ -14,8 +14,7 @@ class TP2_UNREAL_API ABaseAIController : public AAIController
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, Category = "PacManReferenceInAI")
-	class APacMan* PacManReferenceAI;
+
 	
 public:
 	ABaseAIController(const FObjectInitializer& ObjectInitializer);
@@ -24,4 +23,5 @@ public:
 
 	UPROPERTY(Transient)
 	class UBehaviorTreeComponent* BehaviorTreeComponent;
+
 };
