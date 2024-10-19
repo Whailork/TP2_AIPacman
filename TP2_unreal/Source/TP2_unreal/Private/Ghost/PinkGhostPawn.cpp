@@ -37,8 +37,3 @@ void APinkGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
-
-void APinkGhostPawn::SetOnScatterMode(bool isOnScatterMode)
-{
-	this->onScatterMode = isOnScatterMode;
-}

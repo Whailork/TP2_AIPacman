@@ -3,6 +3,7 @@
 
 #include "AEatable/AEatables.h"
 
+#include "PacMan.h"
 #include "Components/SphereComponent.h"
 
 // Sets default values
@@ -34,8 +35,12 @@ void AAEatables::Tick(float DeltaTime)
 
 void AAEatables::OnOverlap(AActor* MyActor, AActor* OtherActor)
 {
-	OnEat(OtherActor);
-	this->Destroy();
+	if(auto pacman = Cast<APacMan>(OtherActor))
+	{
+		OnEat(OtherActor);
+		this->Destroy();
+	}
+
 	
 }
 

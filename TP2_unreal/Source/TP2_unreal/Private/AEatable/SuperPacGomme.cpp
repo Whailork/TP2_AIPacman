@@ -14,6 +14,10 @@ void ASuperPacGomme::OnEat(AActor* OtherActor)
 	if (auto pacman = Cast<APacMan>(OtherActor))
 	{
 		pacman->OnEat(scoreValue,true);
+		/*for ()
+		{
+			
+		}*/
 		//TODO : set ghosts to flee mode
 	}
 }

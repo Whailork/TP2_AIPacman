@@ -20,7 +20,7 @@ public:
 	
 
 public:
-	bool onScatterMode;
+
 
 public:
 	// Sets default values for this pawn's properties
@@ -37,8 +37,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UFUNCTION()
-	void SetOnScatterMode(bool isOnScatterMode);
+	
 	UFUNCTION(BlueprintCallable)
 	void OnChaseMode();
 	UFUNCTION(BlueprintCallable)
