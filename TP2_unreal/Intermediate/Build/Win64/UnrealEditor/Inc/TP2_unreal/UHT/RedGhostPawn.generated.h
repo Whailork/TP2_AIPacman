@@ -15,6 +15,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define TP2_UNREAL_RedGhostPawn_generated_h
 
 #define FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnFrightenedMode); \
 	DECLARE_FUNCTION(execOnScatterMode); \
 	DECLARE_FUNCTION(execOnChaseMode);
 

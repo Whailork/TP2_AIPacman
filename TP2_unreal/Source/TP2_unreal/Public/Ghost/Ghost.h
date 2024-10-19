@@ -13,6 +13,10 @@ class TP2_UNREAL_API AGhost : public AEntityCharacter
 	GENERATED_BODY()
 
 public:
+
+	UPROPERTY(EditAnywhere, Category = "AI")
+	class UBehaviorTree* TreeAsset;
+
 	FVector targetLocation;
 
 public:
@@ -39,6 +43,4 @@ public:
 	bool isDead;
 	UFUNCTION()
 	void OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor); // (UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-
-	
 };
