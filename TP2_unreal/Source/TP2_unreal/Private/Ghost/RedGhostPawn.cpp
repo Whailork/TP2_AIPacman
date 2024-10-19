@@ -5,6 +5,8 @@
 #include "PacMan.h"
 #include <AiController/BaseAIController.h>
 #include <Kismet/GameplayStatics.h>
+#include "GameFramework/FloatingPawnMovement.h"
+#include "GameFramework/MovementComponent.h"
 
 // Sets default values
 ARedGhostPawn::ARedGhostPawn()
@@ -27,8 +29,6 @@ void ARedGhostPawn::BeginPlay()
     //GhostAI->MoveToLocation(targetLocation);
 
     // Find the PacMan actor in the level (assuming only one PacMan)
-
-    
 }
 
 // Called every frame
@@ -59,7 +59,6 @@ void ARedGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 }
 
 
-
 // TODO : voir si ca marche et comment le mettre dans le behaviour tree
 void ARedGhostPawn::OnChaseMode()
 {
@@ -74,5 +73,4 @@ void ARedGhostPawn::OnScatterMode()
     SetOnScatterMode(true);
     targetLocation = coinsScatter[0]->GetActorLocation();
     GhostAI->MoveToLocation(targetLocation,0, false);
-    
 }
