@@ -38,6 +38,7 @@ public:
 	
 	UFUNCTION()
 	void SetOnScatterMode(bool isOnScatterMode);
+
 	bool onScatterMode;
 	bool inFleeMode;
 	bool isDead;
