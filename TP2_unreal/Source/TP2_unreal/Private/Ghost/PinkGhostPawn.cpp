@@ -40,7 +40,7 @@ void APinkGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 void APinkGhostPawn::OnChaseMode()
 {
-	setModes(false, false, true, false);
+
 
 
 	//targetLocation
@@ -50,7 +50,6 @@ void APinkGhostPawn::OnChaseMode()
 
 void APinkGhostPawn::OnScatterMode()
 {
-	setModes(true, false, false, false);
 
 	targetLocation = coinsScatter[0]->GetActorLocation();
 	GhostAI->MoveToLocation(targetLocation, 0, false);
@@ -58,7 +57,6 @@ void APinkGhostPawn::OnScatterMode()
 
 void APinkGhostPawn::InFleeMode()
 {
-	setModes(false, true, false, false);
 
 	targetLocation = coinsScatter[0]->GetActorLocation();
 	GhostAI->MoveToLocation(targetLocation, 0, false);
