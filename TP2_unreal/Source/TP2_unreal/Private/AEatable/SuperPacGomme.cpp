@@ -20,13 +20,9 @@ void ASuperPacGomme::OnEat(AActor* OtherActor)
 		{
 			if(auto ghost = Cast<AGhost>(actor))
 			{
-				ghost->inFleeMode = true;
+				ghost->setFleeMode(true);
 			}
 			
 		}
-		
-			
-		
-		//TODO : set ghosts to flee mode
 	}
 }

@@ -4,8 +4,9 @@
 #include "Entity/EntityCharacter.h"
 #include "Corner/CornerActor.h"
 #include "AIController.h"
-
-
+#include "BehaviorTree/BehaviorTree.h"
+#include "BehaviorTree/BlackboardComponent.h"
+#include "PacMan.h"
 
 
 // GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ceci est un message!"));
@@ -22,13 +23,19 @@ AGhost::AGhost()
 void AGhost::BeginPlay()
 {
 	Super::BeginPlay();
+    /*
+
+I.e: ExecuteTask(UBehaviorTreeComponent& OwnerComp,…)
+UBlackboardComponent* MyBlackboard = OwnerComp.GetBlackboardComponent();
+MyBlackboard->ClearValue(Key.SelectedKeyName);
+MyBlackboard->GetValueAsBool(Key.SelectedKeyName);
+​​​​​​​MyBlackboard->SetValueAsBool(Key.SelectedKeyName, false);*/
 
     // Initialisation
     targetLocation = FVector::ZeroVector;
 
-    this->OnActorBeginOverlap.AddDynamic(this, &AGhost::OnCatchOverlapBegin);
-
-    if (AAIController* aiController = Cast<AAIController>(Controller))
+   
+    if (ABaseAIController* aiController = Cast<ABaseAIController>(Controller))
     {
         GhostAI = aiController;
     }
@@ -46,23 +53,7 @@ void AGhost::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 }
 
-void AGhost::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
-{
-    // Si je collisione avec un coin
-/*    if (OtherActor && OtherActor->IsA(ACornerActor::StaticClass()))
-    {
-        // TODO : trouve ou est pacman et va vers lui
-        //GhostAI->MoveToLocation(PacManReference->GetActorLocation());
 
-        // Trouve ou est pacman et va vers lui
-
-        // Autres comportements
-
-        //
-
-        //
-    }*/
-}
 
 // Called to bind functionality to input
 void AGhost::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -70,10 +61,63 @@ void AGhost::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
     Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
+bool AGhost::OnScatterMode()
+{
+    if(!inFleeMode)
+    {
+        SetOnScatterMode(false);
+
+        //targetLocation
+        targetLocation = PacManReference->GetActorLocation();
+        GhostAI->MoveToLocation(targetLocation,0, false);
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
+}
+
+void AGhost::OnFleeMode()
+{
+    
+}
+
+void AGhost::OnChaseMode()
+{
+}
+
 void AGhost::SetOnScatterMode(bool isOnScatterMode)
 {
     this->onScatterMode = isOnScatterMode;
 }
+
+void AGhost::setFleeMode(bool value)
+{
+    inFleeMode = value;
+   //GhostAI->GetBlackboardComponent()->SetValueAsBool("inFleeMode",value);
+    //set la valeur dans le blackboard
+}
+
+bool AGhost::getFleeMode()
+{
+    return inFleeMode;
+}
+
+void AGhost::setDeath(bool value)
+{
+    isDead = value;
+    //GhostAI->setIsDead(value);
+    //set la valeur dans le blackboard
+}
+
+bool AGhost::getIsDead()
+{
+    return isDead;
+}
+
+
 
 
 /*
