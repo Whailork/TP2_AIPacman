@@ -39,5 +39,5 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void OnScatterMode();
 	UFUNCTION(BlueprintCallable)
-	void OnFrightenedMode();
+	void InFleeMode();
 };

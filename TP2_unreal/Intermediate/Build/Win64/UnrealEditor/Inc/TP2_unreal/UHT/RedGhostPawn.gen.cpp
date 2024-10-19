@@ -16,6 +16,35 @@ TP2_UNREAL_API UClass* Z_Construct_UClass_ARedGhostPawn_NoRegister();
 UPackage* Z_Construct_UPackage__Script_TP2_unreal();
 // End Cross Module References
 
+// Begin Class ARedGhostPawn Function InFleeMode
+struct Z_Construct_UFunction_ARedGhostPawn_InFleeMode_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Ghost/RedGhostPawn.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ARedGhostPawn_InFleeMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ARedGhostPawn, nullptr, "InFleeMode", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ARedGhostPawn_InFleeMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_ARedGhostPawn_InFleeMode_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ARedGhostPawn_InFleeMode()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ARedGhostPawn_InFleeMode_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ARedGhostPawn::execInFleeMode)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->InFleeMode();
+	P_NATIVE_END;
+}
+// End Class ARedGhostPawn Function InFleeMode
+
 // Begin Class ARedGhostPawn Function OnChaseMode
 struct Z_Construct_UFunction_ARedGhostPawn_OnChaseMode_Statics
 {
@@ -44,35 +73,6 @@ DEFINE_FUNCTION(ARedGhostPawn::execOnChaseMode)
 	P_NATIVE_END;
 }
 // End Class ARedGhostPawn Function OnChaseMode
-
-// Begin Class ARedGhostPawn Function OnFrightenedMode
-struct Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode_Statics
-{
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/Ghost/RedGhostPawn.h" },
-	};
-#endif // WITH_METADATA
-	static const UECodeGen_Private::FFunctionParams FuncParams;
-};
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ARedGhostPawn, nullptr, "OnFrightenedMode", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode_Statics::Function_MetaDataParams) };
-UFunction* Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode()
-{
-	static UFunction* ReturnFunction = nullptr;
-	if (!ReturnFunction)
-	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode_Statics::FuncParams);
-	}
-	return ReturnFunction;
-}
-DEFINE_FUNCTION(ARedGhostPawn::execOnFrightenedMode)
-{
-	P_FINISH;
-	P_NATIVE_BEGIN;
-	P_THIS->OnFrightenedMode();
-	P_NATIVE_END;
-}
-// End Class ARedGhostPawn Function OnFrightenedMode
 
 // Begin Class ARedGhostPawn Function OnScatterMode
 struct Z_Construct_UFunction_ARedGhostPawn_OnScatterMode_Statics
@@ -108,8 +108,8 @@ void ARedGhostPawn::StaticRegisterNativesARedGhostPawn()
 {
 	UClass* Class = ARedGhostPawn::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "InFleeMode", &ARedGhostPawn::execInFleeMode },
 		{ "OnChaseMode", &ARedGhostPawn::execOnChaseMode },
-		{ "OnFrightenedMode", &ARedGhostPawn::execOnFrightenedMode },
 		{ "OnScatterMode", &ARedGhostPawn::execOnScatterMode },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -130,8 +130,8 @@ struct Z_Construct_UClass_ARedGhostPawn_Statics
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_ARedGhostPawn_InFleeMode, "InFleeMode" }, // 1333919425
 		{ &Z_Construct_UFunction_ARedGhostPawn_OnChaseMode, "OnChaseMode" }, // 3007482793
-		{ &Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode, "OnFrightenedMode" }, // 2345967271
 		{ &Z_Construct_UFunction_ARedGhostPawn_OnScatterMode, "OnScatterMode" }, // 3345816101
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -180,10 +180,10 @@ ARedGhostPawn::~ARedGhostPawn() {}
 struct Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ARedGhostPawn, ARedGhostPawn::StaticClass, TEXT("ARedGhostPawn"), &Z_Registration_Info_UClass_ARedGhostPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARedGhostPawn), 1369642159U) },
+		{ Z_Construct_UClass_ARedGhostPawn, ARedGhostPawn::StaticClass, TEXT("ARedGhostPawn"), &Z_Registration_Info_UClass_ARedGhostPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARedGhostPawn), 2834739545U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_826268929(TEXT("/Script/TP2_unreal"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_3545779231(TEXT("/Script/TP2_unreal"),
 	Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+#include "PacMan.h"
 #include "Ghost/PinkGhostPawn.h"
 
 // Sets default values
@@ -37,3 +37,30 @@ void APinkGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
+
+void APinkGhostPawn::OnChaseMode()
+{
+	setModes(false, false, true, false);
+
+
+	//targetLocation
+	targetLocation = PacManReference->GetActorLocation();
+	GhostAI->MoveToLocation(targetLocation, 0, false);
+}
+
+void APinkGhostPawn::OnScatterMode()
+{
+	setModes(true, false, false, false);
+
+	targetLocation = coinsScatter[0]->GetActorLocation();
+	GhostAI->MoveToLocation(targetLocation, 0, false);
+}
+
+void APinkGhostPawn::InFleeMode()
+{
+	setModes(false, true, false, false);
+
+	targetLocation = coinsScatter[0]->GetActorLocation();
+	GhostAI->MoveToLocation(targetLocation, 0, false);
+}
+

@@ -39,9 +39,32 @@ public:
 	UFUNCTION()
 	void SetOnScatterMode(bool isOnScatterMode);
 
+	UFUNCTION()
+	void SetOnFleeMode(bool isInFleeMode);
+
+	UFUNCTION()
+	void SetOnChaseMode(bool isInChaseMode);
+
+	UFUNCTION()
+	void SetIsDead(bool isDead);
+
+	UFUNCTION()
+	void setModes(bool isOnScatterMode, bool isInFleeMode, bool isInChaseMode, bool isDead);
+
 	bool onScatterMode;
+	bool inChaseMode;
 	bool inFleeMode;
-	bool isDead;
+	bool isDeadMode;
+
 	UFUNCTION()
 	void OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor); // (UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	/*
+	UFUNCTION(BlueprintCallable)
+	void OnChaseMode();
+	UFUNCTION(BlueprintCallable)
+	void OnScatterMode();
+	UFUNCTION(BlueprintCallable)
+	void InFleeMode();
+	*/
 };

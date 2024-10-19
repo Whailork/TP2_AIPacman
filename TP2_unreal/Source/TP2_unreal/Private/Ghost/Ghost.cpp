@@ -74,7 +74,26 @@ void AGhost::SetOnScatterMode(bool isOnScatterMode)
 {
     this->onScatterMode = isOnScatterMode;
 }
+void AGhost::SetOnFleeMode(bool isInFleeMode)
+{
+    this->inFleeMode = isInFleeMode;
+}
+void AGhost::SetOnChaseMode(bool isInChaseMode)
+{
+    this->inChaseMode = isInChaseMode;
+}
+void AGhost::SetIsDead(bool isDead)
+{
+    this->isDeadMode = isDead;
+}
 
+void AGhost::setModes(bool isOnScatterMode, bool isInFleeMode, bool isInChaseMode, bool isDead) {
+
+    SetOnScatterMode(isOnScatterMode);
+    SetOnFleeMode(isInFleeMode);
+    SetOnChaseMode(isInChaseMode);
+    SetIsDead(isDead);
+}
 
 /*
 * FLEE = RANDOM 6secondes -> 8secondes
@@ -104,8 +123,8 @@ Comportement : M�me comportement que dans Chase mode, mais avec une vitesse au
 Pinky (ROSE)
 Pour simplifier le comportement de Pinky, voici une version plus concise de sa logique de mouvement en mode "Chase" :
 
-Sortie de la maison des fant�mes : D�s que le jeu commence, Pinky quitte imm�diatement la maison des fant�mes et commence � chasser Pac-Man.
-Cible principale : En mode "Chase", Pinky essaie de pr�dire o� Pac-Man se dirigera. Il vise toujours une case situ�e quatre cases devant Pac-Man dans la direction actuelle de ce dernier :
+Sortie de la maison des fantòmes : Des que le jeu commence, Pinky quitte immediatement la maison des fantomes et commence a chasser Pac-Man.
+Cible principale : En mode "Chase", Pinky essaie de predire ou Pac-Man se dirigera. Il vise toujours une case situee quatre cases devant Pac-Man dans la direction actuelle de ce dernier
 
 *****************************************************************************************************************************************************************************************************************************************************************************
 
