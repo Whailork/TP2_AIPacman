@@ -1,19 +1,15 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+#include "Corner/CornerActor.h"
 #include <cmath>
-
 #include "PacMan.h"
 #include "Ghost/Ghost.h"
-#include "Corner/CornerActor.h"
-
 
 // Sets default values
 ACornerActor::ACornerActor()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	
 }
 
 // Called when the game starts or when spawned
@@ -21,7 +17,7 @@ void ACornerActor::BeginPlay()
 {
 	Super::BeginPlay();
 	this->OnActorBeginOverlap.AddDynamic(this, &ACornerActor::OnOverlap);
-	
+
 }
 
 // Called every frame
@@ -61,9 +57,9 @@ void ACornerActor::HandleScatterMode(AGhostCharacter* ghost, AActor* MyActor) {
 void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 {
 
-	if(auto ghost = Cast<AGhost>(OtherActor))
+	if (auto ghost = Cast<AGhost>(OtherActor))
 	{
-		if(ghost->onScatterMode)
+		if (ghost->onScatterMode)
 		{
 			bool coinHorsScatter = true;
 
@@ -116,11 +112,11 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 		}
 		ghost->GhostAI->MoveToLocation(ghost->targetLocation, 0, false);
 	}
-	
+
 	/*if (auto redGhost = Cast<ARedGhostPawn>(OtherActor)) {
-		
+
 		if (redGhost->onScatterMode) {
-			
+
 			bool coinHorsScatter = true;
 
 			for (int x = 0; x < redGhost->coinsScatter.Num(); x++) {
@@ -143,7 +139,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 		{
 			redGhost->targetLocation = redGhost->PacManReference->GetActorLocation();
 		}
-		
+
 		redGhost->GhostAI->MoveToLocation(redGhost->targetLocation, 0, false);
 	}
 	if (auto blueGhost = Cast<ABlueGhostPawn>(OtherActor)) {
@@ -223,11 +219,11 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 	}*/
 	else if (auto pacman = Cast<APacMan>(OtherActor))
 	{
-		
+
 		//GEngine->AddOnScreenDebugMessage(-1, 15, FColor::Red, TEXT("destroyBonus"));
-		if(ContinueOnContact)
+		if (ContinueOnContact)
 		{
-			if(UpCorner != nullptr && UpCorner != pacman->PreviousTarget)
+			if (UpCorner != nullptr && UpCorner != pacman->PreviousTarget)
 			{
 				pacman->PreviousTarget = this;
 				pacman->UpCorner = UpCorner;
@@ -235,7 +231,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 			}
 			else
 			{
-				if(DownCorner != nullptr && DownCorner != pacman->PreviousTarget)
+				if (DownCorner != nullptr && DownCorner != pacman->PreviousTarget)
 				{
 					pacman->PreviousTarget = this;
 					pacman->DownCorner = DownCorner;
@@ -244,7 +240,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 				}
 				else
 				{
-					if(LeftCorner != nullptr && LeftCorner != pacman->PreviousTarget)
+					if (LeftCorner != nullptr && LeftCorner != pacman->PreviousTarget)
 					{
 						pacman->PreviousTarget = this;
 						pacman->LeftCorner = LeftCorner;
@@ -253,7 +249,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 					}
 					else
 					{
-						if(RightCorner != nullptr && RightCorner != pacman->PreviousTarget)
+						if (RightCorner != nullptr && RightCorner != pacman->PreviousTarget)
 						{
 							pacman->PreviousTarget = this;
 							pacman->RightCorner = RightCorner;
@@ -273,9 +269,9 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 			pacman->LeftCorner = LeftCorner;
 			pacman->RightCorner = RightCorner;
 		}
-		
-		
+
+
 	}
-	
+
 }
 
