@@ -39,12 +39,7 @@ void ARedGhostPawn::Tick(float DeltaTime)
     // TODO : voir si ca fait pas bug
    // float distance = (this->GetActorLocation() - targetLocation).Size();
    // if (distance < 0.5) {
-    if(!onScatterMode)
-    {
-        targetLocation = PacManReference->GetActorLocation();
-    }
 
-    GhostAI->MoveToLocation(targetLocation,0, false);
 
      //   targetLocation = coinsScatter[0]->GetActorLocation();
         //GhostAI->MoveToLocation(targetLocation);
