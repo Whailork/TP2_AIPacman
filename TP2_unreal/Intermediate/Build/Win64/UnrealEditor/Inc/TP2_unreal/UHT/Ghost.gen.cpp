@@ -65,12 +65,60 @@ DEFINE_FUNCTION(AGhost::execOnCatchOverlapBegin)
 }
 // End Class AGhost Function OnCatchOverlapBegin
 
+// Begin Class AGhost Function SetOnScatterMode
+struct Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics
+{
+	struct Ghost_eventSetOnScatterMode_Parms
+	{
+		bool isOnScatterMode;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp_isOnScatterMode_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_isOnScatterMode;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::NewProp_isOnScatterMode_SetBit(void* Obj)
+{
+	((Ghost_eventSetOnScatterMode_Parms*)Obj)->isOnScatterMode = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::NewProp_isOnScatterMode = { "isOnScatterMode", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Ghost_eventSetOnScatterMode_Parms), &Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::NewProp_isOnScatterMode_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::NewProp_isOnScatterMode,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGhost, nullptr, "SetOnScatterMode", nullptr, nullptr, Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::PropPointers), sizeof(Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::Ghost_eventSetOnScatterMode_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::Ghost_eventSetOnScatterMode_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AGhost_SetOnScatterMode()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AGhost_SetOnScatterMode_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AGhost::execSetOnScatterMode)
+{
+	P_GET_UBOOL(Z_Param_isOnScatterMode);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SetOnScatterMode(Z_Param_isOnScatterMode);
+	P_NATIVE_END;
+}
+// End Class AGhost Function SetOnScatterMode
+
 // Begin Class AGhost
 void AGhost::StaticRegisterNativesAGhost()
 {
 	UClass* Class = AGhost::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "OnCatchOverlapBegin", &AGhost::execOnCatchOverlapBegin },
+		{ "SetOnScatterMode", &AGhost::execSetOnScatterMode },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -96,6 +144,7 @@ struct Z_Construct_UClass_AGhost_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AGhost_OnCatchOverlapBegin, "OnCatchOverlapBegin" }, // 463316576
+		{ &Z_Construct_UFunction_AGhost_SetOnScatterMode, "SetOnScatterMode" }, // 4237152404
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -148,11 +197,11 @@ AGhost::~AGhost() {}
 struct Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AGhost, AGhost::StaticClass, TEXT("AGhost"), &Z_Registration_Info_UClass_AGhost, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGhost), 1115563957U) },
+		{ Z_Construct_UClass_AGhost, AGhost::StaticClass, TEXT("AGhost"), &Z_Registration_Info_UClass_AGhost, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGhost), 2225435529U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_1985896995(TEXT("/Script/TP2_unreal"),
-	Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_1194736043(TEXT("/Script/TP2_unreal"),
+	Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

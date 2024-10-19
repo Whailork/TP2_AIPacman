@@ -37,8 +37,5 @@ void ABlueGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 }
 
-void ABlueGhostPawn::SetOnScatterMode(bool isOnScatterMode)
-{
-	this->onScatterMode = isOnScatterMode;
-}
+
 

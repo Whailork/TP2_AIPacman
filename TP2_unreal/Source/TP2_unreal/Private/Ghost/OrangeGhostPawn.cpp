@@ -35,8 +35,3 @@ void AOrangeGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
-
-void AOrangeGhostPawn::SetOnScatterMode(bool isOnScatterMode)
-{
-	this->onScatterMode = isOnScatterMode;
-}
