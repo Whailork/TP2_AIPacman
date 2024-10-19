@@ -14,7 +14,6 @@ AIMODULE_API UClass* Z_Construct_UClass_AAIController();
 AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTreeComponent_NoRegister();
 TP2_UNREAL_API UClass* Z_Construct_UClass_ABaseAIController();
 TP2_UNREAL_API UClass* Z_Construct_UClass_ABaseAIController_NoRegister();
-TP2_UNREAL_API UClass* Z_Construct_UClass_APacMan_NoRegister();
 UPackage* Z_Construct_UPackage__Script_TP2_unreal();
 // End Cross Module References
 
@@ -39,16 +38,11 @@ struct Z_Construct_UClass_ABaseAIController_Statics
 		{ "ModuleRelativePath", "Public/AiController/BaseAIController.h" },
 		{ "ObjectInitializerConstructorDeclared", "" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PacManReferenceAI_MetaData[] = {
-		{ "Category", "PacManReferenceInAI" },
-		{ "ModuleRelativePath", "Public/AiController/BaseAIController.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BehaviorTreeComponent_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/AiController/BaseAIController.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_PacManReferenceAI;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_BehaviorTreeComponent;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
@@ -57,10 +51,8 @@ struct Z_Construct_UClass_ABaseAIController_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABaseAIController_Statics::NewProp_PacManReferenceAI = { "PacManReferenceAI", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABaseAIController, PacManReferenceAI), Z_Construct_UClass_APacMan_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PacManReferenceAI_MetaData), NewProp_PacManReferenceAI_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABaseAIController_Statics::NewProp_BehaviorTreeComponent = { "BehaviorTreeComponent", nullptr, (EPropertyFlags)0x0010000000082008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABaseAIController, BehaviorTreeComponent), Z_Construct_UClass_UBehaviorTreeComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BehaviorTreeComponent_MetaData), NewProp_BehaviorTreeComponent_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABaseAIController_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseAIController_Statics::NewProp_PacManReferenceAI,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseAIController_Statics::NewProp_BehaviorTreeComponent,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABaseAIController_Statics::PropPointers) < 2048);
@@ -101,14 +93,14 @@ ABaseAIController::~ABaseAIController() {}
 // End Class ABaseAIController
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_Statics
+struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABaseAIController, ABaseAIController::StaticClass, TEXT("ABaseAIController"), &Z_Registration_Info_UClass_ABaseAIController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseAIController), 531201289U) },
+		{ Z_Construct_UClass_ABaseAIController, ABaseAIController::StaticClass, TEXT("ABaseAIController"), &Z_Registration_Info_UClass_ABaseAIController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseAIController), 2479222971U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_3041791052(TEXT("/Script/TP2_unreal"),
-	Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_3970101556(TEXT("/Script/TP2_unreal"),
+	Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
