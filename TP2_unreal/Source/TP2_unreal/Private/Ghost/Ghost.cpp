@@ -77,6 +77,8 @@ void AGhost::SetOnScatterMode(bool isOnScatterMode)
 
 
 /*
+* FLEE = RANDOM 6secondes -> 8secondes
+* 
 Ghosts Behaviour
 
 Blinky (ROUGE)
