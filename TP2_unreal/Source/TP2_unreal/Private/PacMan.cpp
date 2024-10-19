@@ -106,9 +106,9 @@ void APacMan::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
 {
 	if(auto ghost = Cast<AGhost>(OtherActor))
 	{
-		if(ghost->inFleeMode && !ghost->isDead)
+		if(ghost->inFleeMode && !ghost->isDeadMode)
 		{
-			ghost->isDead;
+			ghost->isDeadMode;
 			score+= 200*pow(2,ghostEatStreak);
 			ghostEatStreak++;
 		}

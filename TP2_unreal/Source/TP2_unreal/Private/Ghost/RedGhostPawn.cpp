@@ -5,8 +5,6 @@
 #include "PacMan.h"
 #include <AiController/BaseAIController.h>
 #include <Kismet/GameplayStatics.h>
-#include "GameFramework/FloatingPawnMovement.h"
-#include "GameFramework/MovementComponent.h"
 
 // Sets default values
 ARedGhostPawn::ARedGhostPawn()
@@ -20,6 +18,8 @@ ARedGhostPawn::ARedGhostPawn()
 void ARedGhostPawn::BeginPlay()
 {
     Super::BeginPlay();
+
+    InFleeMode();
 
     // TODO: appeler au bon endroit
     //SetOnScatterMode(true);
@@ -42,8 +42,8 @@ void ARedGhostPawn::Tick(float DeltaTime)
     if(!onScatterMode)
     {
         targetLocation = PacManReference->GetActorLocation();
-        
     }
+
     GhostAI->MoveToLocation(targetLocation,0, false);
 
      //   targetLocation = coinsScatter[0]->GetActorLocation();
@@ -63,6 +63,9 @@ void ARedGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 void ARedGhostPawn::OnChaseMode()
 {
     SetOnScatterMode(false);
+    SetOnFleeMode(false);
+    SetIsDead(false);
+    SetOnChaseMode(true);
 
     //targetLocation
     targetLocation = PacManReference->GetActorLocation();
@@ -76,7 +79,10 @@ void ARedGhostPawn::OnScatterMode()
     GhostAI->MoveToLocation(targetLocation,0, false);
 }
 
-void ARedGhostPawn::OnFrightenedMode()
+void ARedGhostPawn::InFleeMode()
 {
-    // TODO : when overlap un coin, choisi un coin randome SAUF celui d'où je viens
+    setModes(false, true, false, false);
+
+    targetLocation = coinsScatter[0]->GetActorLocation();
+    GhostAI->MoveToLocation(targetLocation, 0, false);
 }
