@@ -106,17 +106,17 @@ void AGhost::SetIsDead(bool isDead)
 }
 
 void AGhost::setModes(bool isOnScatterMode, bool isInFleeMode, bool isInChaseMode, bool isDead) {
-void AGhost::setFleeMode(bool value)
-{
-    inFleeMode = value;
-   //GhostAI->GetBlackboardComponent()->SetValueAsBool("inFleeMode",value);
-    //set la valeur dans le blackboard
-}
 
     SetOnScatterMode(isOnScatterMode);
     SetOnFleeMode(isInFleeMode);
     SetOnChaseMode(isInChaseMode);
     SetIsDead(isDead);
+}
+void AGhost::setFleeMode(bool value)
+{
+    inFleeMode = value;
+    //GhostAI->GetBlackboardComponent()->SetValueAsBool("inFleeMode",value);
+    //set la valeur dans le blackboard
 }
 
 bool AGhost::getFleeMode()
