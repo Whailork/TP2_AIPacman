@@ -70,7 +70,6 @@ void ARedGhostPawn::OnChaseMode()
 
 void ARedGhostPawn::InFleeMode()
 {
-    setModes(false, true, false, false);
 
     targetLocation = coinsScatter[0]->GetActorLocation();
     GhostAI->MoveToLocation(targetLocation, 0, false);
