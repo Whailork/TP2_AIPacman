@@ -63,6 +63,7 @@ void ARedGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 void ARedGhostPawn::OnChaseMode()
 {
     SetOnScatterMode(false);
+
     //targetLocation
     targetLocation = PacManReference->GetActorLocation();
     GhostAI->MoveToLocation(targetLocation,0, false);
@@ -73,4 +74,9 @@ void ARedGhostPawn::OnScatterMode()
     SetOnScatterMode(true);
     targetLocation = coinsScatter[0]->GetActorLocation();
     GhostAI->MoveToLocation(targetLocation,0, false);
+}
+
+void ARedGhostPawn::OnFrightenedMode()
+{
+    // TODO : when overlap un coin, choisi un coin randome SAUF celui d'où je viens
 }

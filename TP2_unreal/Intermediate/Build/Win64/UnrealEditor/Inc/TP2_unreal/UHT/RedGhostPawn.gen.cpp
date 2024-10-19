@@ -10,7 +10,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeRedGhostPawn() {}
 
 // Begin Cross Module References
-AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
 TP2_UNREAL_API UClass* Z_Construct_UClass_AGhost();
 TP2_UNREAL_API UClass* Z_Construct_UClass_ARedGhostPawn();
 TP2_UNREAL_API UClass* Z_Construct_UClass_ARedGhostPawn_NoRegister();
@@ -45,6 +44,35 @@ DEFINE_FUNCTION(ARedGhostPawn::execOnChaseMode)
 	P_NATIVE_END;
 }
 // End Class ARedGhostPawn Function OnChaseMode
+
+// Begin Class ARedGhostPawn Function OnFrightenedMode
+struct Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Ghost/RedGhostPawn.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ARedGhostPawn, nullptr, "OnFrightenedMode", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ARedGhostPawn::execOnFrightenedMode)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnFrightenedMode();
+	P_NATIVE_END;
+}
+// End Class ARedGhostPawn Function OnFrightenedMode
 
 // Begin Class ARedGhostPawn Function OnScatterMode
 struct Z_Construct_UFunction_ARedGhostPawn_OnScatterMode_Statics
@@ -81,6 +109,7 @@ void ARedGhostPawn::StaticRegisterNativesARedGhostPawn()
 	UClass* Class = ARedGhostPawn::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "OnChaseMode", &ARedGhostPawn::execOnChaseMode },
+		{ "OnFrightenedMode", &ARedGhostPawn::execOnFrightenedMode },
 		{ "OnScatterMode", &ARedGhostPawn::execOnScatterMode },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -98,16 +127,11 @@ struct Z_Construct_UClass_ARedGhostPawn_Statics
 		{ "IncludePath", "Ghost/RedGhostPawn.h" },
 		{ "ModuleRelativePath", "Public/Ghost/RedGhostPawn.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TreeAsset_MetaData[] = {
-		{ "Category", "AI" },
-		{ "ModuleRelativePath", "Public/Ghost/RedGhostPawn.h" },
-	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_TreeAsset;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ARedGhostPawn_OnChaseMode, "OnChaseMode" }, // 3007482793
+		{ &Z_Construct_UFunction_ARedGhostPawn_OnFrightenedMode, "OnFrightenedMode" }, // 2345967271
 		{ &Z_Construct_UFunction_ARedGhostPawn_OnScatterMode, "OnScatterMode" }, // 3345816101
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -116,11 +140,6 @@ struct Z_Construct_UClass_ARedGhostPawn_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARedGhostPawn_Statics::NewProp_TreeAsset = { "TreeAsset", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARedGhostPawn, TreeAsset), Z_Construct_UClass_UBehaviorTree_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TreeAsset_MetaData), NewProp_TreeAsset_MetaData) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ARedGhostPawn_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARedGhostPawn_Statics::NewProp_TreeAsset,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ARedGhostPawn_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ARedGhostPawn_Statics::DependentSingletons[])() = {
 	(UObject* (*)())Z_Construct_UClass_AGhost,
 	(UObject* (*)())Z_Construct_UPackage__Script_TP2_unreal,
@@ -132,11 +151,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_ARedGhostPawn_Statics::
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
 	FuncInfo,
-	Z_Construct_UClass_ARedGhostPawn_Statics::PropPointers,
+	nullptr,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
 	UE_ARRAY_COUNT(FuncInfo),
-	UE_ARRAY_COUNT(Z_Construct_UClass_ARedGhostPawn_Statics::PropPointers),
+	0,
 	0,
 	0x009000A4u,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ARedGhostPawn_Statics::Class_MetaDataParams), Z_Construct_UClass_ARedGhostPawn_Statics::Class_MetaDataParams)

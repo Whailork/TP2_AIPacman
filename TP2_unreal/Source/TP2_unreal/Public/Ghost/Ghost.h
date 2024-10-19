@@ -13,6 +13,10 @@ class TP2_UNREAL_API AGhost : public AEntityCharacter
 	GENERATED_BODY()
 
 public:
+
+	UPROPERTY(EditAnywhere, Category = "AI")
+	class UBehaviorTree* TreeAsset;
+
 	FVector targetLocation;
 
 public:

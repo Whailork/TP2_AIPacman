@@ -82,6 +82,8 @@ bool AGhost::getIsDead()
 
 
 /*
+* FLEE = RANDOM 6secondes -> 8secondes
+* 
 Ghosts Behaviour
 
 Blinky (ROUGE)
