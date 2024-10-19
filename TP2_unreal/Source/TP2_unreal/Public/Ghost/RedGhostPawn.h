@@ -17,8 +17,6 @@ public:
 	UPROPERTY(EditAnywhere, Category = "AI")
 	class UBehaviorTree* TreeAsset;
 
-	
-
 public:
 	bool onScatterMode;
 

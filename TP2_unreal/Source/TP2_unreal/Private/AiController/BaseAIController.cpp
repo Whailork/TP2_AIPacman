@@ -32,9 +32,10 @@ void ABaseAIController::OnPossess(APawn* InPawn)
 
 			// Run the BT
 			BehaviorTreeComponent->StartTree(*AICharactere->TreeAsset);
-			
-			AICharactere->SetPacmanReference();
 
+			/*
+			AICharactere->SetPacmanReference();
+			
 			// RENTRE
 			if (AICharactere->PacManReference) {
 				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Coucou1"));
@@ -60,6 +61,7 @@ void ABaseAIController::OnPossess(APawn* InPawn)
 
 				FVector position = BehaviorTreeComponent->GetBlackboardComponent()->GetValueAsVector("TargetLocation");
 			}
+			*/
 		}
 	}
 }
