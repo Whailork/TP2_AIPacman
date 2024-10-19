@@ -73,7 +73,7 @@ void AGhost::OnScatterMode()
     SetOnScatterMode(true);
 
     //targetLocation
-    targetLocation = PacManReference->GetActorLocation();
+    targetLocation = coinsScatter[0]->GetActorLocation();
     GhostAI->MoveToLocation(targetLocation,0, false);
 
 
