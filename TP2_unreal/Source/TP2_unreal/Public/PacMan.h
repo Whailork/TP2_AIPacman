@@ -33,7 +33,7 @@ public:
 	int nbEaten;
 	UPROPERTY()
 	int score;
-	
+	bool inFleeMode;
 	UPROPERTY(EditAnywhere, Category = Corner)
 	ACornerActor* UpCorner;
 	UPROPERTY(EditAnywhere, Category = Corner)
@@ -47,6 +47,8 @@ public:
 	UPROPERTY()
 	ACornerActor* PreviousTarget;
 	bool isMoving;
+	UFUNCTION(BlueprintCallable)
+	void stopInFleeMode();
 	// Sets default values for this pawn's properties
 	APacMan();
 
@@ -68,8 +70,7 @@ public:
 	void MoveRight();
 
 private:
-	void Move(FVector Location);
-	FVector Seek(FVector Target);
+	int ghostEatStreak;
 	UPROPERTY(EditDefaultsOnly, Category= Input)
 	class UInputMappingContext* DefaultMappingContext;
 	UPROPERTY(EditDefaultsOnly, Category= Input)
@@ -80,5 +81,7 @@ private:
 	class UInputAction* LeftAction;
 	UPROPERTY(EditDefaultsOnly, Category= Input)
 	class UInputAction* RightAction;
+	UFUNCTION()
+	void OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor);
 
 };

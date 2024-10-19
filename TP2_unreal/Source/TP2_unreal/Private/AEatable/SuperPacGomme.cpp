@@ -4,6 +4,7 @@
 #include "AEatable/SuperPacGomme.h"
 
 #include "PacMan.h"
+#include "Ghost/Ghost.h"
 
 ASuperPacGomme::ASuperPacGomme()
 {
@@ -14,10 +15,18 @@ void ASuperPacGomme::OnEat(AActor* OtherActor)
 	if (auto pacman = Cast<APacMan>(OtherActor))
 	{
 		pacman->OnEat(scoreValue,true);
-		/*for ()
+		pacman->inFleeMode = true;
+		for (auto actor : GetLevel()->Actors)
 		{
+			if(auto ghost = Cast<AGhost>(actor))
+			{
+				ghost->inFleeMode = true;
+			}
 			
-		}*/
+		}
+		
+			
+		
 		//TODO : set ghosts to flee mode
 	}
 }

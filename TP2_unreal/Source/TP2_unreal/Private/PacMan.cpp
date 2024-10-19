@@ -7,6 +7,13 @@
 #include "Components/BoxComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/FloatingPawnMovement.h"
+#include "Ghost/Ghost.h"
+
+void APacMan::stopInFleeMode()
+{
+	ghostEatStreak = 0;
+	inFleeMode = false;
+}
 
 // Sets default values
 APacMan::APacMan()
@@ -31,9 +38,12 @@ APacMan::APacMan()
 // Called when the game starts or when spawned
 void APacMan::BeginPlay()
 {
+	ghostEatStreak = 0;
 	nbEaten = 0;
 	score = 0;
 	Super::BeginPlay();
+
+	this->OnActorBeginOverlap.AddDynamic(this, &APacMan::OnCatchOverlapBegin);
 	
 	if (AAIController* aiController = Cast<AAIController>(Controller))
 	{
@@ -91,32 +101,22 @@ void APacMan::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	}*/
 }
 
-void APacMan::Move(FVector Location)
+
+void APacMan::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
 {
-	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Location.ToString());
-	//SetActorLocation(CurrentTarget->GetActorLocation());
-	MovementComponent->AddInputVector(Location);
-	//AddMovementInput(Location,5000000,true);
-	//bool test = MovementComponent->IsMoveInputIgnored();
-}
-
-FVector APacMan::Seek(FVector Target)
-{
-
-	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Target.ToString());
-	
-	FVector DesiredVelocity = Target - GetActorLocation();
-	DesiredVelocity.Z = 0;
-	
-	DesiredVelocity.Normalize();
-	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, DesiredVelocity.ToString());
-	DesiredVelocity *= MovementComponent->GetMaxSpeed();
-	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, DesiredVelocity.ToString());
-
-	FVector Steering = DesiredVelocity - MovementComponent->Velocity;
-	Steering = Steering.GetClampedToMaxSize(MovementComponent->GetMaxSpeed());
-
-	return Steering;
+	if(auto ghost = Cast<AGhost>(OtherActor))
+	{
+		if(ghost->inFleeMode && !ghost->isDead)
+		{
+			ghost->isDead;
+			score+= 200*pow(2,ghostEatStreak);
+			ghostEatStreak++;
+		}
+		else
+		{
+			//pacman loses life
+		}
+	}
 }
 
 void APacMan::MoveUp()

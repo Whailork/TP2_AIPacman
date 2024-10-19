@@ -49,7 +49,7 @@ void AGhost::Tick(float DeltaTime)
 void AGhost::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
 {
     // Si je collisione avec un coin
-    if (OtherActor && OtherActor->IsA(ACornerActor::StaticClass()))
+/*    if (OtherActor && OtherActor->IsA(ACornerActor::StaticClass()))
     {
         // TODO : trouve ou est pacman et va vers lui
         //GhostAI->MoveToLocation(PacManReference->GetActorLocation());
@@ -61,7 +61,7 @@ void AGhost::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
         //
 
         //
-    }
+    }*/
 }
 
 // Called to bind functionality to input
