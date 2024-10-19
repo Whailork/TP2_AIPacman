@@ -34,7 +34,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	
-	void OnChaseMode();
+	void OnChaseMode() override;
 
 	UFUNCTION(BlueprintCallable)
 	void InFleeMode();
