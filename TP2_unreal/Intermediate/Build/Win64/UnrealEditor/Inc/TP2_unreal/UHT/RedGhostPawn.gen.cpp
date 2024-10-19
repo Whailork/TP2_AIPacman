@@ -74,35 +74,6 @@ DEFINE_FUNCTION(ARedGhostPawn::execOnChaseMode)
 }
 // End Class ARedGhostPawn Function OnChaseMode
 
-// Begin Class ARedGhostPawn Function OnScatterMode
-struct Z_Construct_UFunction_ARedGhostPawn_OnScatterMode_Statics
-{
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/Ghost/RedGhostPawn.h" },
-	};
-#endif // WITH_METADATA
-	static const UECodeGen_Private::FFunctionParams FuncParams;
-};
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ARedGhostPawn_OnScatterMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ARedGhostPawn, nullptr, "OnScatterMode", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ARedGhostPawn_OnScatterMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_ARedGhostPawn_OnScatterMode_Statics::Function_MetaDataParams) };
-UFunction* Z_Construct_UFunction_ARedGhostPawn_OnScatterMode()
-{
-	static UFunction* ReturnFunction = nullptr;
-	if (!ReturnFunction)
-	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ARedGhostPawn_OnScatterMode_Statics::FuncParams);
-	}
-	return ReturnFunction;
-}
-DEFINE_FUNCTION(ARedGhostPawn::execOnScatterMode)
-{
-	P_FINISH;
-	P_NATIVE_BEGIN;
-	P_THIS->OnScatterMode();
-	P_NATIVE_END;
-}
-// End Class ARedGhostPawn Function OnScatterMode
-
 // Begin Class ARedGhostPawn
 void ARedGhostPawn::StaticRegisterNativesARedGhostPawn()
 {
@@ -177,7 +148,7 @@ ARedGhostPawn::~ARedGhostPawn() {}
 // End Class ARedGhostPawn
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_Statics
+struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_ARedGhostPawn, ARedGhostPawn::StaticClass, TEXT("ARedGhostPawn"), &Z_Registration_Info_UClass_ARedGhostPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARedGhostPawn), 2834739545U) },

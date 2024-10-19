@@ -10,61 +10,117 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeGhost() {}
 
 // Begin Cross Module References
-AIMODULE_API UClass* Z_Construct_UClass_AAIController_NoRegister();
 AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
-ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+TP2_UNREAL_API UClass* Z_Construct_UClass_ABaseAIController_NoRegister();
 TP2_UNREAL_API UClass* Z_Construct_UClass_AEntityCharacter();
 TP2_UNREAL_API UClass* Z_Construct_UClass_AGhost();
 TP2_UNREAL_API UClass* Z_Construct_UClass_AGhost_NoRegister();
 UPackage* Z_Construct_UPackage__Script_TP2_unreal();
 // End Cross Module References
 
-// Begin Class AGhost Function OnCatchOverlapBegin
-struct Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics
+// Begin Class AGhost Function OnChaseMode
+struct Z_Construct_UFunction_AGhost_OnChaseMode_Statics
 {
-	struct Ghost_eventOnCatchOverlapBegin_Parms
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AGhost_OnChaseMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGhost, nullptr, "OnChaseMode", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_OnChaseMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_AGhost_OnChaseMode_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AGhost_OnChaseMode()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
 	{
-		AActor* MyActor;
-		AActor* OtherActor;
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AGhost_OnChaseMode_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AGhost::execOnChaseMode)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnChaseMode();
+	P_NATIVE_END;
+}
+// End Class AGhost Function OnChaseMode
+
+// Begin Class AGhost Function OnFleeMode
+struct Z_Construct_UFunction_AGhost_OnFleeMode_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AGhost_OnFleeMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGhost, nullptr, "OnFleeMode", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_OnFleeMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_AGhost_OnFleeMode_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AGhost_OnFleeMode()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AGhost_OnFleeMode_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AGhost::execOnFleeMode)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnFleeMode();
+	P_NATIVE_END;
+}
+// End Class AGhost Function OnFleeMode
+
+// Begin Class AGhost Function OnScatterMode
+struct Z_Construct_UFunction_AGhost_OnScatterMode_Statics
+{
+	struct Ghost_eventOnScatterMode_Parms
+	{
+		bool ReturnValue;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_MyActor;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_OtherActor;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::NewProp_MyActor = { "MyActor", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Ghost_eventOnCatchOverlapBegin_Parms, MyActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::NewProp_OtherActor = { "OtherActor", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Ghost_eventOnCatchOverlapBegin_Parms, OtherActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::NewProp_MyActor,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::NewProp_OtherActor,
+void Z_Construct_UFunction_AGhost_OnScatterMode_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((Ghost_eventOnScatterMode_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AGhost_OnScatterMode_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Ghost_eventOnScatterMode_Parms), &Z_Construct_UFunction_AGhost_OnScatterMode_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGhost_OnScatterMode_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGhost_OnScatterMode_Statics::NewProp_ReturnValue,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGhost, nullptr, "OnCatchOverlapBegin", nullptr, nullptr, Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::PropPointers), sizeof(Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::Ghost_eventOnCatchOverlapBegin_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::Function_MetaDataParams), Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::Ghost_eventOnCatchOverlapBegin_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_AGhost_OnCatchOverlapBegin()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_OnScatterMode_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AGhost_OnScatterMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGhost, nullptr, "OnScatterMode", nullptr, nullptr, Z_Construct_UFunction_AGhost_OnScatterMode_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_OnScatterMode_Statics::PropPointers), sizeof(Z_Construct_UFunction_AGhost_OnScatterMode_Statics::Ghost_eventOnScatterMode_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_OnScatterMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_AGhost_OnScatterMode_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AGhost_OnScatterMode_Statics::Ghost_eventOnScatterMode_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AGhost_OnScatterMode()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AGhost_OnCatchOverlapBegin_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AGhost_OnScatterMode_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-DEFINE_FUNCTION(AGhost::execOnCatchOverlapBegin)
+DEFINE_FUNCTION(AGhost::execOnScatterMode)
 {
-	P_GET_OBJECT(AActor,Z_Param_MyActor);
-	P_GET_OBJECT(AActor,Z_Param_OtherActor);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->OnCatchOverlapBegin(Z_Param_MyActor,Z_Param_OtherActor);
+	*(bool*)Z_Param__Result=P_THIS->OnScatterMode();
 	P_NATIVE_END;
 }
-// End Class AGhost Function OnCatchOverlapBegin
+// End Class AGhost Function OnScatterMode
 
 // Begin Class AGhost Function SetIsDead
 struct Z_Construct_UFunction_AGhost_SetIsDead_Statics
@@ -385,7 +441,7 @@ struct Z_Construct_UClass_AGhost_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGhost_Statics::NewProp_TreeAsset = { "TreeAsset", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AGhost, TreeAsset), Z_Construct_UClass_UBehaviorTree_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TreeAsset_MetaData), NewProp_TreeAsset_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGhost_Statics::NewProp_GhostAI = { "GhostAI", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AGhost, GhostAI), Z_Construct_UClass_AAIController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GhostAI_MetaData), NewProp_GhostAI_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGhost_Statics::NewProp_GhostAI = { "GhostAI", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AGhost, GhostAI), Z_Construct_UClass_ABaseAIController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GhostAI_MetaData), NewProp_GhostAI_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGhost_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhost_Statics::NewProp_TreeAsset,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhost_Statics::NewProp_GhostAI,
@@ -428,7 +484,7 @@ AGhost::~AGhost() {}
 // End Class AGhost
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics
+struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_AGhost, AGhost::StaticClass, TEXT("AGhost"), &Z_Registration_Info_UClass_AGhost, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGhost), 1852501128U) },

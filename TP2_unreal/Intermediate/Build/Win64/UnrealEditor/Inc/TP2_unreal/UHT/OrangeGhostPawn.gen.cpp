@@ -77,7 +77,7 @@ AOrangeGhostPawn::~AOrangeGhostPawn() {}
 // End Class AOrangeGhostPawn
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_OrangeGhostPawn_h_Statics
+struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_OrangeGhostPawn_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_AOrangeGhostPawn, AOrangeGhostPawn::StaticClass, TEXT("AOrangeGhostPawn"), &Z_Registration_Info_UClass_AOrangeGhostPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AOrangeGhostPawn), 2149495159U) },
