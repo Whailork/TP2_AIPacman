@@ -51,6 +51,13 @@ MyBlackboard->GetValueAsBool(Key.SelectedKeyName);
 void AGhost::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
+
+    if(!onScatterMode)
+    {
+        targetLocation = PacManReference->GetActorLocation();
+    }
+
+    GhostAI->MoveToLocation(targetLocation,0, false);
 }
 
 
@@ -63,7 +70,7 @@ void AGhost::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AGhost::OnScatterMode()
 {
-    SetOnScatterMode(false);
+    SetOnScatterMode(true);
 
     //targetLocation
     targetLocation = PacManReference->GetActorLocation();
@@ -78,9 +85,6 @@ void AGhost::OnFleeMode()
     
 }
 
-void AGhost::OnChaseMode()
-{
-}
 
 void AGhost::SetOnScatterMode(bool isOnScatterMode)
 {

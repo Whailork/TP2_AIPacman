@@ -45,7 +45,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void OnFleeMode();
 	UFUNCTION(BlueprintCallable)
-	void OnChaseMode();
+	virtual void OnChaseMode();
 	UFUNCTION()
 	void SetOnScatterMode(bool isOnScatterMode);
 
