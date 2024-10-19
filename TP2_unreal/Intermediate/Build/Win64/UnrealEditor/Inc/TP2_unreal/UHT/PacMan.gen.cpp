@@ -68,12 +68,42 @@ DEFINE_FUNCTION(APacMan::execOnCatchOverlapBegin)
 }
 // End Class APacMan Function OnCatchOverlapBegin
 
+// Begin Class APacMan Function stopInFleeMode
+struct Z_Construct_UFunction_APacMan_stopInFleeMode_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/PacMan.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_APacMan_stopInFleeMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APacMan, nullptr, "stopInFleeMode", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_stopInFleeMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_APacMan_stopInFleeMode_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_APacMan_stopInFleeMode()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_APacMan_stopInFleeMode_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(APacMan::execstopInFleeMode)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->stopInFleeMode();
+	P_NATIVE_END;
+}
+// End Class APacMan Function stopInFleeMode
+
 // Begin Class APacMan
 void APacMan::StaticRegisterNativesAPacMan()
 {
 	UClass* Class = APacMan::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "OnCatchOverlapBegin", &APacMan::execOnCatchOverlapBegin },
+		{ "stopInFleeMode", &APacMan::execstopInFleeMode },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -166,6 +196,7 @@ struct Z_Construct_UClass_APacMan_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_APacMan_OnCatchOverlapBegin, "OnCatchOverlapBegin" }, // 2515277029
+		{ &Z_Construct_UFunction_APacMan_stopInFleeMode, "stopInFleeMode" }, // 892126044
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -244,10 +275,10 @@ APacMan::~APacMan() {}
 struct Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_APacMan, APacMan::StaticClass, TEXT("APacMan"), &Z_Registration_Info_UClass_APacMan, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APacMan), 202410600U) },
+		{ Z_Construct_UClass_APacMan, APacMan::StaticClass, TEXT("APacMan"), &Z_Registration_Info_UClass_APacMan, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APacMan), 539814943U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_416519083(TEXT("/Script/TP2_unreal"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_1445321056(TEXT("/Script/TP2_unreal"),
 	Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
