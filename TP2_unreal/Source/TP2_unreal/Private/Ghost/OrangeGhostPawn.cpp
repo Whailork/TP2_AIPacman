@@ -3,6 +3,9 @@
 
 #include "Ghost/OrangeGhostPawn.h"
 
+#include "NavigationSystem.h"
+#include "NavigationPath.h"
+
 // Sets default values
 AOrangeGhostPawn::AOrangeGhostPawn()
 {
@@ -36,9 +39,12 @@ void AOrangeGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
-// TODO : voir si ca marche et comment le mettre dans le behaviour tree
+// TODO : voir si ca marche
+
+// Si Clyde est a plus de 8 cases de Pac-Man, il se comporte comme Blinky (le fantome rouge) et cible directement la position actuelle de Pac-Man.
 void AOrangeGhostPawn::OnChaseMode()
 {
+
 	/*
 	SetOnScatterMode(false);
 	SetOnFleeMode(false);
