@@ -11,6 +11,7 @@ void EmptyLinkFunctionForGeneratedCodePacMan() {}
 
 // Begin Cross Module References
 AIMODULE_API UClass* Z_Construct_UClass_AAIController_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 TP2_UNREAL_API UClass* Z_Construct_UClass_ACornerActor_NoRegister();
@@ -20,9 +21,61 @@ TP2_UNREAL_API UClass* Z_Construct_UClass_APacMan_NoRegister();
 UPackage* Z_Construct_UPackage__Script_TP2_unreal();
 // End Cross Module References
 
+// Begin Class APacMan Function OnCatchOverlapBegin
+struct Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics
+{
+	struct PacMan_eventOnCatchOverlapBegin_Parms
+	{
+		AActor* MyActor;
+		AActor* OtherActor;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/PacMan.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MyActor;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_OtherActor;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::NewProp_MyActor = { "MyActor", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PacMan_eventOnCatchOverlapBegin_Parms, MyActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::NewProp_OtherActor = { "OtherActor", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PacMan_eventOnCatchOverlapBegin_Parms, OtherActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::NewProp_MyActor,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::NewProp_OtherActor,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APacMan, nullptr, "OnCatchOverlapBegin", nullptr, nullptr, Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::PropPointers), sizeof(Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::PacMan_eventOnCatchOverlapBegin_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::Function_MetaDataParams), Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::PacMan_eventOnCatchOverlapBegin_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_APacMan_OnCatchOverlapBegin()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(APacMan::execOnCatchOverlapBegin)
+{
+	P_GET_OBJECT(AActor,Z_Param_MyActor);
+	P_GET_OBJECT(AActor,Z_Param_OtherActor);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnCatchOverlapBegin(Z_Param_MyActor,Z_Param_OtherActor);
+	P_NATIVE_END;
+}
+// End Class APacMan Function OnCatchOverlapBegin
+
 // Begin Class APacMan
 void APacMan::StaticRegisterNativesAPacMan()
 {
+	UClass* Class = APacMan::StaticClass();
+	static const FNameNativePtrPair Funcs[] = {
+		{ "OnCatchOverlapBegin", &APacMan::execOnCatchOverlapBegin },
+	};
+	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
 IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(APacMan);
 UClass* Z_Construct_UClass_APacMan_NoRegister()
@@ -111,6 +164,10 @@ struct Z_Construct_UClass_APacMan_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_RightAction;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
+	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_APacMan_OnCatchOverlapBegin, "OnCatchOverlapBegin" }, // 2515277029
+	};
+	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APacMan>::IsAbstract,
 	};
@@ -157,11 +214,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_APacMan_Statics::ClassP
 	"Game",
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
-	nullptr,
+	FuncInfo,
 	Z_Construct_UClass_APacMan_Statics::PropPointers,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
-	0,
+	UE_ARRAY_COUNT(FuncInfo),
 	UE_ARRAY_COUNT(Z_Construct_UClass_APacMan_Statics::PropPointers),
 	0,
 	0x009000A4u,
@@ -187,7 +244,7 @@ APacMan::~APacMan() {}
 struct Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_APacMan, APacMan::StaticClass, TEXT("APacMan"), &Z_Registration_Info_UClass_APacMan, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APacMan), 2426282463U) },
+		{ Z_Construct_UClass_APacMan, APacMan::StaticClass, TEXT("APacMan"), &Z_Registration_Info_UClass_APacMan, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APacMan), 202410600U) },
 	};
 };
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_416519083(TEXT("/Script/TP2_unreal"),
