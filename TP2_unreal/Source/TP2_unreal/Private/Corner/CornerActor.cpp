@@ -85,7 +85,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 				ghost->targetLocation = ghost->coinsScatter[0]->GetActorLocation();
 			}
 		}
-		else if (ghost->inFleeMode) {
+		else if (ghost->getFleeMode()) {
 
 			if (NeighborsArray.Num() > 0)
 			{
@@ -97,7 +97,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 					int RandomIndex = FMath::RandRange(0, NeighborsArray.Num() - 1);
 					RandomCorner = NeighborsArray[RandomIndex];
 
-					// RandomCorner != null && RandomCorner != emplacement précédent
+					// RandomCorner != null && RandomCorner != emplacement prï¿½cï¿½dent
 					if (RandomCorner != nullptr &&
 						ghost->PacManReference->PreviousTarget != nullptr &&
 						ghost->PacManReference->PreviousTarget->GetActorLocation() != RandomCorner->GetActorLocation())
