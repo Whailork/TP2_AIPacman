@@ -4,7 +4,7 @@
 #include "Entity/EntityCharacter.h"
 #include "Corner/CornerActor.h"
 #include "AIController.h"
-#include "../../../../../../../../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h"
+
 
 
 
@@ -79,58 +79,58 @@ Pour simplifier le comportement de Blinky, tu peux diviser son comportement en d
 
 1. Chase Mode (Mode poursuite)
 Comportement : Blinky suit directement Pac-Man en ciblant sa position actuelle.
-Cible : Le carreau où se trouve Pac-Man.
-Vitesse : Sa vitesse peut être normale ou augmentée après un certain nombre de points collectés par Pac-Man (à définir selon ton niveau).
-Conditions de transition : Ce mode est activé presque tout le temps, sauf en début de niveau ou lorsque le mode Scatter est forcé.
+Cible : Le carreau oï¿½ se trouve Pac-Man.
+Vitesse : Sa vitesse peut ï¿½tre normale ou augmentï¿½e aprï¿½s un certain nombre de points collectï¿½s par Pac-Man (ï¿½ dï¿½finir selon ton niveau).
+Conditions de transition : Ce mode est activï¿½ presque tout le temps, sauf en dï¿½but de niveau ou lorsque le mode Scatter est forcï¿½.
 
 2. Scatter Mode (Mode dispersion)
-Comportement standard : Normalement, Blinky se dirige vers un coin fixe du labyrinthe, mais dans son cas particulier, il continue de poursuivre Pac-Man, même en mode Scatter (comme en mode Chase).
+Comportement standard : Normalement, Blinky se dirige vers un coin fixe du labyrinthe, mais dans son cas particulier, il continue de poursuivre Pac-Man, mï¿½me en mode Scatter (comme en mode Chase).
 Cible : Pac-Man, comme en mode Chase.
-Conditions de transition : Blinky change de direction à intervalles réguliers quand il passe du mode Chase au mode Scatter, mais il continue de suivre Pac-Man.
+Conditions de transition : Blinky change de direction ï¿½ intervalles rï¿½guliers quand il passe du mode Chase au mode Scatter, mais il continue de suivre Pac-Man.
 
-3. Cruise Elroy Mode (Mode accéléré)
-Déclenchement : Lorsque Pac-Man a mangé un certain nombre de points (à définir en fonction du niveau), Blinky accélère de 5 % et reste en mode Chase, même lorsqu’il devrait être en mode Scatter.
-Comportement : Même comportement que dans Chase mode, mais avec une vitesse augmentée.
+3. Cruise Elroy Mode (Mode accï¿½lï¿½rï¿½)
+Dï¿½clenchement : Lorsque Pac-Man a mangï¿½ un certain nombre de points (ï¿½ dï¿½finir en fonction du niveau), Blinky accï¿½lï¿½re de 5 % et reste en mode Chase, mï¿½me lorsquï¿½il devrait ï¿½tre en mode Scatter.
+Comportement : Mï¿½me comportement que dans Chase mode, mais avec une vitesse augmentï¿½e.
 
 *****************************************************************************************************************************************************************************************************************************************************************************
 
 Pinky (ROSE)
 Pour simplifier le comportement de Pinky, voici une version plus concise de sa logique de mouvement en mode "Chase" :
 
-Sortie de la maison des fantômes : Dès que le jeu commence, Pinky quitte immédiatement la maison des fantômes et commence à chasser Pac-Man.
-Cible principale : En mode "Chase", Pinky essaie de prédire où Pac-Man se dirigera. Il vise toujours une case située quatre cases devant Pac-Man dans la direction actuelle de ce dernier :
+Sortie de la maison des fantï¿½mes : Dï¿½s que le jeu commence, Pinky quitte immï¿½diatement la maison des fantï¿½mes et commence ï¿½ chasser Pac-Man.
+Cible principale : En mode "Chase", Pinky essaie de prï¿½dire oï¿½ Pac-Man se dirigera. Il vise toujours une case situï¿½e quatre cases devant Pac-Man dans la direction actuelle de ce dernier :
 
 *****************************************************************************************************************************************************************************************************************************************************************************
 
 Inky (BLEU)
-Pour simplifier le comportement d'Inky, conservant son caractère imprévisible.
+Pour simplifier le comportement d'Inky, conservant son caractï¿½re imprï¿½visible.
 
 1. Comportement de base :
-Inky commence dans la maison des fantômes et ne sort qu'après que Pac-Man a mangé 30 points.
+Inky commence dans la maison des fantï¿½mes et ne sort qu'aprï¿½s que Pac-Man a mangï¿½ 30 points.
 Ensuite, Inky alterne entre deux comportements simples :
-Chase (Poursuite) : Inky poursuit Pac-Man lorsque Blinky est proche de Pac-Man (par exemple, à moins de 5 tuiles).
-Random (Aléatoire) : Si Blinky est loin, Inky se déplace de manière aléatoire dans le labyrinthe.
+Chase (Poursuite) : Inky poursuit Pac-Man lorsque Blinky est proche de Pac-Man (par exemple, ï¿½ moins de 5 tuiles).
+Random (Alï¿½atoire) : Si Blinky est loin, Inky se dï¿½place de maniï¿½re alï¿½atoire dans le labyrinthe.
 
-2. Détermination de la cible d'Inky :
+2. Dï¿½termination de la cible d'Inky :
 Lorsque Inky est en mode "Poursuite" :
-Sélectionne une tuile 2 cases devant Pac-Man, selon sa direction (haut, bas, gauche, droite).
-Si Blinky est à moins de 5 tuiles de Pac-Man, Inky se dirige vers cette tuile.
-Lorsque Inky est en mode "Aléatoire" :
-Inky choisit une direction aléatoire parmi les directions possibles à chaque intersection.
+Sï¿½lectionne une tuile 2 cases devant Pac-Man, selon sa direction (haut, bas, gauche, droite).
+Si Blinky est ï¿½ moins de 5 tuiles de Pac-Man, Inky se dirige vers cette tuile.
+Lorsque Inky est en mode "Alï¿½atoire" :
+Inky choisit une direction alï¿½atoire parmi les directions possibles ï¿½ chaque intersection.
 
 *****************************************************************************************************************************************************************************************************************************************************************************
 
 Clyde (ORANGE)
-Le comportement de Clyde peut être simplifié en deux modes basés sur sa distance par rapport à Pac-Man :
+Le comportement de Clyde peut ï¿½tre simplifiï¿½ en deux modes basï¿½s sur sa distance par rapport ï¿½ Pac-Man :
 
 Mode Chasse (plus de 8 cases de Pac-Man) :
-Si Clyde est à plus de 8 cases de Pac-Man, il se comporte comme Blinky (le fantôme rouge) et cible directement la position actuelle de Pac-Man.
+Si Clyde est ï¿½ plus de 8 cases de Pac-Man, il se comporte comme Blinky (le fantï¿½me rouge) et cible directement la position actuelle de Pac-Man.
 
 Mode Fuite (moins de 8 cases de Pac-Man) :
-Si Clyde est à moins de 8 cases de Pac-Man, il change de direction et se dirige vers une position fixe dans le coin inférieur gauche du labyrinthe.
+Si Clyde est ï¿½ moins de 8 cases de Pac-Man, il change de direction et se dirige vers une position fixe dans le coin infï¿½rieur gauche du labyrinthe.
 
-Résumé du comportement :
-Clyde poursuit Pac-Man lorsqu'il est éloigné (plus de 8 cases). Lorsqu'il s'approche trop près (moins de 8 cases), il "change d'avis" et retourne vers son coin.
-Il alterne continuellement entre ces deux modes en fonction de la distance, ce qui donne l'impression qu'il hésite.
-En codant cela, tu peux utiliser une fonction qui calcule la distance entre Clyde et Pac-Man à chaque frame, et en fonction de cette distance, changer sa cible de Pac-Man à la position du coin inférieur gauche.
+Rï¿½sumï¿½ du comportement :
+Clyde poursuit Pac-Man lorsqu'il est ï¿½loignï¿½ (plus de 8 cases). Lorsqu'il s'approche trop prï¿½s (moins de 8 cases), il "change d'avis" et retourne vers son coin.
+Il alterne continuellement entre ces deux modes en fonction de la distance, ce qui donne l'impression qu'il hï¿½site.
+En codant cela, tu peux utiliser une fonction qui calcule la distance entre Clyde et Pac-Man ï¿½ chaque frame, et en fonction de cette distance, changer sa cible de Pac-Man ï¿½ la position du coin infï¿½rieur gauche.
 */

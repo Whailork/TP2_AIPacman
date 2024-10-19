@@ -36,14 +36,20 @@ void ARedGhostPawn::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    /* TODO : voir si ca fait pas bug
-    float distance = (this->GetActorLocation() - targetLocation).Size();
-    if (distance < 0.5) {
-
-        targetLocation = coinsScatter[0]->GetActorLocation();
-        GhostAI->MoveToLocation(targetLocation);
+    // TODO : voir si ca fait pas bug
+   // float distance = (this->GetActorLocation() - targetLocation).Size();
+   // if (distance < 0.5) {
+    if(!onScatterMode)
+    {
+        targetLocation = PacManReference->GetActorLocation();
+        
     }
-    */
+    GhostAI->MoveToLocation(targetLocation,0, false);
+
+     //   targetLocation = coinsScatter[0]->GetActorLocation();
+        //GhostAI->MoveToLocation(targetLocation);
+   // }
+    
 }
 
 // Called to bind functionality to input
@@ -62,6 +68,15 @@ void ARedGhostPawn::SetOnScatterMode(bool isOnScatterMode)
 void ARedGhostPawn::OnChaseMode()
 {
     SetOnScatterMode(false);
+    //targetLocation
+    targetLocation = PacManReference->GetActorLocation();
+    GhostAI->MoveToLocation(targetLocation,0, false);
+}
 
-    GhostAI->MoveToLocation(PacManReference->GetActorLocation());
+void ARedGhostPawn::OnScatterMode()
+{
+    SetOnScatterMode(true);
+    targetLocation = coinsScatter[0]->GetActorLocation();
+    GhostAI->MoveToLocation(targetLocation,0, false);
+    
 }

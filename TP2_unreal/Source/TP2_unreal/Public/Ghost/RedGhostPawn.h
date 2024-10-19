@@ -37,8 +37,10 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-public:
+	UFUNCTION()
 	void SetOnScatterMode(bool isOnScatterMode);
-
+	UFUNCTION(BlueprintCallable)
 	void OnChaseMode();
+	UFUNCTION(BlueprintCallable)
+	void OnScatterMode();
 };
