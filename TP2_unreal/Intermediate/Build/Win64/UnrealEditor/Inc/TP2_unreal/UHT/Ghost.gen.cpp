@@ -18,6 +18,98 @@ TP2_UNREAL_API UClass* Z_Construct_UClass_AGhost_NoRegister();
 UPackage* Z_Construct_UPackage__Script_TP2_unreal();
 // End Cross Module References
 
+// Begin Class AGhost Function getFleeMode
+struct Z_Construct_UFunction_AGhost_getFleeMode_Statics
+{
+	struct Ghost_eventgetFleeMode_Parms
+	{
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AGhost_getFleeMode_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((Ghost_eventgetFleeMode_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AGhost_getFleeMode_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Ghost_eventgetFleeMode_Parms), &Z_Construct_UFunction_AGhost_getFleeMode_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGhost_getFleeMode_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGhost_getFleeMode_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_getFleeMode_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AGhost_getFleeMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGhost, nullptr, "getFleeMode", nullptr, nullptr, Z_Construct_UFunction_AGhost_getFleeMode_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_getFleeMode_Statics::PropPointers), sizeof(Z_Construct_UFunction_AGhost_getFleeMode_Statics::Ghost_eventgetFleeMode_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_getFleeMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_AGhost_getFleeMode_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AGhost_getFleeMode_Statics::Ghost_eventgetFleeMode_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AGhost_getFleeMode()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AGhost_getFleeMode_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AGhost::execgetFleeMode)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->getFleeMode();
+	P_NATIVE_END;
+}
+// End Class AGhost Function getFleeMode
+
+// Begin Class AGhost Function getIsDead
+struct Z_Construct_UFunction_AGhost_getIsDead_Statics
+{
+	struct Ghost_eventgetIsDead_Parms
+	{
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AGhost_getIsDead_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((Ghost_eventgetIsDead_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AGhost_getIsDead_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Ghost_eventgetIsDead_Parms), &Z_Construct_UFunction_AGhost_getIsDead_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGhost_getIsDead_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGhost_getIsDead_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_getIsDead_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AGhost_getIsDead_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGhost, nullptr, "getIsDead", nullptr, nullptr, Z_Construct_UFunction_AGhost_getIsDead_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_getIsDead_Statics::PropPointers), sizeof(Z_Construct_UFunction_AGhost_getIsDead_Statics::Ghost_eventgetIsDead_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_getIsDead_Statics::Function_MetaDataParams), Z_Construct_UFunction_AGhost_getIsDead_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AGhost_getIsDead_Statics::Ghost_eventgetIsDead_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AGhost_getIsDead()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AGhost_getIsDead_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AGhost::execgetIsDead)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->getIsDead();
+	P_NATIVE_END;
+}
+// End Class AGhost Function getIsDead
+
 // Begin Class AGhost Function OnChaseMode
 struct Z_Construct_UFunction_AGhost_OnChaseMode_Statics
 {
@@ -79,31 +171,14 @@ DEFINE_FUNCTION(AGhost::execOnFleeMode)
 // Begin Class AGhost Function OnScatterMode
 struct Z_Construct_UFunction_AGhost_OnScatterMode_Statics
 {
-	struct Ghost_eventOnScatterMode_Parms
-	{
-		bool ReturnValue;
-	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
 	};
 #endif // WITH_METADATA
-	static void NewProp_ReturnValue_SetBit(void* Obj);
-	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-void Z_Construct_UFunction_AGhost_OnScatterMode_Statics::NewProp_ReturnValue_SetBit(void* Obj)
-{
-	((Ghost_eventOnScatterMode_Parms*)Obj)->ReturnValue = 1;
-}
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AGhost_OnScatterMode_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Ghost_eventOnScatterMode_Parms), &Z_Construct_UFunction_AGhost_OnScatterMode_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGhost_OnScatterMode_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGhost_OnScatterMode_Statics::NewProp_ReturnValue,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_OnScatterMode_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AGhost_OnScatterMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGhost, nullptr, "OnScatterMode", nullptr, nullptr, Z_Construct_UFunction_AGhost_OnScatterMode_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_OnScatterMode_Statics::PropPointers), sizeof(Z_Construct_UFunction_AGhost_OnScatterMode_Statics::Ghost_eventOnScatterMode_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_OnScatterMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_AGhost_OnScatterMode_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_AGhost_OnScatterMode_Statics::Ghost_eventOnScatterMode_Parms) < MAX_uint16);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AGhost_OnScatterMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGhost, nullptr, "OnScatterMode", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_OnScatterMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_AGhost_OnScatterMode_Statics::Function_MetaDataParams) };
 UFunction* Z_Construct_UFunction_AGhost_OnScatterMode()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -117,7 +192,7 @@ DEFINE_FUNCTION(AGhost::execOnScatterMode)
 {
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(bool*)Z_Param__Result=P_THIS->OnScatterMode();
+	P_THIS->OnScatterMode();
 	P_NATIVE_END;
 }
 // End Class AGhost Function OnScatterMode
@@ -392,6 +467,8 @@ void AGhost::StaticRegisterNativesAGhost()
 {
 	UClass* Class = AGhost::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "getFleeMode", &AGhost::execgetFleeMode },
+		{ "getIsDead", &AGhost::execgetIsDead },
 		{ "OnChaseMode", &AGhost::execOnChaseMode },
 		{ "OnFleeMode", &AGhost::execOnFleeMode },
 		{ "OnScatterMode", &AGhost::execOnScatterMode },
@@ -429,9 +506,11 @@ struct Z_Construct_UClass_AGhost_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AGhost_getFleeMode, "getFleeMode" }, // 2949245025
+		{ &Z_Construct_UFunction_AGhost_getIsDead, "getIsDead" }, // 2548617395
 		{ &Z_Construct_UFunction_AGhost_OnChaseMode, "OnChaseMode" }, // 3265030985
 		{ &Z_Construct_UFunction_AGhost_OnFleeMode, "OnFleeMode" }, // 1568879758
-		{ &Z_Construct_UFunction_AGhost_OnScatterMode, "OnScatterMode" }, // 3156733108
+		{ &Z_Construct_UFunction_AGhost_OnScatterMode, "OnScatterMode" }, // 2744307532
 		{ &Z_Construct_UFunction_AGhost_SetIsDead, "SetIsDead" }, // 2953266396
 		{ &Z_Construct_UFunction_AGhost_setModes, "setModes" }, // 797910520
 		{ &Z_Construct_UFunction_AGhost_SetOnChaseMode, "SetOnChaseMode" }, // 858916497
@@ -491,10 +570,10 @@ AGhost::~AGhost() {}
 struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AGhost, AGhost::StaticClass, TEXT("AGhost"), &Z_Registration_Info_UClass_AGhost, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGhost), 3743441821U) },
+		{ Z_Construct_UClass_AGhost, AGhost::StaticClass, TEXT("AGhost"), &Z_Registration_Info_UClass_AGhost, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGhost), 3003727165U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_1591346274(TEXT("/Script/TP2_unreal"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_19712158(TEXT("/Script/TP2_unreal"),
 	Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
