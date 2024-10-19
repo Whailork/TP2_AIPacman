@@ -19,7 +19,7 @@ void ARedGhostPawn::BeginPlay()
 {
     Super::BeginPlay();
 
-    InFleeMode();
+    //InFleeMode();
 
     // TODO: appeler au bon endroit
     //SetOnScatterMode(true);
