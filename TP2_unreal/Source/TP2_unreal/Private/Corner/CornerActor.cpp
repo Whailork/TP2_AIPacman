@@ -2,13 +2,10 @@
 
 
 #include <cmath>
-#include "Corner/CornerActor.h"
+
 #include "PacMan.h"
 #include "Ghost/Ghost.h"
-#include "ghost/RedGhostPawn.h"
-#include <Ghost/BlueGhostPawn.h>
-#include <Ghost/OrangeGhostPawn.h>
-#include <Ghost/PinkGhostPawn.h>
+#include "Corner/CornerActor.h"
 
 
 // Sets default values

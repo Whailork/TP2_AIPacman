@@ -61,21 +61,15 @@ void AGhost::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
     Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
-bool AGhost::OnScatterMode()
+void AGhost::OnScatterMode()
 {
-    if(!inFleeMode)
-    {
-        SetOnScatterMode(false);
+    SetOnScatterMode(false);
 
-        //targetLocation
-        targetLocation = PacManReference->GetActorLocation();
-        GhostAI->MoveToLocation(targetLocation,0, false);
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    //targetLocation
+    targetLocation = PacManReference->GetActorLocation();
+    GhostAI->MoveToLocation(targetLocation,0, false);
+
+
 
 }
 

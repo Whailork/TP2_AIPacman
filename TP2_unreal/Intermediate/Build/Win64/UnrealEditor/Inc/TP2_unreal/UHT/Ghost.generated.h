@@ -15,6 +15,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define TP2_UNREAL_Ghost_generated_h
 
 #define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execgetIsDead); \
+	DECLARE_FUNCTION(execgetFleeMode); \
 	DECLARE_FUNCTION(execsetModes); \
 	DECLARE_FUNCTION(execSetIsDead); \
 	DECLARE_FUNCTION(execSetOnChaseMode); \

@@ -41,7 +41,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	UFUNCTION(BlueprintCallable)
-	bool OnScatterMode();
+	void OnScatterMode();
 	UFUNCTION(BlueprintCallable)
 	void OnFleeMode();
 	UFUNCTION(BlueprintCallable)
@@ -62,8 +62,10 @@ public:
 	void setModes(bool isOnScatterMode, bool isInFleeMode, bool isInChaseMode, bool isDead);
 
 	void setFleeMode(bool value);
+	UFUNCTION(BlueprintCallable)
 	bool getFleeMode();
 	void setDeath(bool value);
+	UFUNCTION(BlueprintCallable)
 	bool getIsDead();
 
 	bool onScatterMode;
