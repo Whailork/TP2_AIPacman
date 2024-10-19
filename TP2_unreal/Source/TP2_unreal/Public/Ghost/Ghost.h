@@ -31,9 +31,11 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-public:
-
+	
+	UFUNCTION()
+	void SetOnScatterMode(bool isOnScatterMode);
+	bool onScatterMode;
+	bool inFleeMode;
 	UFUNCTION()
 	void OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor); // (UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 

@@ -70,6 +70,11 @@ void AGhost::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
     Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
+void AGhost::SetOnScatterMode(bool isOnScatterMode)
+{
+    this->onScatterMode = isOnScatterMode;
+}
+
 
 /*
 Ghosts Behaviour

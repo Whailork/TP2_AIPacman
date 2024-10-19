@@ -16,7 +16,8 @@ class AActor;
 #define TP2_UNREAL_Ghost_generated_h
 
 #define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execOnCatchOverlapBegin);
+	DECLARE_FUNCTION(execOnCatchOverlapBegin); \
+	DECLARE_FUNCTION(execSetOnScatterMode);
 
 
 #define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_INCLASS_NO_PURE_DECLS \

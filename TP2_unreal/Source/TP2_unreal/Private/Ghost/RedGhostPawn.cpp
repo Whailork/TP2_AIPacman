@@ -58,10 +58,6 @@ void ARedGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
     Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
-void ARedGhostPawn::SetOnScatterMode(bool isOnScatterMode)
-{
-    this->onScatterMode = isOnScatterMode;
-}
 
 
 // TODO : voir si ca marche et comment le mettre dans le behaviour tree

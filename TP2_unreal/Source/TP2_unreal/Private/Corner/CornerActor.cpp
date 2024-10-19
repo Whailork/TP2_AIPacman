@@ -3,11 +3,12 @@
 
 #include "Corner/CornerActor.h"
 #include "PacMan.h"
-#include "..\..\Public\Ghost\Ghost.h"
+#include "Ghost/Ghost.h"
 #include "ghost/RedGhostPawn.h"
 #include <Ghost/BlueGhostPawn.h>
 #include <Ghost/OrangeGhostPawn.h>
 #include <Ghost/PinkGhostPawn.h>
+
 
 // Sets default values
 ACornerActor::ACornerActor()
@@ -61,8 +62,36 @@ void ACornerActor::HandleScatterMode(AGhostCharacter* ghost, AActor* MyActor) {
 
 void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 {
+
+	if(auto ghost = Cast<AGhost>(OtherActor))
+	{
+		if(ghost->onScatterMode)
+		{
+			bool coinHorsScatter = true;
+
+			for (int x = 0; x < ghost->coinsScatter.Num(); x++) {
+
+				if (ghost->coinsScatter[x]->GetActorLocation() == MyActor->GetActorLocation()) {
+					coinHorsScatter = false;
+
+					int nextTarget = (x + 1) % ghost->coinsScatter.Num();
+					ghost->targetLocation = ghost->coinsScatter[nextTarget]->GetActorLocation();
+
+					break;
+				}
+			}
+			if (coinHorsScatter) {
+				ghost->targetLocation = ghost->coinsScatter[0]->GetActorLocation();
+			}
+		}
+		else
+		{
+			ghost->targetLocation = ghost->PacManReference->GetActorLocation();
+		}
+		ghost->GhostAI->MoveToLocation(ghost->targetLocation, 0, false);
+	}
 	
-	if (auto redGhost = Cast<ARedGhostPawn>(OtherActor)) {
+	/*if (auto redGhost = Cast<ARedGhostPawn>(OtherActor)) {
 		
 		if (redGhost->onScatterMode) {
 			
@@ -165,7 +194,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 		}
 
 		pinkGhost->GhostAI->MoveToLocation(pinkGhost->targetLocation, 0, false);
-	}
+	}*/
 	else if (auto pacman = Cast<APacMan>(OtherActor))
 	{
 		

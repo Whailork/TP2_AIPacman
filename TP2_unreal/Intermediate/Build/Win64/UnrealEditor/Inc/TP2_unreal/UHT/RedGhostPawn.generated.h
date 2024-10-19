@@ -16,8 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnScatterMode); \
-	DECLARE_FUNCTION(execOnChaseMode); \
-	DECLARE_FUNCTION(execSetOnScatterMode);
+	DECLARE_FUNCTION(execOnChaseMode);
 
 
 #define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_INCLASS_NO_PURE_DECLS \
