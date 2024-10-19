@@ -48,11 +48,29 @@ public:
 	void OnChaseMode();
 	UFUNCTION()
 	void SetOnScatterMode(bool isOnScatterMode);
-	bool onScatterMode;
+
+	UFUNCTION()
+	void SetOnFleeMode(bool isInFleeMode);
+
+	UFUNCTION()
+	void SetOnChaseMode(bool isInChaseMode);
+
+	UFUNCTION()
+	void SetIsDead(bool isDead);
+
+	UFUNCTION()
+	void setModes(bool isOnScatterMode, bool isInFleeMode, bool isInChaseMode, bool isDead);
 
 	void setFleeMode(bool value);
 	bool getFleeMode();
 	void setDeath(bool value);
 	bool getIsDead();
+
+	bool onScatterMode;
+	bool inChaseMode;
+	bool isDeadMode;
+
+	UFUNCTION()
+	void OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor); // (UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 	
 };

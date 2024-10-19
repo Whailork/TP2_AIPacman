@@ -14,11 +14,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TP2_UNREAL_Ghost_generated_h
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execSetOnScatterMode); \
-	DECLARE_FUNCTION(execOnChaseMode); \
-	DECLARE_FUNCTION(execOnFleeMode); \
-	DECLARE_FUNCTION(execOnScatterMode);
+#define FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnCatchOverlapBegin); \
+	DECLARE_FUNCTION(execsetModes); \
+	DECLARE_FUNCTION(execSetIsDead); \
+	DECLARE_FUNCTION(execSetOnChaseMode); \
+	DECLARE_FUNCTION(execSetOnFleeMode); \
+	DECLARE_FUNCTION(execSetOnScatterMode);
 
 
 #define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_15_INCLASS_NO_PURE_DECLS \

@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
+#include <cmath>
 #include "Corner/CornerActor.h"
 #include "PacMan.h"
 #include "Ghost/Ghost.h"
@@ -83,6 +84,34 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 			if (coinHorsScatter) {
 				ghost->targetLocation = ghost->coinsScatter[0]->GetActorLocation();
 			}
+		}
+		else if (ghost->inFleeMode) {
+
+			if (NeighborsArray.Num() > 0)
+			{
+				ACornerActor* RandomCorner = nullptr;
+				bool validTargetFound = false;
+
+				while (!validTargetFound)
+				{
+					int RandomIndex = FMath::RandRange(0, NeighborsArray.Num() - 1);
+					RandomCorner = NeighborsArray[RandomIndex];
+
+					// RandomCorner != null && RandomCorner != emplacement précédent
+					if (RandomCorner != nullptr &&
+						ghost->PacManReference->PreviousTarget != nullptr &&
+						ghost->PacManReference->PreviousTarget->GetActorLocation() != RandomCorner->GetActorLocation())
+					{
+						validTargetFound = true;
+					}
+				}
+
+				if (RandomCorner != nullptr)
+				{
+					ghost->targetLocation = RandomCorner->GetActorLocation();
+				}
+			}
+
 		}
 		else
 		{
@@ -206,7 +235,6 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 				pacman->PreviousTarget = this;
 				pacman->UpCorner = UpCorner;
 				pacman->MoveUp();
-
 			}
 			else
 			{

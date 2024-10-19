@@ -37,5 +37,5 @@ public:
 	void OnChaseMode();
 
 	UFUNCTION(BlueprintCallable)
-	void OnFrightenedMode();
+	void InFleeMode();
 };
