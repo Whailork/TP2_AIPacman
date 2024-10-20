@@ -4,9 +4,11 @@
 #include "Entity/EntityCharacter.h"
 #include "Corner/CornerActor.h"
 #include "AIController.h"
+#include "NiagaraComponent.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "PacMan.h"
+#include "Components/BoxComponent.h"
 
 
 // GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Ceci est un message!"));
@@ -17,6 +19,8 @@ AGhost::AGhost()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+    Particles = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Particles"));
+    Particles->SetupAttachment(BoxCollision);
 }
 
 // Called when the game starts or when spawned
@@ -56,6 +60,7 @@ void AGhost::Tick(float DeltaTime)
     {
         if(GetActorLocation().Equals(FVector(200,-50,52),1) )
         {
+            setFleeMode(false);
             GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("grow back"));
             setDeath(false);
         }
@@ -117,6 +122,18 @@ void AGhost::setFleeMode(bool value)
 {
     inFleeMode = value;
     PacManReference->ghostEatStreak = 0;
+    if(value)
+    {
+        Particles->Activate();
+        Particles->SetVisibility(true,false);
+        
+    }
+    else
+    {
+        GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("deactivate Particles"));
+        Particles->Deactivate();
+        Particles->SetVisibility(false,false);
+    }
     //GhostAI->GetBlackboardComponent()->SetValueAsBool("inFleeMode",value);
     //set la valeur dans le blackboard
 }
@@ -131,13 +148,14 @@ void AGhost::setDeath(bool value)
     isDead = value;
     if(value)
     {
+        
         GhostAI->MoveToLocation(FVector(200,-50,52),0, false);
         StaticMesh->SetWorldScale3D(FVector(0.3,0.3,0.3));
         
     }
     else
     {
-        GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("grow back"));
+       
         StaticMesh->SetWorldScale3D(FVector(1,1,1));
     }
    
