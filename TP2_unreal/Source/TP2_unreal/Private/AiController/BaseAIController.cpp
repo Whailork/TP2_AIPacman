@@ -9,6 +9,7 @@
 #include "BehaviorTree/BehaviorTreeComponent.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "BehaviorTree/BlackboardData.h"
 
 
 // Behavior tree
@@ -16,6 +17,7 @@ ABaseAIController::ABaseAIController(const FObjectInitializer& ObjectInitializer
 {
 	// Create BT Component
 	BehaviorTreeComponent = CreateDefaultSubobject<UBehaviorTreeComponent>(TEXT("BehaviorTree Component"));
+	BlackboardComponent = CreateDefaultSubobject<UBlackboardComponent>(TEXT("BlackBoard Component"));
 }
 
 // Behavior tree
@@ -30,6 +32,8 @@ void ABaseAIController::OnPossess(APawn* InPawn)
 		// Check if the assets has been selected in the editor
 		if (AICharactere->TreeAsset) {
 
+			BlackboardComponent->InitializeBlackboard(*AICharactere->TreeAsset->BlackboardAsset);
+			
 			// Run the BT
 			BehaviorTreeComponent->StartTree(*AICharactere->TreeAsset);
 
