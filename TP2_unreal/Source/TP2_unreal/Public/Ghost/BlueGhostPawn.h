@@ -29,5 +29,5 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	void OnChaseMode() override;
+	virtual void OnChaseMode() override;
 };

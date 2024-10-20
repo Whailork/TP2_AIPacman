@@ -57,9 +57,6 @@ void ARedGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 // TODO : voir si ca marche
 void ARedGhostPawn::OnChaseMode()
 {
-    SetOnScatterMode(false);
-    SetOnFleeMode(false);
-    SetIsDead(false);
     SetOnChaseMode(true);
 
     //targetLocation

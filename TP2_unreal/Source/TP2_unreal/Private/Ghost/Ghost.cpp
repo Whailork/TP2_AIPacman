@@ -93,10 +93,7 @@ void AGhost::SetOnScatterMode(bool isOnScatterMode)
 {
     this->onScatterMode = isOnScatterMode;
 }
-void AGhost::SetOnFleeMode(bool isInFleeMode)
-{
-    this->inFleeMode = isInFleeMode;
-}
+
 void AGhost::SetOnChaseMode(bool isInChaseMode)
 {
     this->inChaseMode = isInChaseMode;

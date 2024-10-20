@@ -48,9 +48,7 @@ public:
 	virtual void OnChaseMode();
 	UFUNCTION()
 	void SetOnScatterMode(bool isOnScatterMode);
-
-	UFUNCTION()
-	void SetOnFleeMode(bool isInFleeMode);
+	
 
 	UFUNCTION()
 	void SetOnChaseMode(bool isInChaseMode);

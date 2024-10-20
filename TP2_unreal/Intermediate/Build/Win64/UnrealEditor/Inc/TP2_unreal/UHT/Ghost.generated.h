@@ -19,7 +19,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execgetFleeMode); \
 	DECLARE_FUNCTION(execSetIsDead); \
 	DECLARE_FUNCTION(execSetOnChaseMode); \
-	DECLARE_FUNCTION(execSetOnFleeMode); \
 	DECLARE_FUNCTION(execSetOnScatterMode); \
 	DECLARE_FUNCTION(execOnChaseMode); \
 	DECLARE_FUNCTION(execOnFleeMode); \

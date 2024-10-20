@@ -80,10 +80,10 @@ AOrangeGhostPawn::~AOrangeGhostPawn() {}
 struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_OrangeGhostPawn_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AOrangeGhostPawn, AOrangeGhostPawn::StaticClass, TEXT("AOrangeGhostPawn"), &Z_Registration_Info_UClass_AOrangeGhostPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AOrangeGhostPawn), 294142588U) },
+		{ Z_Construct_UClass_AOrangeGhostPawn, AOrangeGhostPawn::StaticClass, TEXT("AOrangeGhostPawn"), &Z_Registration_Info_UClass_AOrangeGhostPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AOrangeGhostPawn), 807514695U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_OrangeGhostPawn_h_1798792637(TEXT("/Script/TP2_unreal"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_OrangeGhostPawn_h_3680447713(TEXT("/Script/TP2_unreal"),
 	Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_OrangeGhostPawn_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_OrangeGhostPawn_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
