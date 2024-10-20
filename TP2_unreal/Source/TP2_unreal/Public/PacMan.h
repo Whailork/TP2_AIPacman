@@ -32,10 +32,15 @@ public:
 	UPROPERTY()
 	int nbEaten;
 	int nbTotal;
+	int vie;
 	UFUNCTION(BlueprintCallable)
 	bool GameSucces();
+	UFUNCTION(BlueprintCallable)
+	int getVie();
 	UPROPERTY()
 	int score;
+	UFUNCTION(BlueprintCallable)
+	int getScore();
 	bool inFleeMode;
 	int ghostEatStreak;
 	UPROPERTY(EditAnywhere, Category = Corner)
