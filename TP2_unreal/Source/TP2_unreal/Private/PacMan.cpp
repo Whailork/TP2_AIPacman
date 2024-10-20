@@ -1,5 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "AI/NavigationSystemBase.h"
+#include "NavigationSystem.h"
+#include "NavMesh/RecastNavMesh.h"
 
 #include "PacMan.h"
 #include "EnhancedInputComponent.h"
@@ -41,7 +44,10 @@ void APacMan::BeginPlay()
 	ghostEatStreak = 0;
 	nbEaten = 0;
 	score = 0;
+
 	Super::BeginPlay();
+
+	AgentRadiusOfRecastNavMesh();	
 
 	this->OnActorBeginOverlap.AddDynamic(this, &APacMan::OnCatchOverlapBegin);
 	
@@ -61,7 +67,6 @@ void APacMan::BeginPlay()
 			Subsystem->AddMappingContext(DefaultMappingContext,0);
 		}
 	}*/
-	
 }
 
 // Called every frame
@@ -75,6 +80,23 @@ void APacMan::Tick(float DeltaTime)
 	}*/
 
 
+}
+
+void APacMan::AgentRadiusOfRecastNavMesh()
+{
+	// Obtenir le système de navigation
+	UNavigationSystemV1* NavSys = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
+
+	if (NavSys)
+	{
+		ARecastNavMesh* RecastNavMesh = Cast<ARecastNavMesh>(NavSys->GetDefaultNavDataInstance());
+
+		if (RecastNavMesh)
+		{
+			RecastNavMesh->AgentRadius = 76.0f;
+			NavSys->Build();
+		}
+	}
 }
 
 void APacMan::OnEat(int earnedScore, bool isPacGomme)
