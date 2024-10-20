@@ -25,6 +25,7 @@ AEntityCharacter::AEntityCharacter()
 	MovementComponent = CreateDefaultSubobject<UPawnMovementComponent, UFloatingPawnMovement>(TEXT("MovementComponent"));
 	MovementComponent->UpdatedComponent = BoxCollision;
 
+	
 }
 
 // Called when the game starts or when spawned
