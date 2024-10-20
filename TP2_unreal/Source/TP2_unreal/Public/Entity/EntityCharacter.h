@@ -22,6 +22,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* StaticMesh;
 
+	
+	
+
 	UPROPERTY(EditAnywhere)
 	class UBoxComponent* BoxCollision;
 

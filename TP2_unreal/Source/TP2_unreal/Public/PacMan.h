@@ -34,6 +34,7 @@ public:
 	UPROPERTY()
 	int score;
 	bool inFleeMode;
+	int ghostEatStreak;
 	UPROPERTY(EditAnywhere, Category = Corner)
 	ACornerActor* UpCorner;
 	UPROPERTY(EditAnywhere, Category = Corner)
@@ -72,7 +73,7 @@ public:
 	void MoveRight();
 
 private:
-	int ghostEatStreak;
+	
 	UPROPERTY(EditDefaultsOnly, Category= Input)
 	class UInputMappingContext* DefaultMappingContext;
 	UPROPERTY(EditDefaultsOnly, Category= Input)
