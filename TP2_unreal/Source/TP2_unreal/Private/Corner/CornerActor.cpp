@@ -57,9 +57,10 @@ void ACornerActor::HandleScatterMode(AGhostCharacter* ghost, AActor* MyActor) {
 void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 {
 
+	
 	if (auto ghost = Cast<AGhost>(OtherActor))
 	{
-
+		
 		
 		auto corner = Cast<ACornerActor>(MyActor);
 		if (ghost->getFleeMode()) {

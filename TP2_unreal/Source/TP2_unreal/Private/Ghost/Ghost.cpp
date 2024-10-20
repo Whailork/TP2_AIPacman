@@ -56,24 +56,14 @@ void AGhost::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    if(isDead)
-    {
-        if(GetActorLocation().Equals(FVector(200,-50,52),1) )
-        {
-            setFleeMode(false);
-            //GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("grow back"));
-            setDeath(false);
-        }
-    }
-    else
-    {
-        if(!onScatterMode && !inFleeMode)
+   
+     /*if(!onScatterMode && !inFleeMode)
         {
             targetLocation = PacManReference->GetActorLocation();
         }
 
         GhostAI->MoveToLocation(targetLocation,0, false);
-    }
+    */
     
 }
 
@@ -143,10 +133,13 @@ bool AGhost::getFleeMode()
 void AGhost::setDeath(bool value)
 {
     isDead = value;
+    SetOnScatterMode(false);
+    setFleeMode(false);
+    SetOnChaseMode(false);
     if(value)
     {
         
-        GhostAI->MoveToLocation(FVector(200,-50,52),0, false);
+        //GhostAI->MoveToLocation(FVector(200,-50,52),0, false);
         StaticMesh->SetWorldScale3D(FVector(0.3,0.3,0.3));
         
     }

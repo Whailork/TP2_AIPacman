@@ -151,7 +151,7 @@ void APacMan::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
 			score+= 200*pow(2,ghostEatStreak);
 			ghostEatStreak++;
 			//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("eat ghost"));
-			ghost->setDeath(true);
+			
 		}
 		else
 		{
