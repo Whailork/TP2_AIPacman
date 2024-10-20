@@ -6,6 +6,8 @@
 #include "GameFramework/FloatingPawnMovement.h"
 #include "GameFramework/MovementComponent.h"
 #include"Corner/CornerActor.h"
+#include "NiagaraFunctionLibrary.h"
+#include "NiagaraComponent.h"
 #include"PacMan.h"
 
 // Sets default values
@@ -22,6 +24,7 @@ AEntityCharacter::AEntityCharacter()
 
 	MovementComponent = CreateDefaultSubobject<UPawnMovementComponent, UFloatingPawnMovement>(TEXT("MovementComponent"));
 	MovementComponent->UpdatedComponent = BoxCollision;
+
 }
 
 // Called when the game starts or when spawned

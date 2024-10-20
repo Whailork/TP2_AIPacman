@@ -60,9 +60,10 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 	if (auto ghost = Cast<AGhost>(OtherActor))
 	{
 
+		
 		auto corner = Cast<ACornerActor>(MyActor);
 		if (ghost->getFleeMode()) {
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("se"));
+			//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("se"));
 			ACornerActor* RandomCorner = nullptr;
 			bool validTargetFound = false;
 
@@ -75,7 +76,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 				case 0:
 					if(corner->UpCorner != nullptr)
 					{
-						GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("upSelected"));
+						//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("upSelected"));
 						RandomCorner = corner->UpCorner;
 						validTargetFound = true;
 					}
@@ -83,7 +84,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 				case 1:
 					if(corner->RightCorner != nullptr)
 					{
-						GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("right selected"));
+						//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("right selected"));
 						RandomCorner = corner->RightCorner;
 						validTargetFound = true;
 					}
@@ -91,7 +92,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 				case 2:
 					if(corner->DownCorner != nullptr)
 					{
-						GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("down selected"));
+						//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("down selected"));
 						RandomCorner = corner->DownCorner;
 						validTargetFound = true;
 					}
@@ -99,7 +100,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 				case 3:
 					if(corner->LeftCorner != nullptr)
 					{
-						GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("left selected"));
+						//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("left selected"));
 						RandomCorner = corner->LeftCorner;
 						validTargetFound = true;
 					}
@@ -117,7 +118,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 
 			if (RandomCorner != nullptr)
 			{
-				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("set flee target"));
+				//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("set flee target"));
 				ghost->targetLocation = RandomCorner->GetActorLocation();
 			}
 				
