@@ -7,10 +7,22 @@
 #include "PacMan.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "AEatable/APacGomme.h"
 #include "Components/BoxComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/FloatingPawnMovement.h"
 #include "Ghost/Ghost.h"
+
+bool APacMan::GameSucces()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::FromInt(nbEaten));
+	if(nbEaten >= nbTotal)
+	{
+		
+		return true;
+	}
+	return false;
+}
 
 void APacMan::stopInFleeMode()
 {
@@ -41,6 +53,9 @@ APacMan::APacMan()
 // Called when the game starts or when spawned
 void APacMan::BeginPlay()
 {
+	nbTotal = 244;
+	
+
 	ghostEatStreak = 0;
 	nbEaten = 0;
 	score = 0;
@@ -106,8 +121,9 @@ void APacMan::OnEat(int earnedScore, bool isPacGomme)
 		nbEaten++;
 		score+=earnedScore;
 		FString stringScore = FString::FromInt(score);
+
 		
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, stringScore);
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, stringScore);
 	}
 }
 

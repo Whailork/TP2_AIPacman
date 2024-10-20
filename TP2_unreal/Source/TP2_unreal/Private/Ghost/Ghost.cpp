@@ -61,7 +61,7 @@ void AGhost::Tick(float DeltaTime)
         if(GetActorLocation().Equals(FVector(200,-50,52),1) )
         {
             setFleeMode(false);
-            GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("grow back"));
+            //GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("grow back"));
             setDeath(false);
         }
     }
@@ -127,7 +127,7 @@ void AGhost::setFleeMode(bool value)
     }
     else
     {
-        GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("deactivate Particles"));
+        //GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("deactivate Particles"));
         Particles->Deactivate();
         Particles->SetVisibility(false,false);
     }
