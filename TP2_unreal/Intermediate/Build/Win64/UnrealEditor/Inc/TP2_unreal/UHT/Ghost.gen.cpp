@@ -11,6 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeGhost() {}
 
 // Begin Cross Module References
 AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
+NIAGARA_API UClass* Z_Construct_UClass_UNiagaraComponent_NoRegister();
 TP2_UNREAL_API UClass* Z_Construct_UClass_ABaseAIController_NoRegister();
 TP2_UNREAL_API UClass* Z_Construct_UClass_AEntityCharacter();
 TP2_UNREAL_API UClass* Z_Construct_UClass_AGhost();
@@ -197,6 +198,53 @@ DEFINE_FUNCTION(AGhost::execOnScatterMode)
 }
 // End Class AGhost Function OnScatterMode
 
+// Begin Class AGhost Function setDeath
+struct Z_Construct_UFunction_AGhost_setDeath_Statics
+{
+	struct Ghost_eventsetDeath_Parms
+	{
+		bool value;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp_value_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_value;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AGhost_setDeath_Statics::NewProp_value_SetBit(void* Obj)
+{
+	((Ghost_eventsetDeath_Parms*)Obj)->value = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AGhost_setDeath_Statics::NewProp_value = { "value", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Ghost_eventsetDeath_Parms), &Z_Construct_UFunction_AGhost_setDeath_Statics::NewProp_value_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGhost_setDeath_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGhost_setDeath_Statics::NewProp_value,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_setDeath_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AGhost_setDeath_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGhost, nullptr, "setDeath", nullptr, nullptr, Z_Construct_UFunction_AGhost_setDeath_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_setDeath_Statics::PropPointers), sizeof(Z_Construct_UFunction_AGhost_setDeath_Statics::Ghost_eventsetDeath_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_setDeath_Statics::Function_MetaDataParams), Z_Construct_UFunction_AGhost_setDeath_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AGhost_setDeath_Statics::Ghost_eventsetDeath_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AGhost_setDeath()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AGhost_setDeath_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AGhost::execsetDeath)
+{
+	P_GET_UBOOL(Z_Param_value);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->setDeath(Z_Param_value);
+	P_NATIVE_END;
+}
+// End Class AGhost Function setDeath
+
 // Begin Class AGhost Function setFleeMode
 struct Z_Construct_UFunction_AGhost_setFleeMode_Statics
 {
@@ -243,53 +291,6 @@ DEFINE_FUNCTION(AGhost::execsetFleeMode)
 	P_NATIVE_END;
 }
 // End Class AGhost Function setFleeMode
-
-// Begin Class AGhost Function SetIsDead
-struct Z_Construct_UFunction_AGhost_SetIsDead_Statics
-{
-	struct Ghost_eventSetIsDead_Parms
-	{
-		bool isDead;
-	};
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
-	};
-#endif // WITH_METADATA
-	static void NewProp_isDead_SetBit(void* Obj);
-	static const UECodeGen_Private::FBoolPropertyParams NewProp_isDead;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-	static const UECodeGen_Private::FFunctionParams FuncParams;
-};
-void Z_Construct_UFunction_AGhost_SetIsDead_Statics::NewProp_isDead_SetBit(void* Obj)
-{
-	((Ghost_eventSetIsDead_Parms*)Obj)->isDead = 1;
-}
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AGhost_SetIsDead_Statics::NewProp_isDead = { "isDead", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Ghost_eventSetIsDead_Parms), &Z_Construct_UFunction_AGhost_SetIsDead_Statics::NewProp_isDead_SetBit, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGhost_SetIsDead_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGhost_SetIsDead_Statics::NewProp_isDead,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_SetIsDead_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AGhost_SetIsDead_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGhost, nullptr, "SetIsDead", nullptr, nullptr, Z_Construct_UFunction_AGhost_SetIsDead_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_SetIsDead_Statics::PropPointers), sizeof(Z_Construct_UFunction_AGhost_SetIsDead_Statics::Ghost_eventSetIsDead_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AGhost_SetIsDead_Statics::Function_MetaDataParams), Z_Construct_UFunction_AGhost_SetIsDead_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_AGhost_SetIsDead_Statics::Ghost_eventSetIsDead_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_AGhost_SetIsDead()
-{
-	static UFunction* ReturnFunction = nullptr;
-	if (!ReturnFunction)
-	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AGhost_SetIsDead_Statics::FuncParams);
-	}
-	return ReturnFunction;
-}
-DEFINE_FUNCTION(AGhost::execSetIsDead)
-{
-	P_GET_UBOOL(Z_Param_isDead);
-	P_FINISH;
-	P_NATIVE_BEGIN;
-	P_THIS->SetIsDead(Z_Param_isDead);
-	P_NATIVE_END;
-}
-// End Class AGhost Function SetIsDead
 
 // Begin Class AGhost Function SetOnChaseMode
 struct Z_Construct_UFunction_AGhost_SetOnChaseMode_Statics
@@ -395,8 +396,8 @@ void AGhost::StaticRegisterNativesAGhost()
 		{ "OnChaseMode", &AGhost::execOnChaseMode },
 		{ "OnFleeMode", &AGhost::execOnFleeMode },
 		{ "OnScatterMode", &AGhost::execOnScatterMode },
+		{ "setDeath", &AGhost::execsetDeath },
 		{ "setFleeMode", &AGhost::execsetFleeMode },
-		{ "SetIsDead", &AGhost::execSetIsDead },
 		{ "SetOnChaseMode", &AGhost::execSetOnChaseMode },
 		{ "SetOnScatterMode", &AGhost::execSetOnScatterMode },
 	};
@@ -415,6 +416,11 @@ struct Z_Construct_UClass_AGhost_Statics
 		{ "IncludePath", "Ghost/Ghost.h" },
 		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Particles_MetaData[] = {
+		{ "Category", "Particles" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TreeAsset_MetaData[] = {
 		{ "Category", "AI" },
 		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
@@ -423,6 +429,7 @@ struct Z_Construct_UClass_AGhost_Statics
 		{ "ModuleRelativePath", "Public/Ghost/Ghost.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Particles;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_TreeAsset;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_GhostAI;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -433,8 +440,8 @@ struct Z_Construct_UClass_AGhost_Statics
 		{ &Z_Construct_UFunction_AGhost_OnChaseMode, "OnChaseMode" }, // 2836028375
 		{ &Z_Construct_UFunction_AGhost_OnFleeMode, "OnFleeMode" }, // 1568879758
 		{ &Z_Construct_UFunction_AGhost_OnScatterMode, "OnScatterMode" }, // 2744307532
+		{ &Z_Construct_UFunction_AGhost_setDeath, "setDeath" }, // 3172359530
 		{ &Z_Construct_UFunction_AGhost_setFleeMode, "setFleeMode" }, // 1610445487
-		{ &Z_Construct_UFunction_AGhost_SetIsDead, "SetIsDead" }, // 2953266396
 		{ &Z_Construct_UFunction_AGhost_SetOnChaseMode, "SetOnChaseMode" }, // 858916497
 		{ &Z_Construct_UFunction_AGhost_SetOnScatterMode, "SetOnScatterMode" }, // 4237152404
 	};
@@ -444,9 +451,11 @@ struct Z_Construct_UClass_AGhost_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGhost_Statics::NewProp_Particles = { "Particles", nullptr, (EPropertyFlags)0x0010000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AGhost, Particles), Z_Construct_UClass_UNiagaraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Particles_MetaData), NewProp_Particles_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGhost_Statics::NewProp_TreeAsset = { "TreeAsset", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AGhost, TreeAsset), Z_Construct_UClass_UBehaviorTree_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TreeAsset_MetaData), NewProp_TreeAsset_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGhost_Statics::NewProp_GhostAI = { "GhostAI", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AGhost, GhostAI), Z_Construct_UClass_ABaseAIController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GhostAI_MetaData), NewProp_GhostAI_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGhost_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhost_Statics::NewProp_Particles,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhost_Statics::NewProp_TreeAsset,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGhost_Statics::NewProp_GhostAI,
 };
@@ -491,11 +500,11 @@ AGhost::~AGhost() {}
 struct Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AGhost, AGhost::StaticClass, TEXT("AGhost"), &Z_Registration_Info_UClass_AGhost, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGhost), 4046715633U) },
+		{ Z_Construct_UClass_AGhost, AGhost::StaticClass, TEXT("AGhost"), &Z_Registration_Info_UClass_AGhost, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGhost), 4027553094U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_1854493697(TEXT("/Script/TP2_unreal"),
-	Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_540430184(TEXT("/Script/TP2_unreal"),
+	Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

@@ -84,6 +84,7 @@ void APacMan::OnEat(int earnedScore, bool isPacGomme)
 		nbEaten++;
 		score+=earnedScore;
 		FString stringScore = FString::FromInt(score);
+		
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, stringScore);
 	}
 }
@@ -111,9 +112,12 @@ void APacMan::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
 			ghost->setDeath(true);
 			score+= 200*pow(2,ghostEatStreak);
 			ghostEatStreak++;
+			//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("eat ghost"));
+			ghost->setDeath(true);
 		}
 		else
 		{
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("loselife"));
 			//pacman loses life
 		}
 	}

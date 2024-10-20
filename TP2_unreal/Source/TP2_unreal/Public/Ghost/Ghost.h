@@ -16,6 +16,9 @@ class TP2_UNREAL_API AGhost : public AEntityCharacter
 
 public:
 
+	UPROPERTY(EditAnywhere, Category = "Particles")
+	class UNiagaraComponent* Particles;
+	
 	UPROPERTY(EditAnywhere, Category = "AI")
 	class UBehaviorTree* TreeAsset;
 
@@ -52,15 +55,14 @@ public:
 
 	UFUNCTION()
 	void SetOnChaseMode(bool isInChaseMode);
-
-	UFUNCTION()
-	void SetIsDead(bool isDead);
+	
 
 	
 	UFUNCTION(BlueprintCallable)
 	void setFleeMode(bool value);
 	UFUNCTION(BlueprintCallable)
 	bool getFleeMode();
+	UFUNCTION(BlueprintCallable)
 	void setDeath(bool value);
 	UFUNCTION(BlueprintCallable)
 	bool getIsDead();

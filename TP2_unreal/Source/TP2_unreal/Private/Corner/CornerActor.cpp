@@ -59,51 +59,70 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 
 	if (auto ghost = Cast<AGhost>(OtherActor))
 	{
-		if (ghost->onScatterMode)
-		{
-			bool coinHorsScatter = true;
 
-			for (int x = 0; x < ghost->coinsScatter.Num(); x++) {
+		
+		auto corner = Cast<ACornerActor>(MyActor);
+		if (ghost->getFleeMode()) {
+			//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("se"));
+			ACornerActor* RandomCorner = nullptr;
+			bool validTargetFound = false;
 
-				if (ghost->coinsScatter[x]->GetActorLocation() == MyActor->GetActorLocation()) {
-					coinHorsScatter = false;
-
-					int nextTarget = (x + 1) % ghost->coinsScatter.Num();
-					ghost->targetLocation = ghost->coinsScatter[nextTarget]->GetActorLocation();
-
-					break;
-				}
-			}
-			if (coinHorsScatter) {
-				ghost->targetLocation = ghost->coinsScatter[0]->GetActorLocation();
-			}
-		}
-		else if (ghost->getFleeMode()) {
-
-			if (NeighborsArray.Num() > 0)
+			while (!validTargetFound)
 			{
-				ACornerActor* RandomCorner = nullptr;
-				bool validTargetFound = false;
+				int RandomIndex = FMath::RandRange(0, 3);
 
-				while (!validTargetFound)
+				switch (RandomIndex)
 				{
-					int RandomIndex = FMath::RandRange(0, NeighborsArray.Num() - 1);
-					RandomCorner = NeighborsArray[RandomIndex];
-
-					// RandomCorner != null && RandomCorner != emplacement pr�c�dent
-					if (RandomCorner != nullptr &&
-						ghost->PacManReference->PreviousTarget != nullptr &&
-						ghost->PacManReference->PreviousTarget->GetActorLocation() != RandomCorner->GetActorLocation())
+				case 0:
+					if(corner->UpCorner != nullptr)
 					{
+						//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("upSelected"));
+						RandomCorner = corner->UpCorner;
 						validTargetFound = true;
 					}
+					break;
+				case 1:
+					if(corner->RightCorner != nullptr)
+					{
+						//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("right selected"));
+						RandomCorner = corner->RightCorner;
+						validTargetFound = true;
+					}
+					break;
+				case 2:
+					if(corner->DownCorner != nullptr)
+					{
+						//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("down selected"));
+						RandomCorner = corner->DownCorner;
+						validTargetFound = true;
+					}
+					break;
+				case 3:
+					if(corner->LeftCorner != nullptr)
+					{
+						//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("left selected"));
+						RandomCorner = corner->LeftCorner;
+						validTargetFound = true;
+					}
+					break;
+						
 				}
-
-				if (RandomCorner != nullptr)
+				// RandomCorner != null && RandomCorner != emplacement pr�c�dent
+				/*if (RandomCorner != nullptr &&
+					ghost->PacManReference->PreviousTarget != nullptr &&
+					ghost->PacManReference->PreviousTarget->GetActorLocation() != RandomCorner->GetActorLocation())
 				{
-					ghost->targetLocation = RandomCorner->GetActorLocation();
-				}
+					validTargetFound = true;
+				}*/
 			}
+
+			if (RandomCorner != nullptr)
+			{
+				//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("set flee target"));
+				ghost->targetLocation = RandomCorner->GetActorLocation();
+			}
+				
+			
 
 		}
 		/* If is in chase mode, le orange et le bleu doivent surveiller a chaque coins ils sont a quelle distance du pacman
@@ -113,9 +132,33 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 		*/
 		else
 		{
-			ghost->targetLocation = ghost->PacManReference->GetActorLocation();
+			if (ghost->onScatterMode)
+			{
+				bool coinHorsScatter = true;
+
+				for (int x = 0; x < ghost->coinsScatter.Num(); x++) {
+
+					if (ghost->coinsScatter[x]->GetActorLocation() == MyActor->GetActorLocation()) {
+						coinHorsScatter = false;
+
+						int nextTarget = (x + 1) % ghost->coinsScatter.Num();
+						ghost->targetLocation = ghost->coinsScatter[nextTarget]->GetActorLocation();
+
+						break;
+					}
+				}
+				if (coinHorsScatter) {
+					ghost->targetLocation = ghost->coinsScatter[0]->GetActorLocation();
+				}
+			}
+
+			else
+			{
+				ghost->targetLocation = ghost->PacManReference->GetActorLocation();
+			}
+			ghost->GhostAI->MoveToLocation(ghost->targetLocation, 0, false);
 		}
-		ghost->GhostAI->MoveToLocation(ghost->targetLocation, 0, false);
+
 	}
 
 	/*if (auto redGhost = Cast<ARedGhostPawn>(OtherActor)) {

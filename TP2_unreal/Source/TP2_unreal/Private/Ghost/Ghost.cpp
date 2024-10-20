@@ -52,12 +52,24 @@ void AGhost::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    if(!onScatterMode)
+    if(isDead)
     {
-        targetLocation = PacManReference->GetActorLocation();
+        if(GetActorLocation().Equals(FVector(200,-50,52),1) )
+        {
+            GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("grow back"));
+            setDeath(false);
+        }
     }
+    else
+    {
+        if(!onScatterMode && !inFleeMode)
+        {
+            targetLocation = PacManReference->GetActorLocation();
+        }
 
-    GhostAI->MoveToLocation(targetLocation,0, false);
+        GhostAI->MoveToLocation(targetLocation,0, false);
+    }
+    
 }
 
 
@@ -98,15 +110,13 @@ void AGhost::SetOnChaseMode(bool isInChaseMode)
 {
     this->inChaseMode = isInChaseMode;
 }
-void AGhost::SetIsDead(bool isDeadBln)
-{
-    this->isDeadMode = isDeadBln;
-}
+
 
 
 void AGhost::setFleeMode(bool value)
 {
     inFleeMode = value;
+    PacManReference->ghostEatStreak = 0;
     //GhostAI->GetBlackboardComponent()->SetValueAsBool("inFleeMode",value);
     //set la valeur dans le blackboard
 }
@@ -119,6 +129,18 @@ bool AGhost::getFleeMode()
 void AGhost::setDeath(bool value)
 {
     isDead = value;
+    if(value)
+    {
+        GhostAI->MoveToLocation(FVector(200,-50,52),0, false);
+        StaticMesh->SetWorldScale3D(FVector(0.3,0.3,0.3));
+        
+    }
+    else
+    {
+        GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("grow back"));
+        StaticMesh->SetWorldScale3D(FVector(1,1,1));
+    }
+   
     //GhostAI->setIsDead(value);
     //set la valeur dans le blackboard
 }

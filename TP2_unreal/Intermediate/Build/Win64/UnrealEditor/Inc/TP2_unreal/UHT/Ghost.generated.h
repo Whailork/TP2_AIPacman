@@ -16,9 +16,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_Users_Coralie_Desktop_Intelligence_artificielle_pour_le_jeu_video_TP2_Whailork_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_Ghost_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execgetIsDead); \
+	DECLARE_FUNCTION(execsetDeath); \
 	DECLARE_FUNCTION(execgetFleeMode); \
 	DECLARE_FUNCTION(execsetFleeMode); \
-	DECLARE_FUNCTION(execSetIsDead); \
 	DECLARE_FUNCTION(execSetOnChaseMode); \
 	DECLARE_FUNCTION(execSetOnScatterMode); \
 	DECLARE_FUNCTION(execOnChaseMode); \
