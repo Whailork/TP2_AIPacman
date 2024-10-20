@@ -37,18 +37,11 @@ void ARedGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 void ARedGhostPawn::OnChaseMode()
 {
     SetOnChaseMode(true);
-    SetOnScatterMode(false);
-    setFleeMode(false);
-    setDeath(false);
 
     //targetLocation
     targetLocation = PacManReference->GetActorLocation();
+    isMoving = true;
     GhostAI->MoveToLocation(targetLocation,0, false);
 }
 
 
-void ARedGhostPawn::InFleeMode()
-{
-    targetLocation = coinsScatter[0]->GetActorLocation();
-    GhostAI->MoveToLocation(targetLocation, 0, false);
-}

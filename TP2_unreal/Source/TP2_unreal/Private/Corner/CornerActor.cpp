@@ -60,11 +60,13 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 	
 	if (auto ghost = Cast<AGhost>(OtherActor))
 	{
+		ghost->isMoving = false;
+		
 		
 		
 		auto corner = Cast<ACornerActor>(MyActor);
-		if (ghost->getFleeMode()) {
-			//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("se"));
+		if (ghost->getFleeMode() || ghost->inRandomMode) {
+			//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("flee"));
 			ACornerActor* RandomCorner = nullptr;
 			bool validTargetFound = false;
 
@@ -157,7 +159,7 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 			{
 				ghost->targetLocation = ghost->PacManReference->GetActorLocation();
 			}
-			ghost->GhostAI->MoveToLocation(ghost->targetLocation, 0, false);
+			//ghost->GhostAI->MoveToLocation(ghost->targetLocation, 0, false);
 		}
 
 	}

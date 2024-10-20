@@ -2,6 +2,8 @@
 
 #include "Ghost/PinkGhostPawn.h"
 #include "PacMan.h"
+#include "NavigationSystem.h"
+
 
 // Sets default values
 APinkGhostPawn::APinkGhostPawn()
@@ -54,14 +56,13 @@ void APinkGhostPawn::InFleeMode()
 // TODO : voir si ca marche
 void APinkGhostPawn::OnChaseMode()
 {
+	
 	// Initialisation
 	SetOnChaseMode(true);
-	SetOnScatterMode(false);
-	setFleeMode(false);
-	setDeath(false);
+
 
 	// Variables
-	FHitResult HitResult;
+	FNavLocation HitResult;
 	float CaseSize = 100.0f;
 	float DistanceInCases = 4.0f;
 	FCollisionQueryParams TraceParams(FName(TEXT("")), false, this);
@@ -84,9 +85,24 @@ void APinkGhostPawn::OnChaseMode()
 
 	TargetPosition = PacmanPosition + (directionVector * CaseSize * DistanceInCases);
 
-	/*
+	FVector QueryingExtent = FVector(0.0f, 0.0f, 0.0f);
+	
+	bool bOnNavMesh = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld())->ProjectPointToNavigation(TargetPosition, HitResult,QueryingExtent);
+
+	
+	if(bOnNavMesh)
+	{
+		targetLocation = TargetPosition;
+	}
+	else
+	{
+		targetLocation = PacmanPosition;
+	}
+	
+
+	
 	// Raycast
-	bool hit = GetWorld()->AsyncLineTraceByObjectType(
+	/*bool hit = GetWorld()->AsyncLineTraceByObjectType(
 		HitResult,
 		PacmanPosition,
 		TargetPosition,
@@ -118,11 +134,12 @@ void APinkGhostPawn::OnChaseMode()
 	else
 	{
 		targetLocation = TargetPosition;
-	}
+	}*/
 
-	GhostAI->MoveToLocation(targetLocation, 0, false);
-	*/
+	//GhostAI->MoveToLocation(targetLocation, 0, false);
 	
-	targetLocation = TargetPosition;
+	
+	//targetLocation = TargetPosition;
+	isMoving = true;
 	GhostAI->MoveToLocation(targetLocation, 0, false);
 }

@@ -38,6 +38,9 @@ public:
 	bool inChaseMode;
 	bool inFleeMode;
 	bool isDead;
+	//pour le fantome bleu
+	bool inRandomMode;
+	bool isMoving;
 
 protected:
 	virtual void BeginPlay() override;

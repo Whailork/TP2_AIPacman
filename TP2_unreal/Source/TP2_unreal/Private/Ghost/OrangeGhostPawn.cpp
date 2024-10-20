@@ -20,21 +20,18 @@ void AOrangeGhostPawn::BeginPlay()
 	Super::BeginPlay();
 	
 	// TODO: appeler au bon endroit
-	SetOnScatterMode(true);
+	/*SetOnScatterMode(true);
 
-	targetLocation = coinsScatter[0]->GetActorLocation();
+	targetLocation = coinsScatter[0]->GetActorLocation();*/
 
-	GhostAI->MoveToLocation(targetLocation);
+	//GhostAI->MoveToLocation(targetLocation);
 }
 
 // Called every frame
 void AOrangeGhostPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	if (getChaseMode()) {
-		OnChaseMode();
-	}
+	
 }
 
 // Called to bind functionality to input
@@ -48,23 +45,34 @@ void AOrangeGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 // Si Clyde est a plus de 8 cases de Pac-Man, il se comporte comme Blinky (le fantome rouge) et cible directement la position actuelle de Pac-Man.
 void AOrangeGhostPawn::OnChaseMode()
 {
-	// TODO : Calculer la distance en tuile plutot qu'en ligne droite
-	float distance = FVector::Dist(GetActorLocation(), PacManReference->GetActorLocation());
+	if(!isMoving)
+	{
+		// TODO : Calculer la distance en tuile plutot qu'en ligne droite
+		float distance = FVector::Dist(GetActorLocation(), PacManReference->GetActorLocation());
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::SanitizeFloat(distance));
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::SanitizeFloat(distance));
 
-	if (distance <= 800.0f) {
-		SetOnChaseMode(false);
-		SetOnScatterMode(true);
+	
+	
+		if (distance <= 800.0f) {
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("trop proche"));
+			SetOnChaseMode(false);
+			SetOnScatterMode(true);
+			Super::OnScatterMode();
+		}
+		else {
+			SetOnChaseMode(true);
+			SetOnScatterMode(false);
+
+			targetLocation = PacManReference->GetActorLocation();
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("pourchasse"));
+			isMoving = true;
+			GhostAI->MoveToLocation(targetLocation, 0, false);
+		
+		}
+	
+	
 	}
-	else {
-		SetOnChaseMode(true);
-		SetOnScatterMode(false);
-
-		targetLocation = PacManReference->GetActorLocation();
-		GhostAI->MoveToLocation(targetLocation, 0, false);
-	}
-
-	setFleeMode(false);
-	setDeath(false);
+	
+	
 }

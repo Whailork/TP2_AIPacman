@@ -50,14 +50,13 @@ Si Blinky est a moins de 5 tuiles de Pac-Man, Inky se dirige vers cette tuile.
 */
 void ABlueGhostPawn::OnChaseMode()
 {
+	
 	// TODO : Calculer la distance en tuile plutot qu'en ligne droite
 	SetOnChaseMode(true);
-	SetOnScatterMode(false);
-	setFleeMode(false);
-	setDeath(false);
+
 	
 	// Variables
-	FHitResult HitResult;
+	//FHitResult HitResult;
 	float CaseSize = 100.0f;
 	float DistanceInCases = 2.0f;
 	FCollisionQueryParams TraceParams(FName(TEXT("")), false, this);
@@ -79,16 +78,25 @@ void ABlueGhostPawn::OnChaseMode()
 		directionVector.X += 1;
 	}
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::SanitizeFloat(distance));
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::SanitizeFloat(distance));
 
 	if (distance <= 400.0f) {
-		
-		targetLocation = PacmanPosition;
-		GhostAI->MoveToLocation(targetLocation, 0, false);
-	}
-	else {
+		// on ne passe pas par les getters et les setters car on ne veut pas trigger
+		inRandomMode = false;
 		
 		targetLocation = TargetPosition;
-		GhostAI->MoveToLocation(targetLocation, 0, false);
+		
 	}
+	else {
+		if(GetActorLocation().Equals(targetLocation,1))
+		{
+			targetLocation = TargetPosition;
+		}
+		inRandomMode = true;
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("random"));
+		//targetLocation = TargetPosition;
+		
+	}
+	isMoving = true;
+	GhostAI->MoveToLocation(targetLocation, 0, false);
 }
