@@ -21,6 +21,52 @@ TP2_UNREAL_API UClass* Z_Construct_UClass_APacMan_NoRegister();
 UPackage* Z_Construct_UPackage__Script_TP2_unreal();
 // End Cross Module References
 
+// Begin Class APacMan Function GameSucces
+struct Z_Construct_UFunction_APacMan_GameSucces_Statics
+{
+	struct PacMan_eventGameSucces_Parms
+	{
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/PacMan.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_APacMan_GameSucces_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((PacMan_eventGameSucces_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_APacMan_GameSucces_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(PacMan_eventGameSucces_Parms), &Z_Construct_UFunction_APacMan_GameSucces_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APacMan_GameSucces_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APacMan_GameSucces_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_GameSucces_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_APacMan_GameSucces_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APacMan, nullptr, "GameSucces", nullptr, nullptr, Z_Construct_UFunction_APacMan_GameSucces_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_GameSucces_Statics::PropPointers), sizeof(Z_Construct_UFunction_APacMan_GameSucces_Statics::PacMan_eventGameSucces_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_GameSucces_Statics::Function_MetaDataParams), Z_Construct_UFunction_APacMan_GameSucces_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_APacMan_GameSucces_Statics::PacMan_eventGameSucces_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_APacMan_GameSucces()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_APacMan_GameSucces_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(APacMan::execGameSucces)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->GameSucces();
+	P_NATIVE_END;
+}
+// End Class APacMan Function GameSucces
+
 // Begin Class APacMan Function OnCatchOverlapBegin
 struct Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics
 {
@@ -102,6 +148,7 @@ void APacMan::StaticRegisterNativesAPacMan()
 {
 	UClass* Class = APacMan::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "GameSucces", &APacMan::execGameSucces },
 		{ "OnCatchOverlapBegin", &APacMan::execOnCatchOverlapBegin },
 		{ "stopInFleeMode", &APacMan::execstopInFleeMode },
 	};
@@ -195,6 +242,7 @@ struct Z_Construct_UClass_APacMan_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_APacMan_GameSucces, "GameSucces" }, // 3959592277
 		{ &Z_Construct_UFunction_APacMan_OnCatchOverlapBegin, "OnCatchOverlapBegin" }, // 2515277029
 		{ &Z_Construct_UFunction_APacMan_stopInFleeMode, "stopInFleeMode" }, // 892126044
 	};
@@ -275,10 +323,10 @@ APacMan::~APacMan() {}
 struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_APacMan, APacMan::StaticClass, TEXT("APacMan"), &Z_Registration_Info_UClass_APacMan, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APacMan), 539814943U) },
+		{ Z_Construct_UClass_APacMan, APacMan::StaticClass, TEXT("APacMan"), &Z_Registration_Info_UClass_APacMan, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APacMan), 2546705418U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_1445321056(TEXT("/Script/TP2_unreal"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_410702310(TEXT("/Script/TP2_unreal"),
 	Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

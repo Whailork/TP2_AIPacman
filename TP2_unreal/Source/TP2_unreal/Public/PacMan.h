@@ -31,6 +31,9 @@ class TP2_UNREAL_API APacMan : public AEntityCharacter
 public:
 	UPROPERTY()
 	int nbEaten;
+	int nbTotal;
+	UFUNCTION(BlueprintCallable)
+	bool GameSucces();
 	UPROPERTY()
 	int score;
 	bool inFleeMode;
