@@ -181,7 +181,7 @@ Pour simplifier le comportement de Blinky, tu peux diviser son comportement en d
 
 1. Chase Mode (Mode poursuite)
 Comportement : Blinky suit directement Pac-Man en ciblant sa position actuelle.
-Cible : Le carreau o� se trouve Pac-Man.
+Cible : Le carreau ou se trouve Pac-Man.
 Vitesse : Sa vitesse peut �tre normale ou augment�e apr�s un certain nombre de points collect�s par Pac-Man (� d�finir selon ton niveau).
 Conditions de transition : Ce mode est activ� presque tout le temps, sauf en d�but de niveau ou lorsque le mode Scatter est forc�.
 
@@ -208,17 +208,17 @@ Inky (BLEU)
 Pour simplifier le comportement d'Inky, conservant son caract�re impr�visible.
 
 1. Comportement de base :
-Inky commence dans la maison des fant�mes et ne sort qu'apr�s que Pac-Man a mang� 30 points.
+Inky commence dans la maison des fant�mes et ne sort qu'apres que Pac-Man a mange 30 points.
 Ensuite, Inky alterne entre deux comportements simples :
 Chase (Poursuite) : Inky poursuit Pac-Man lorsque Blinky est proche de Pac-Man (par exemple, � moins de 5 tuiles).
-Random (Al�atoire) : Si Blinky est loin, Inky se d�place de mani�re al�atoire dans le labyrinthe.
+Random (Aleatoire) : Si Blinky est loin, Inky se d�place de mani�re al�atoire dans le labyrinthe.
 
-2. D�termination de la cible d'Inky :
+2. Determination de la cible d'Inky :
 Lorsque Inky est en mode "Poursuite" :
 S�lectionne une tuile 2 cases devant Pac-Man, selon sa direction (haut, bas, gauche, droite).
 Si Blinky est � moins de 5 tuiles de Pac-Man, Inky se dirige vers cette tuile.
 Lorsque Inky est en mode "Al�atoire" :
-Inky choisit une direction al�atoire parmi les directions possibles � chaque intersection.
+Inky choisit une direction al�atoire parmi les directions possibles a chaque intersection.
 
 *****************************************************************************************************************************************************************************************************************************************************************************
 
@@ -229,10 +229,10 @@ Mode Chasse (plus de 8 cases de Pac-Man) :
 Si Clyde est � plus de 8 cases de Pac-Man, il se comporte comme Blinky (le fant�me rouge) et cible directement la position actuelle de Pac-Man.
 
 Mode Fuite (moins de 8 cases de Pac-Man) :
-Si Clyde est � moins de 8 cases de Pac-Man, il change de direction et se dirige vers une position fixe dans le coin inf�rieur gauche du labyrinthe.
+Si Clyde est a moins de 8 cases de Pac-Man, il change de direction et se dirige vers une position fixe dans le coin inf�rieur gauche du labyrinthe.
 
 R�sum� du comportement :
 Clyde poursuit Pac-Man lorsqu'il est �loign� (plus de 8 cases). Lorsqu'il s'approche trop pr�s (moins de 8 cases), il "change d'avis" et retourne vers son coin.
 Il alterne continuellement entre ces deux modes en fonction de la distance, ce qui donne l'impression qu'il h�site.
-En codant cela, tu peux utiliser une fonction qui calcule la distance entre Clyde et Pac-Man � chaque frame, et en fonction de cette distance, changer sa cible de Pac-Man � la position du coin inf�rieur gauche.
+En codant cela, tu peux utiliser une fonction qui calcule la distance entre Clyde et Pac-Man a chaque frame, et en fonction de cette distance, changer sa cible de Pac-Man � la position du coin inf�rieur gauche.
 */
