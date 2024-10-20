@@ -125,6 +125,11 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 			
 
 		}
+		/* If is in chase mode, le orange et le bleu doivent surveiller a chaque coins ils sont a quelle distance du pacman
+		else if () {
+
+		}
+		*/
 		else
 		{
 			if (ghost->onScatterMode)

@@ -59,6 +59,8 @@ void ARedGhostPawn::OnChaseMode()
 {
     SetOnChaseMode(true);
     SetOnScatterMode(false);
+    setFleeMode(false);
+    setDeath(false);
 
     //targetLocation
     targetLocation = PacManReference->GetActorLocation();
@@ -68,7 +70,6 @@ void ARedGhostPawn::OnChaseMode()
 
 void ARedGhostPawn::InFleeMode()
 {
-
     targetLocation = coinsScatter[0]->GetActorLocation();
     GhostAI->MoveToLocation(targetLocation, 0, false);
 }
