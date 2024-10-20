@@ -17,17 +17,17 @@
 // Sets default values
 AGhost::AGhost()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-    Particles = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Particles"));
-    Particles->SetupAttachment(BoxCollision);
+	Particles = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Particles"));
+	Particles->SetupAttachment(BoxCollision);
 }
 
 // Called when the game starts or when spawned
 void AGhost::BeginPlay()
 {
 	Super::BeginPlay();
-    /*
+	/*
 
 I.e: ExecuteTask(UBehaviorTreeComponent& OwnerComp,…)
 UBlackboardComponent* MyBlackboard = OwnerComp.GetBlackboardComponent();
@@ -35,36 +35,47 @@ MyBlackboard->ClearValue(Key.SelectedKeyName);
 MyBlackboard->GetValueAsBool(Key.SelectedKeyName);
 ​​​​​​​MyBlackboard->SetValueAsBool(Key.SelectedKeyName, false);*/
 
-    // Initialisation
-    targetLocation = FVector::ZeroVector;
+// Initialisation
+	targetLocation = FVector::ZeroVector;
 
-   
-    if (ABaseAIController* aiController = Cast<ABaseAIController>(Controller))
-    {
-        GhostAI = aiController;
-    }
 
-    /*
-    if (UseBlackboard(GhostBlackboard, BlackboardComponent))
-    {
-        RunBehaviorTree(GhostBehaviorTree);
-    }*/
+	if (ABaseAIController* aiController = Cast<ABaseAIController>(Controller))
+	{
+		GhostAI = aiController;
+	}
+
+	/*
+	if (UseBlackboard(GhostBlackboard, BlackboardComponent))
+	{
+		RunBehaviorTree(GhostBehaviorTree);
+	}*/
 }
 
 // Called every frame
 void AGhost::Tick(float DeltaTime)
 {
-    Super::Tick(DeltaTime);
+	Super::Tick(DeltaTime);
 
-   
-     /*if(!onScatterMode && !inFleeMode)
-        {
-            targetLocation = PacManReference->GetActorLocation();
-        }
+	if (isDead)
+	{
+		if (GetActorLocation().Equals(FVector(200, -50, 52), 1))
+		{
+			setFleeMode(false);
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("grow back"));
+			setDeath(false);
+		}
+	}
+	else
+	{
+		if (!onScatterMode && !inFleeMode)
+		{
+			OnChaseMode();
+			//targetLocation = PacManReference->GetActorLocation();
+		}
 
-        GhostAI->MoveToLocation(targetLocation,0, false);
-    */
-    
+		GhostAI->MoveToLocation(targetLocation, 0, false);
+	}
+
 }
 
 
@@ -72,63 +83,59 @@ void AGhost::Tick(float DeltaTime)
 // Called to bind functionality to input
 void AGhost::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
-    Super::SetupPlayerInputComponent(PlayerInputComponent);
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
 void AGhost::OnScatterMode()
 {
-    SetOnScatterMode(true);
+	SetOnScatterMode(true);
 
-    //targetLocation
-    targetLocation = coinsScatter[0]->GetActorLocation();
-    GhostAI->MoveToLocation(targetLocation,0, false);
+	//targetLocation
+	targetLocation = coinsScatter[0]->GetActorLocation();
+	GhostAI->MoveToLocation(targetLocation, 0, false);
 }
 
 void AGhost::OnFleeMode()
 {
-    
+
 }
 
 void AGhost::OnChaseMode()
 {
+
 }
 
-void AGhost::SetOnScatterMode(bool isOnScatterMode)
+void AGhost::SetOnScatterMode(bool value)
 {
-    this->onScatterMode = isOnScatterMode;
+	onScatterMode = value;
 }
 
-void AGhost::SetOnChaseMode(bool isInChaseMode)
+void AGhost::SetOnChaseMode(bool value)
 {
-    this->inChaseMode = isInChaseMode;
+	inChaseMode = value;
 }
-
-
 
 void AGhost::setFleeMode(bool value)
 {
-    inFleeMode = value;
-    PacManReference->ghostEatStreak = 0;
-    if(value)
-    {
-        Particles->Activate();
-        Particles->SetVisibility(true,false);
-        
-    }
-    else
-    {
-        //GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("deactivate Particles"));
-        Particles->Deactivate();
-        Particles->SetVisibility(false,false);
-    }
-    //GhostAI->GetBlackboardComponent()->SetValueAsBool("inFleeMode",value);
-    //set la valeur dans le blackboard
+	inFleeMode = value;
+	PacManReference->ghostEatStreak = 0;
+	if (value)
+	{
+		Particles->Activate();
+		Particles->SetVisibility(true, false);
+
+	}
+	else
+	{
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("deactivate Particles"));
+		Particles->Deactivate();
+		Particles->SetVisibility(false, false);
+	}
+	//GhostAI->GetBlackboardComponent()->SetValueAsBool("inFleeMode",value);
+	//set la valeur dans le blackboard
 }
 
-bool AGhost::getFleeMode()
-{
-    return inFleeMode;
-}
+
 
 void AGhost::setDeath(bool value)
 {
@@ -153,17 +160,31 @@ void AGhost::setDeath(bool value)
     //set la valeur dans le blackboard
 }
 
-bool AGhost::getIsDead()
-{
-    return isDead;
+		GhostAI->MoveToLocation(FVector(200, -50, 52), 0, false);
+		StaticMesh->SetWorldScale3D(FVector(0.3, 0.3, 0.3));
+
+	}
+	else
+	{
+
+		StaticMesh->SetWorldScale3D(FVector(1, 1, 1));
+	}
+
+	//GhostAI->setIsDead(value);
+	//set la valeur dans le blackboard
 }
+
+bool AGhost::getFleeMode() { return inFleeMode; }
+bool AGhost::getIsDead() { return isDead; }
+bool AGhost::getScatterMode() { return onScatterMode; }
+bool AGhost::getChaseMode() { return inChaseMode; }
 
 
 
 
 /*
 * FLEE = RANDOM 6secondes -> 8secondes
-* 
+*
 Ghosts Behaviour
 
 Blinky (ROUGE)

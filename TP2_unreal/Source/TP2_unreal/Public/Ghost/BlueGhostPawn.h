@@ -1,9 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-#include "Ghost.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "Ghost.h"
 #include "BlueGhostPawn.generated.h"
 
 UCLASS()
@@ -29,5 +29,6 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	virtual void OnChaseMode() override;
+	//virtual void OnChaseMode() override;
+	void OnChaseMode() override;
 };

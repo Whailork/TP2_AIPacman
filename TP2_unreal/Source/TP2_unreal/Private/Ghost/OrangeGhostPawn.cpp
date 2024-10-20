@@ -32,7 +32,9 @@ void AOrangeGhostPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-
+	if (getChaseMode()) {
+		OnChaseMode();
+	}
 }
 
 // Called to bind functionality to input
@@ -51,7 +53,7 @@ void AOrangeGhostPawn::OnChaseMode()
 
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::SanitizeFloat(distance));
 
-	if (distance < 800.0f) {
+	if (distance <= 800.0f) {
 		SetOnChaseMode(false);
 		SetOnScatterMode(true);
 	}
