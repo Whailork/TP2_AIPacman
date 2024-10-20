@@ -88,7 +88,6 @@ void AGhost::OnScatterMode()
 	}
 	
 	//targetLocation
-	
 	GhostAI->MoveToLocation(targetLocation, 0, false);
 }
 
@@ -150,7 +149,7 @@ void AGhost::setDeath(bool value)
     {
         
         //GhostAI->MoveToLocation(FVector(200,-50,52),0, false);
-        StaticMesh->SetWorldScale3D(FVector(0.3,0.3,0.3));
+        StaticMesh->SetWorldScale3D(FVector(0.5,0.5,0.5));
         
     }
     else

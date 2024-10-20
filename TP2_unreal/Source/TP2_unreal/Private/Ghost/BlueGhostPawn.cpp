@@ -88,7 +88,7 @@ void ABlueGhostPawn::OnChaseMode()
 		
 	}
 	else {
-		if(GetActorLocation().Equals(targetLocation,1))
+		if(GetActorLocation().Equals(targetLocation,5))
 		{
 			targetLocation = TargetPosition;
 		}
