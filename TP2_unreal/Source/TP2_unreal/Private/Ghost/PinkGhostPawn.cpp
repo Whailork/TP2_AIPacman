@@ -52,7 +52,7 @@ void APinkGhostPawn::InFleeMode()
 	GhostAI->MoveToLocation(targetLocation, 0, false);
 }
 
-// TODO : voir si ca marche et comment le mettre dans le behaviour tree
+// TODO : voir si ca marche
 void APinkGhostPawn::OnChaseMode()
 {
 	/*
@@ -61,8 +61,49 @@ void APinkGhostPawn::OnChaseMode()
 	SetIsDead(false);
 	SetOnChaseMode(true);
 	*/
+	
+	float CaseSize = 100.0f;
+	float DistanceInCases = 4.0f;
 
-	//targetLocation
-	targetLocation = PacManReference->GetActorLocation(); // + 4 cases
+	FVector directionVector = PacManReference->GetActorForwardVector();
+	FVector PacmanPosition = PacManReference->GetActorLocation();
+	FVector TargetPosition = PacmanPosition + (directionVector * CaseSize * DistanceInCases);
+
+	// Raycast
+	FHitResult HitResult;
+	FCollisionQueryParams TraceParams(FName(TEXT("")), false, this);
+
+	bool hit = GetWorld()->LineTraceSingleByChannel(
+		HitResult,
+		PacmanPosition,
+		TargetPosition,
+		ECC_Visibility,
+		TraceParams
+	);
+
+	if (hit)
+	{
+		AActor* HitActor = HitResult.GetActor();
+
+		if (HitActor)
+		{
+			auto ghost = Cast<AGhost>(HitActor);
+			auto coin = Cast<ACornerActor>(HitActor);
+
+			if (ghost || coin) {
+				targetLocation = TargetPosition;
+			}
+			else {
+				FVector ImpactPoint = HitResult.ImpactPoint;
+				targetLocation = ImpactPoint - (directionVector * CaseSize);
+			}
+		}
+	}
+	else
+	{
+		targetLocation = TargetPosition;
+	}
+
 	GhostAI->MoveToLocation(targetLocation, 0, false);
+
 }

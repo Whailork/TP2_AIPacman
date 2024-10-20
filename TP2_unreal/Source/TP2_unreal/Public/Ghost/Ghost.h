@@ -48,9 +48,7 @@ public:
 	virtual void OnChaseMode();
 	UFUNCTION()
 	void SetOnScatterMode(bool isOnScatterMode);
-
-	UFUNCTION()
-	void SetOnFleeMode(bool isInFleeMode);
+	
 
 	UFUNCTION()
 	void SetOnChaseMode(bool isInChaseMode);
@@ -59,7 +57,7 @@ public:
 	void SetIsDead(bool isDead);
 
 	
-
+	UFUNCTION(BlueprintCallable)
 	void setFleeMode(bool value);
 	UFUNCTION(BlueprintCallable)
 	bool getFleeMode();

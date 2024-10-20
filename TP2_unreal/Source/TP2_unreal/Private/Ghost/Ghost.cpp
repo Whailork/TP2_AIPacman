@@ -52,7 +52,7 @@ void AGhost::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    if(!onScatterMode)
+    if(!onScatterMode && !inFleeMode)
     {
         targetLocation = PacManReference->GetActorLocation();
     }
@@ -93,10 +93,7 @@ void AGhost::SetOnScatterMode(bool isOnScatterMode)
 {
     this->onScatterMode = isOnScatterMode;
 }
-void AGhost::SetOnFleeMode(bool isInFleeMode)
-{
-    this->inFleeMode = isInFleeMode;
-}
+
 void AGhost::SetOnChaseMode(bool isInChaseMode)
 {
     this->inChaseMode = isInChaseMode;
