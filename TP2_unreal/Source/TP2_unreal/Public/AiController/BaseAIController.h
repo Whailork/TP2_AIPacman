@@ -23,5 +23,7 @@ public:
 
 	UPROPERTY(Transient)
 	class UBehaviorTreeComponent* BehaviorTreeComponent;
+	UPROPERTY(Transient)
+	class UBlackboardComponent* BlackboardComponent;
 
 };

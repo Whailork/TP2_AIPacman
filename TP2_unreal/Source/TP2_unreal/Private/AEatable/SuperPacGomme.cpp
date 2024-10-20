@@ -20,7 +20,6 @@ void ASuperPacGomme::OnEat(AActor* OtherActor)
 		{
 			if(auto ghost = Cast<AGhost>(actor))
 			{
-				//ghost->setModes(false, true, false, false);
 				ghost->setFleeMode(true);
 			}
 			
