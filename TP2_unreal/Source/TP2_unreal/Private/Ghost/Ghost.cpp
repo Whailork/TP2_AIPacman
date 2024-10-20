@@ -139,9 +139,26 @@ void AGhost::setFleeMode(bool value)
 
 void AGhost::setDeath(bool value)
 {
-	isDead = value;
-	if (value)
-	{
+    isDead = value;
+    SetOnScatterMode(false);
+    setFleeMode(false);
+    SetOnChaseMode(false);
+    if(value)
+    {
+        
+        //GhostAI->MoveToLocation(FVector(200,-50,52),0, false);
+        StaticMesh->SetWorldScale3D(FVector(0.3,0.3,0.3));
+        
+    }
+    else
+    {
+       
+        StaticMesh->SetWorldScale3D(FVector(1,1,1));
+    }
+   
+    //GhostAI->setIsDead(value);
+    //set la valeur dans le blackboard
+}
 
 		GhostAI->MoveToLocation(FVector(200, -50, 52), 0, false);
 		StaticMesh->SetWorldScale3D(FVector(0.3, 0.3, 0.3));
