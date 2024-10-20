@@ -80,7 +80,7 @@ APinkGhostPawn::~APinkGhostPawn() {}
 struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_PinkGhostPawn_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_APinkGhostPawn, APinkGhostPawn::StaticClass, TEXT("APinkGhostPawn"), &Z_Registration_Info_UClass_APinkGhostPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APinkGhostPawn), 1900386292U) },
+		{ Z_Construct_UClass_APinkGhostPawn, APinkGhostPawn::StaticClass, TEXT("APinkGhostPawn"), &Z_Registration_Info_UClass_APinkGhostPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APinkGhostPawn), 2067083562U) },
 	};
 };
 static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_PinkGhostPawn_h_2720707478(TEXT("/Script/TP2_unreal"),
