@@ -15,7 +15,7 @@
 
 bool APacMan::GameSucces()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::FromInt(nbEaten));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::FromInt(nbEaten));
 	if(nbEaten >= nbTotal)
 	{
 		

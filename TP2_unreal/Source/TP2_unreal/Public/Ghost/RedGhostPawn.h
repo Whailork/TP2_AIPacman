@@ -35,7 +35,5 @@ public:
 
 	
 	void OnChaseMode() override;
-
-	UFUNCTION(BlueprintCallable)
-	void InFleeMode();
+	
 };

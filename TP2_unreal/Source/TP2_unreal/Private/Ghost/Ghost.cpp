@@ -56,25 +56,16 @@ void AGhost::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (isDead)
-	{
-		if (GetActorLocation().Equals(FVector(200, -50, 52), 1))
-		{
-			setFleeMode(false);
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("grow back"));
-			setDeath(false);
-		}
-	}
-	else
-	{
-		if (!onScatterMode && !inFleeMode)
+	
+	
+		/*if (inChaseMode && !isDead)
 		{
 			OnChaseMode();
 			//targetLocation = PacManReference->GetActorLocation();
-		}
+		}*/
 
-		GhostAI->MoveToLocation(targetLocation, 0, false);
-	}
+		
+	
 
 }
 
@@ -88,16 +79,28 @@ void AGhost::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AGhost::OnScatterMode()
 {
-	SetOnScatterMode(true);
+	//si c'est la première fois que le mode est applé
+	if(targetLocation != coinsScatter[0]->GetActorLocation() && targetLocation != coinsScatter[1]->GetActorLocation() && targetLocation != coinsScatter[2]->GetActorLocation() && targetLocation != coinsScatter[3]->GetActorLocation())
+	{
+		SetOnScatterMode(true);
 
+		targetLocation = coinsScatter[0]->GetActorLocation();
+	}
+	
 	//targetLocation
-	targetLocation = coinsScatter[0]->GetActorLocation();
+	
 	GhostAI->MoveToLocation(targetLocation, 0, false);
 }
 
 void AGhost::OnFleeMode()
 {
-
+	//on set une position bidon pour pas qu'il soit stuck
+	if(GetActorLocation().Equals(targetLocation,1))
+	{
+		targetLocation = coinsScatter[0]->GetActorLocation();
+	}
+	isMoving = true;
+	GhostAI->MoveToLocation(targetLocation, 0, false);
 }
 
 void AGhost::OnChaseMode()
@@ -155,22 +158,6 @@ void AGhost::setDeath(bool value)
        
         StaticMesh->SetWorldScale3D(FVector(1,1,1));
     }
-   
-    //GhostAI->setIsDead(value);
-    //set la valeur dans le blackboard
-}
-
-		GhostAI->MoveToLocation(FVector(200, -50, 52), 0, false);
-		StaticMesh->SetWorldScale3D(FVector(0.3, 0.3, 0.3));
-
-	}
-	else
-	{
-
-		StaticMesh->SetWorldScale3D(FVector(1, 1, 1));
-	}
-
-	//GhostAI->setIsDead(value);
 	//set la valeur dans le blackboard
 }
 
