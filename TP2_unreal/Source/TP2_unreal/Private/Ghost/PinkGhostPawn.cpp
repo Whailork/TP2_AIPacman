@@ -16,12 +16,14 @@ void APinkGhostPawn::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	/*
 	// TODO: appeler au bon endroit
 	SetOnScatterMode(true);
 
 	targetLocation = coinsScatter[0]->GetActorLocation();
 
 	GhostAI->MoveToLocation(targetLocation);
+	*/
 }
 
 // Called every frame
@@ -40,7 +42,6 @@ void APinkGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 void APinkGhostPawn::OnScatterMode()
 {
-
 	targetLocation = coinsScatter[0]->GetActorLocation();
 	GhostAI->MoveToLocation(targetLocation, 0, false);
 }
@@ -55,25 +56,37 @@ void APinkGhostPawn::InFleeMode()
 // TODO : voir si ca marche
 void APinkGhostPawn::OnChaseMode()
 {
-	/*
-	SetOnScatterMode(false);
-	SetOnFleeMode(false);
-	SetIsDead(false);
+	// Initialisation
 	SetOnChaseMode(true);
-	*/
-	
+	SetOnScatterMode(false);
+	setFleeMode(false);
+	setDeath(false);
+
+	// Variables
+	FHitResult HitResult;
 	float CaseSize = 100.0f;
 	float DistanceInCases = 4.0f;
-
-	FVector directionVector = PacManReference->GetActorForwardVector();
+	FCollisionQueryParams TraceParams(FName(TEXT("")), false, this);
+	FVector directionVector = FVector::ZeroVector; // PacManReference->GetActorForwardVector(); Marche pas parce que le static mesh ne tourne pas
 	FVector PacmanPosition = PacManReference->GetActorLocation();
 	FVector TargetPosition = PacmanPosition + (directionVector * CaseSize * DistanceInCases);
 
-	// Raycast
-	FHitResult HitResult;
-	FCollisionQueryParams TraceParams(FName(TEXT("")), false, this);
+	if (PacManReference->direction == "DOWN") {
+		directionVector.X -= 1;
+	}
+	else if (PacManReference->direction == "LEFT") {
+		directionVector.Y -= 1;
+	}
+	else if (PacManReference->direction == "RIGHT") {
+		directionVector.Y += 1;
+	}
+	else { // PacManReference->direction == "UP"
+		directionVector.X += 1;
+	}
 
-	bool hit = GetWorld()->LineTraceSingleByChannel(
+	/*
+	// Raycast
+	bool hit = GetWorld()->AsyncLineTraceByObjectType(
 		HitResult,
 		PacmanPosition,
 		TargetPosition,
@@ -81,6 +94,9 @@ void APinkGhostPawn::OnChaseMode()
 		TraceParams
 	);
 
+	FString message = (hit) ? "Hit" : "No Hit";
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, message);
+	
 	if (hit)
 	{
 		AActor* HitActor = HitResult.GetActor();
@@ -105,5 +121,8 @@ void APinkGhostPawn::OnChaseMode()
 	}
 
 	GhostAI->MoveToLocation(targetLocation, 0, false);
+	*/
 
+	targetLocation = PacManReference->GetActorLocation() + (directionVector * CaseSize * DistanceInCases);
+	GhostAI->MoveToLocation(targetLocation, 0, false);
 }

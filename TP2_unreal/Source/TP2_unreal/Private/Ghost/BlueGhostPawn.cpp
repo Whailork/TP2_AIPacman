@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+#include "PacMan.h"
 #include "Ghost/BlueGhostPawn.h"
 
 // Sets default values
@@ -40,14 +40,34 @@ void ABlueGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 // TODO : voir si ca marche et comment le mettre dans le behaviour tree
 void ABlueGhostPawn::OnChaseMode()
 {
-	/*
-	SetOnScatterMode(false);
-	SetOnFleeMode(false);
-	SetIsDead(false);
 	SetOnChaseMode(true);
+	SetOnScatterMode(false);
+	setFleeMode(false);
+	setDeath(false);
 
 	//targetLocation
 	targetLocation = PacManReference->GetActorLocation();
 	GhostAI->MoveToLocation(targetLocation, 0, false);
-	*/
+
+
+
+	// TODO : Calculer la distance en tuile plutot qu'en ligne droite
+	float distance = FVector::Dist(GetActorLocation(), PacManReference->GetActorLocation());
+
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::SanitizeFloat(distance));
+
+	if (distance < 400.0f) {
+		SetOnChaseMode(false);
+		SetOnScatterMode(true);
+	}
+	else {
+		SetOnChaseMode(true);
+		SetOnScatterMode(false);
+
+		targetLocation = PacManReference->GetActorLocation();
+		GhostAI->MoveToLocation(targetLocation, 0, false);
+	}
+
+	setFleeMode(false);
+	setDeath(false);
 }

@@ -2,7 +2,7 @@
 
 
 #include "Ghost/OrangeGhostPawn.h"
-
+#include "PacMan.h"
 #include "NavigationSystem.h"
 #include "NavigationPath.h"
 
@@ -31,6 +31,8 @@ void AOrangeGhostPawn::BeginPlay()
 void AOrangeGhostPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+
 }
 
 // Called to bind functionality to input
@@ -44,15 +46,23 @@ void AOrangeGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 // Si Clyde est a plus de 8 cases de Pac-Man, il se comporte comme Blinky (le fantome rouge) et cible directement la position actuelle de Pac-Man.
 void AOrangeGhostPawn::OnChaseMode()
 {
+	// TODO : Calculer la distance en tuile plutot qu'en ligne droite
+	float distance = FVector::Dist(GetActorLocation(), PacManReference->GetActorLocation());
 
-	/*
-	SetOnScatterMode(false);
-	SetOnFleeMode(false);
-	SetIsDead(false);
-	SetOnChaseMode(true);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::SanitizeFloat(distance));
 
-	//targetLocation
-	targetLocation = PacManReference->GetActorLocation();
-	GhostAI->MoveToLocation(targetLocation, 0, false);
-	*/
+	if (distance < 800.0f) {
+		SetOnChaseMode(false);
+		SetOnScatterMode(true);
+	}
+	else {
+		SetOnChaseMode(true);
+		SetOnScatterMode(false);
+
+		targetLocation = PacManReference->GetActorLocation();
+		GhostAI->MoveToLocation(targetLocation, 0, false);
+	}
+
+	setFleeMode(false);
+	setDeath(false);
 }
