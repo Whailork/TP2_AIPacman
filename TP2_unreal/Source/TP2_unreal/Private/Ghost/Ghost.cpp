@@ -92,9 +92,6 @@ void AGhost::OnScatterMode()
     //targetLocation
     targetLocation = coinsScatter[0]->GetActorLocation();
     GhostAI->MoveToLocation(targetLocation,0, false);
-
-
-
 }
 
 void AGhost::OnFleeMode()
