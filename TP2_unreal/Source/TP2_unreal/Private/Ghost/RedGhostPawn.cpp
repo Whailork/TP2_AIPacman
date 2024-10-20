@@ -58,6 +58,7 @@ void ARedGhostPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 void ARedGhostPawn::OnChaseMode()
 {
     SetOnChaseMode(true);
+    SetOnScatterMode(false);
 
     //targetLocation
     targetLocation = PacManReference->GetActorLocation();

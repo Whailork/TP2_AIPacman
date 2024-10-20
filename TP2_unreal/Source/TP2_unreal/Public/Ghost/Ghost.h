@@ -57,7 +57,7 @@ public:
 	void SetIsDead(bool isDead);
 
 	
-
+	UFUNCTION(BlueprintCallable)
 	void setFleeMode(bool value);
 	UFUNCTION(BlueprintCallable)
 	bool getFleeMode();
