@@ -2,9 +2,9 @@
 #pragma once
 
 #include "AIController.h"
-#include "CoreMinimal.h"
 #include "AiController/BaseAIController.h"
 #include "BehaviorTree/BehaviorTreeTypes.h"
+#include "CoreMinimal.h"
 #include "Entity/EntityCharacter.h"
 #include "Ghost.generated.h"
 
@@ -14,62 +14,74 @@ class TP2_UNREAL_API AGhost : public AEntityCharacter
 {
 	GENERATED_BODY()
 
+	// Properties
 public:
 
 	UPROPERTY(EditAnywhere, Category = "Particles")
 	class UNiagaraComponent* Particles;
-	
+
 	UPROPERTY(EditAnywhere, Category = "AI")
 	class UBehaviorTree* TreeAsset;
 
-	FVector targetLocation;
-	FBlackboardKeySelector BlackboardKey;
-
-public:
 	UPROPERTY()
 	ABaseAIController* GhostAI;
+
+	// Variables
+public:
+
 	AGhost();
 
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-	bool inFleeMode;
-	bool isDead;
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	UFUNCTION(BlueprintCallable)
-	void OnScatterMode();
-	UFUNCTION(BlueprintCallable)
-	void OnFleeMode();
-	UFUNCTION(BlueprintCallable)
-	virtual void OnChaseMode();
-	UFUNCTION()
-	void SetOnScatterMode(bool isOnScatterMode);
-	
-
-	UFUNCTION()
-	void SetOnChaseMode(bool isInChaseMode);
-	
-
-	
-	UFUNCTION(BlueprintCallable)
-	void setFleeMode(bool value);
-	UFUNCTION(BlueprintCallable)
-	bool getFleeMode();
-	UFUNCTION(BlueprintCallable)
-	void setDeath(bool value);
-	UFUNCTION(BlueprintCallable)
-	bool getIsDead();
+	FBlackboardKeySelector BlackboardKey;
+	FVector targetLocation;
 
 	bool onScatterMode;
 	bool inChaseMode;
-	bool isDeadMode;
+	bool inFleeMode;
+	bool isDead;
 
+protected:
+	virtual void BeginPlay() override;
+
+public:
+	virtual void Tick(float DeltaTime) override;
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override; // Called to bind functionality to input
+
+	// Fonctions
+public:
+	UFUNCTION(BlueprintCallable)
+	void OnScatterMode();
+
+	UFUNCTION(BlueprintCallable)
+	void OnFleeMode();
+
+	UFUNCTION(BlueprintCallable)
+	virtual void OnChaseMode();
+
+	// Setters
+public:
+	UFUNCTION()
+	void SetOnScatterMode(bool isOnScatterMode);
+
+	UFUNCTION()
+	void SetOnChaseMode(bool isInChaseMode);
+
+	UFUNCTION(BlueprintCallable)
+	void setFleeMode(bool value);
+
+	UFUNCTION(BlueprintCallable)
+	void setDeath(bool value);
+
+	// Getters
+public:
+	UFUNCTION(BlueprintCallable)
+	bool getFleeMode();
 	
+	UFUNCTION(BlueprintCallable)
+	bool getIsDead();
+
+	UFUNCTION(BlueprintCallable)
+	bool getScatterMode();
+
+	UFUNCTION(BlueprintCallable)
+	bool getChaseMode();
 };

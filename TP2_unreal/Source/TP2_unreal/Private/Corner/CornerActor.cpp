@@ -59,8 +59,6 @@ void ACornerActor::OnOverlap(AActor* MyActor, AActor* OtherActor)
 
 	if (auto ghost = Cast<AGhost>(OtherActor))
 	{
-
-		
 		auto corner = Cast<ACornerActor>(MyActor);
 		if (ghost->getFleeMode()) {
 			//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("se"));
