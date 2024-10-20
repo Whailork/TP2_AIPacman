@@ -18,6 +18,8 @@ class AActor;
 #define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnCatchOverlapBegin); \
 	DECLARE_FUNCTION(execstopInFleeMode); \
+	DECLARE_FUNCTION(execgetScore); \
+	DECLARE_FUNCTION(execgetVie); \
 	DECLARE_FUNCTION(execGameSucces);
 
 

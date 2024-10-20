@@ -24,6 +24,18 @@ bool APacMan::GameSucces()
 	return false;
 }
 
+int APacMan::getVie()
+{
+	return vie;
+}
+
+
+
+int APacMan::getScore()
+{
+	return score;
+}
+
 void APacMan::stopInFleeMode()
 {
 	ghostEatStreak = 0;
@@ -54,7 +66,7 @@ APacMan::APacMan()
 void APacMan::BeginPlay()
 {
 	nbTotal = 244;
-	
+	vie = 3;
 
 	ghostEatStreak = 0;
 	nbEaten = 0;
@@ -155,6 +167,7 @@ void APacMan::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
 		}
 		else
 		{
+			vie--;
 			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("loselife"));
 			//pacman loses life
 		}

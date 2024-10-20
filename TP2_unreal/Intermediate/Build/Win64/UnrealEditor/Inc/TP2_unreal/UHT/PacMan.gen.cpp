@@ -67,6 +67,88 @@ DEFINE_FUNCTION(APacMan::execGameSucces)
 }
 // End Class APacMan Function GameSucces
 
+// Begin Class APacMan Function getScore
+struct Z_Construct_UFunction_APacMan_getScore_Statics
+{
+	struct PacMan_eventgetScore_Parms
+	{
+		int32 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/PacMan.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_APacMan_getScore_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PacMan_eventgetScore_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APacMan_getScore_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APacMan_getScore_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_getScore_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_APacMan_getScore_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APacMan, nullptr, "getScore", nullptr, nullptr, Z_Construct_UFunction_APacMan_getScore_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_getScore_Statics::PropPointers), sizeof(Z_Construct_UFunction_APacMan_getScore_Statics::PacMan_eventgetScore_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_getScore_Statics::Function_MetaDataParams), Z_Construct_UFunction_APacMan_getScore_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_APacMan_getScore_Statics::PacMan_eventgetScore_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_APacMan_getScore()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_APacMan_getScore_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(APacMan::execgetScore)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->getScore();
+	P_NATIVE_END;
+}
+// End Class APacMan Function getScore
+
+// Begin Class APacMan Function getVie
+struct Z_Construct_UFunction_APacMan_getVie_Statics
+{
+	struct PacMan_eventgetVie_Parms
+	{
+		int32 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/PacMan.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_APacMan_getVie_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PacMan_eventgetVie_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APacMan_getVie_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APacMan_getVie_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_getVie_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_APacMan_getVie_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APacMan, nullptr, "getVie", nullptr, nullptr, Z_Construct_UFunction_APacMan_getVie_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_getVie_Statics::PropPointers), sizeof(Z_Construct_UFunction_APacMan_getVie_Statics::PacMan_eventgetVie_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_APacMan_getVie_Statics::Function_MetaDataParams), Z_Construct_UFunction_APacMan_getVie_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_APacMan_getVie_Statics::PacMan_eventgetVie_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_APacMan_getVie()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_APacMan_getVie_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(APacMan::execgetVie)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->getVie();
+	P_NATIVE_END;
+}
+// End Class APacMan Function getVie
+
 // Begin Class APacMan Function OnCatchOverlapBegin
 struct Z_Construct_UFunction_APacMan_OnCatchOverlapBegin_Statics
 {
@@ -149,6 +231,8 @@ void APacMan::StaticRegisterNativesAPacMan()
 	UClass* Class = APacMan::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "GameSucces", &APacMan::execGameSucces },
+		{ "getScore", &APacMan::execgetScore },
+		{ "getVie", &APacMan::execgetVie },
 		{ "OnCatchOverlapBegin", &APacMan::execOnCatchOverlapBegin },
 		{ "stopInFleeMode", &APacMan::execstopInFleeMode },
 	};
@@ -243,6 +327,8 @@ struct Z_Construct_UClass_APacMan_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_APacMan_GameSucces, "GameSucces" }, // 3959592277
+		{ &Z_Construct_UFunction_APacMan_getScore, "getScore" }, // 562942011
+		{ &Z_Construct_UFunction_APacMan_getVie, "getVie" }, // 2121088094
 		{ &Z_Construct_UFunction_APacMan_OnCatchOverlapBegin, "OnCatchOverlapBegin" }, // 2515277029
 		{ &Z_Construct_UFunction_APacMan_stopInFleeMode, "stopInFleeMode" }, // 892126044
 	};
@@ -323,10 +409,10 @@ APacMan::~APacMan() {}
 struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_APacMan, APacMan::StaticClass, TEXT("APacMan"), &Z_Registration_Info_UClass_APacMan, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APacMan), 2546705418U) },
+		{ Z_Construct_UClass_APacMan, APacMan::StaticClass, TEXT("APacMan"), &Z_Registration_Info_UClass_APacMan, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APacMan), 771620211U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_410702310(TEXT("/Script/TP2_unreal"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_1781738723(TEXT("/Script/TP2_unreal"),
 	Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
