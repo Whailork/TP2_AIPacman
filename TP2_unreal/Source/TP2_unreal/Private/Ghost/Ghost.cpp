@@ -120,15 +120,17 @@ void AGhost::SetOnChaseMode(bool value)
 void AGhost::setFleeMode(bool value)
 {
 	inFleeMode = value;
-	PacManReference->ghostEatStreak = 0;
+
 	if (value)
 	{
+		PacManReference->ghostEatStreak = 0;
 		Particles->Activate();
 		Particles->SetVisibility(true, false);
 
 	}
 	else
 	{
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("resetCounter"));
 		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("deactivate Particles"));
 		Particles->Deactivate();
 		Particles->SetVisibility(false, false);
@@ -143,7 +145,7 @@ void AGhost::setDeath(bool value)
 {
     isDead = value;
     SetOnScatterMode(false);
-    setFleeMode(false);
+    inFleeMode = false;
     SetOnChaseMode(false);
     if(value)
     {
