@@ -33,6 +33,8 @@ public:
 	int nbEaten;
 	int nbTotal;
 	int vie;
+	int hitCooldown;
+	bool startCooldown;
 	UFUNCTION(BlueprintCallable)
 	bool GameSucces();
 	UFUNCTION(BlueprintCallable)

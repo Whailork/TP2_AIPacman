@@ -67,7 +67,7 @@ void APacMan::BeginPlay()
 {
 	nbTotal = 244;
 	vie = 3;
-
+	hitCooldown = 50;
 	ghostEatStreak = 0;
 	nbEaten = 0;
 	score = 0;
@@ -100,6 +100,8 @@ void APacMan::BeginPlay()
 void APacMan::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	hitCooldown--;
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::FromInt(hitCooldown));
 	/*if(CurrentTarget != nullptr && isMoving)
 	{
 		Move(Seek(CurrentTarget->GetActorLocation()));
@@ -167,7 +169,14 @@ void APacMan::OnCatchOverlapBegin(AActor* MyActor, AActor* OtherActor)
 		}
 		else
 		{
-			vie--;
+			if(hitCooldown <= 0)
+			{
+				vie--;
+				hitCooldown = 50;
+				
+				
+			}
+
 			//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("loselife"));
 			//pacman loses life
 		}
