@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TP2_UNREAL_RedGhostPawn_generated_h
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesARedGhostPawn(); \
 	friend struct Z_Construct_UClass_ARedGhostPawn_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(ARedGhostPawn)
 
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ARedGhostPawn(ARedGhostPawn&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~ARedGhostPawn();
 
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_9_PROLOG
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_GENERATED_BODY \
+#define FID_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_9_PROLOG
+#define FID_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_INCLASS_NO_PURE_DECLS \
-	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_ENHANCED_CONSTRUCTORS \
+	FID_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_INCLASS_NO_PURE_DECLS \
+	FID_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TP2_UNREAL_API UClass* StaticClass<class ARedGhostPawn>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h
+#define CURRENT_FILE_ID FID_TP2_unreal_Source_TP2_unreal_Public_Ghost_RedGhostPawn_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

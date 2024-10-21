@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"D:\\gitKrakenRepos\\TP2_AIPacman\\TP2_unreal\\Source\\TP2_unreal\\TP2_unreal.Build.cs",
-		"D:\\gitKrakenRepos\\TP2_AIPacman\\TP2_unreal\\Source\\TP2_unreal.Target.cs",
-		"D:\\gitKrakenRepos\\TP2_AIPacman\\TP2_unreal\\Source\\TP2_unrealEditor.Target.cs"
+		"C:\\Users\\15814\\Desktop\\projets_jni\\TP2_AIPacman\\TP2_unreal\\Source\\TP2_unreal\\TP2_unreal.Build.cs",
+		"C:\\Users\\15814\\Desktop\\projets_jni\\TP2_AIPacman\\TP2_unreal\\Source\\TP2_unreal.Target.cs",
+		"C:\\Users\\15814\\Desktop\\projets_jni\\TP2_AIPacman\\TP2_unreal\\Source\\TP2_unrealEditor.Target.cs"
 	],
 	"EngineVersion": "5.4.4"
 }

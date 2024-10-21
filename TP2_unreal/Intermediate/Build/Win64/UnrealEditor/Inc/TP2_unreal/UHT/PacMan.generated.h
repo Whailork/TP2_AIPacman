@@ -15,7 +15,7 @@ class AActor;
 #endif
 #define TP2_UNREAL_PacMan_generated_h
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execOnCatchOverlapBegin); \
 	DECLARE_FUNCTION(execstopInFleeMode); \
 	DECLARE_FUNCTION(execgetScore); \
@@ -23,7 +23,7 @@ class AActor;
 	DECLARE_FUNCTION(execGameSucces);
 
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_INCLASS_NO_PURE_DECLS \
+#define FID_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPacMan(); \
 	friend struct Z_Construct_UClass_APacMan_Statics; \
@@ -32,7 +32,7 @@ public: \
 	DECLARE_SERIALIZER(APacMan)
 
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_ENHANCED_CONSTRUCTORS \
+#define FID_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	APacMan(APacMan&&); \
@@ -44,13 +44,13 @@ public: \
 	NO_API virtual ~APacMan();
 
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_13_PROLOG
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_GENERATED_BODY \
+#define FID_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_13_PROLOG
+#define FID_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_INCLASS_NO_PURE_DECLS \
-	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_ENHANCED_CONSTRUCTORS \
+	FID_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_INCLASS_NO_PURE_DECLS \
+	FID_TP2_unreal_Source_TP2_unreal_Public_PacMan_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -58,7 +58,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TP2_UNREAL_API UClass* StaticClass<class APacMan>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_PacMan_h
+#define CURRENT_FILE_ID FID_TP2_unreal_Source_TP2_unreal_Public_PacMan_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

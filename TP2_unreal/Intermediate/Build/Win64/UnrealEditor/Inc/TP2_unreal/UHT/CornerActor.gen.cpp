@@ -195,14 +195,14 @@ ACornerActor::~ACornerActor() {}
 // End Class ACornerActor
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_Statics
+struct Z_CompiledInDeferFile_FID_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_ACornerActor, ACornerActor::StaticClass, TEXT("ACornerActor"), &Z_Registration_Info_UClass_ACornerActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACornerActor), 1508477923U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_1496319877(TEXT("/Script/TP2_unreal"),
-	Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_1496319877(TEXT("/Script/TP2_unreal"),
+	Z_CompiledInDeferFile_FID_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_TP2_unreal_Source_TP2_unreal_Public_Corner_CornerActor_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

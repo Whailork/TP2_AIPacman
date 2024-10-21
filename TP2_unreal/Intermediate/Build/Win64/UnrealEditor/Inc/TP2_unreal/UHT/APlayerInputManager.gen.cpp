@@ -126,14 +126,14 @@ AAPlayerInputManager::~AAPlayerInputManager() {}
 // End Class AAPlayerInputManager
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_APlayerInputManager_h_Statics
+struct Z_CompiledInDeferFile_FID_TP2_unreal_Source_TP2_unreal_Public_APlayerInputManager_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_AAPlayerInputManager, AAPlayerInputManager::StaticClass, TEXT("AAPlayerInputManager"), &Z_Registration_Info_UClass_AAPlayerInputManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAPlayerInputManager), 331079933U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_APlayerInputManager_h_1702698466(TEXT("/Script/TP2_unreal"),
-	Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_APlayerInputManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_APlayerInputManager_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_TP2_unreal_Source_TP2_unreal_Public_APlayerInputManager_h_1702698466(TEXT("/Script/TP2_unreal"),
+	Z_CompiledInDeferFile_FID_TP2_unreal_Source_TP2_unreal_Public_APlayerInputManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_TP2_unreal_Source_TP2_unreal_Public_APlayerInputManager_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

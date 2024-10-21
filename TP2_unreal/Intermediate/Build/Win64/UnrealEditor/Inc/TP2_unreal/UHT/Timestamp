@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 D:\gitKrakenRepos\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\PacMan.h
 D:\gitKrakenRepos\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\APlayerInputManager.h
 D:\gitKrakenRepos\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\PacmanAIController.h
@@ -16,3 +17,23 @@ D:\gitKrakenRepos\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\Map\Wall.h
 D:\gitKrakenRepos\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\Ghost\BlueGhostPawn.h
 D:\gitKrakenRepos\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\TP2_unrealCharacter.h
 D:\gitKrakenRepos\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\TP2_unrealGameMode.h
+=======
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\APlayerInputManager.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\AEatable\APacGomme.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\PacmanAIController.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\AEatable\SuperPacGomme.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\AEatable\AEatables.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\PacMan.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\AiController\BaseAIController.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\AiController\Ghost_AIController.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\Corner\CornerActor.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\Ghost\RedGhostPawn.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\Ghost\PinkGhostPawn.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\Ghost\OrangeGhostPawn.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\Ghost\BlueGhostPawn.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\Map\Wall.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\Entity\EntityCharacter.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\Public\Ghost\Ghost.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\TP2_unrealCharacter.h
+C:\Users\15814\Desktop\projets_jni\TP2_AIPacman\TP2_unreal\Source\TP2_unreal\TP2_unrealGameMode.h
+>>>>>>> Stashed changes

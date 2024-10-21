@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TP2_UNREAL_BaseAIController_generated_h
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABaseAIController(); \
 	friend struct Z_Construct_UClass_ABaseAIController_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(ABaseAIController)
 
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ABaseAIController(ABaseAIController&&); \
@@ -35,12 +35,12 @@ public: \
 	NO_API virtual ~ABaseAIController();
 
 
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_12_PROLOG
-#define FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_15_GENERATED_BODY \
+#define FID_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_12_PROLOG
+#define FID_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_15_INCLASS_NO_PURE_DECLS \
-	FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_15_ENHANCED_CONSTRUCTORS \
+	FID_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_15_INCLASS_NO_PURE_DECLS \
+	FID_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -48,7 +48,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TP2_UNREAL_API UClass* StaticClass<class ABaseAIController>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_gitKrakenRepos_TP2_AIPacman_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h
+#define CURRENT_FILE_ID FID_TP2_unreal_Source_TP2_unreal_Public_AiController_BaseAIController_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
